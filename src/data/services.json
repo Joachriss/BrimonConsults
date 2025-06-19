@@ -1,0 +1,63 @@
+[
+    {
+        "image": "architecture",
+        "title": "Architecture",
+        "description": "Integrated, aesthetic, and sustainable designs by a multidisciplinary team."
+    },
+    {
+        "image": "quantity",
+        "title": "Quantity Surveying",
+        "description": "Cost control and investment optimization to ensure project feasibility and confidence."
+    },
+    {
+        "image": "project",
+        "title": "Project Management",
+        "description": "Comprehensive project delivery with strategic planning, control, and risk mitigation."
+    },
+    {
+        "image": "construction",
+        "title": "Construction Management",
+        "description": "Hands-on site management for timelines, safety, quality, and stakeholder satisfaction."
+    },
+    {
+        "image": "financial",
+        "title": "Financial Advisory",
+        "description": "Cost engineering, value management, and risk evaluation to guide smart investments."
+    },
+    {
+        "image": "program",
+        "title": "Program Management",
+        "description": "Coordinated delivery of multi-project programs with a focus on quality and cost."
+    },
+    {
+        "image": "quantity",
+        "title": "Industrial & Mining",
+        "description": "Technical solutions for industrial and mining developments, ensuring compliance and sustainability."
+    },
+    {
+        "image": "social",
+        "title": "Social Risk Management",
+        "description": "Support for land acquisition, resettlement, and stakeholder engagement."
+    },
+    {
+        "image": "environmental",
+        "title": "Environmental & Social Services",
+        "description": "Environmental and social due diligence, compliance, and monitoring."
+    },
+    {
+        "image": "claims",
+        "title": "Construction claims",
+        "description": "We resolve construction disputes with expert claims analysis and management, ensuring optimal outcomes through experience and hands-on support."
+    },
+    {
+        "image": "risk",
+        "title": "Project Risk Management",
+        "description": "Our risk assessment experts enhance project success by identifying, analyzing, and mitigating potential delays and disruptions efficiently."
+    },
+    {
+        "image": "control",
+        "title": "Project controls",
+        "description": "Effective project controls ensure success by balancing oversight with project complexity, optimizing resources to achieve desired outcomes efficiently."
+    }
+    
+]

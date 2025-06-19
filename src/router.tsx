@@ -1,0 +1,52 @@
+import { createBrowserRouter } from "react-router";
+import { Layout } from "./pages/Layout";
+import { Home } from "./pages/Home";
+import { ContactPage } from "./pages/ContactPage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { CompanyPage } from "./pages/CompanyPage";
+import { ProjectDetailsPage } from "./pages/ProjectDetailsPage";
+import { ServicesPage } from "./pages/ServicesPage";
+import { TeamPage } from "./pages/TeamPage";
+import { PolicyPage } from "./pages/PolicyPage";
+
+
+export const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Layout />,
+        children: [
+            {
+                index: true,
+                element: <Home />,
+            },
+            {
+                path: "contacts",
+                element: <ContactPage />,
+            },
+            {
+                path: "company",
+                element: <CompanyPage />
+            },
+            {
+                path: "projects",
+                element: <ProjectsPage />
+            },
+            {
+                path: "projects/:project",
+                element: <ProjectDetailsPage />
+            },
+            {
+                path: "services",
+                element: <ServicesPage />
+            },
+            {
+                path: "team",
+                element: <TeamPage />
+            },
+            {
+                path: "policies",
+                element: <PolicyPage />
+            }
+        ]
+    },
+]);

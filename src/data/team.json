@@ -1,0 +1,157 @@
+[
+  {
+    "image": "elvis.png",
+    "name": "Elvis B. Otieno",
+    "title": "Managing Director",
+    "description": "A diligent and results-oriented professional with over ten years of diverse experience in civil and building construction projects. Skilled in project and commercial management, quantity surveying, Oil and Gas, RAP implementation, valuation, and financial management.",
+    "credentials": [
+      "Bsc Building Economics – Ardhi University, Tanzania",
+      "MBA (Online) – London School of Economics & Political Science (LSE)"
+    ],
+    "expertise": [
+      "Project Management",
+      "Contracts Management",
+      "Construction Management",
+      "Oil and Gas",
+      "Resettlement Program",
+      "Social Risk Management",
+      "Financial Advisory"
+    ],
+    "association": ""
+  },
+  {
+    "image": "otty.jpg",
+    "name": "Otty Msuku",
+    "title": "Contracts & Commercial Director",
+    "description": "Over 30 years' experience in large construction and infrastructure projects in multiple countries. Chartered quantity surveyor with deep expertise in contract evaluation, commercial issues, and dispute resolution.",
+    "credentials": [
+      "Advanced Diploma in Building Economics – Ardhi University, Tanzania",
+      "MSc Quantity Surveying – University of Reading, UK"
+    ],
+    "expertise": [
+      "Contracts/Commercial Management",
+      "Claims Management",
+      "Procurement and Tendering",
+      "Construction Claims"
+    ],
+    "association": [
+      "MRICS – Royal Institution of Chartered Surveyors, UK",
+      "PrQS 4161 – South Africa",
+      "Registered QS – AQRB Tanzania [QL215.289.5/12]"
+    ]
+  },
+  {
+    "image": "",
+    "name": "Bennet Katabarwa",
+    "title": "Technical Director",
+    "description": "Over 30 years' experience in architectural and design services across Africa and the Middle East. Specialized in concept development, project management, and design of complex structures.",
+    "credentials": [
+      "Advanced Diploma in Architecture – Ardhi University, Tanzania"
+    ],
+    "expertise": [
+      "Conceptual Design",
+      "Design Development",
+      "Construction Drawings",
+      "Permitting and Approvals",
+      "Interior and Sustainable Design",
+      "Historic Preservation",
+      "Site and Urban Planning",
+      "3D Modeling and Visualization"
+    ],
+    "association": ""
+  },
+  {
+    "image": "gregory.jpg",
+    "name": "Gregory Feist",
+    "title": "Operations & Construction Director",
+    "description": "Over 25 years of leadership in civil and building construction across Greenfield and Brownfield sites. Strong project management and critical-path skills within Oil & Gas and private sectors.",
+    "credentials": [
+      "Diploma – Civil Engineering (Brighton College, Vancouver, Canada)",
+      "Project Management Program – University of British Columbia",
+      "Business Administration – Capilano University, Vancouver"
+    ],
+    "expertise": [
+      "Construction and Project Management",
+      "Mining and Oil & Gas",
+      "Resettlement Program",
+      "Social Risk Management",
+      "Financial Advisory",
+      "Contract Management"
+    ],
+    "association": ""
+  },
+  {
+    "image": "rashid.jpg",
+    "name": "Rashid Nyagabona",
+    "title": "Building & Civil Works Manager",
+    "description": "Civil engineer with 12+ years of experience in construction and resettlement programs. Strong analytical skills and knowledge in Oil and Gas industry.",
+    "credentials": [
+      "BSc Civil Engineering – Nottingham University, UK",
+      "MSc Civil Engineering – Nottingham University, UK"
+    ],
+    "expertise": [
+      "Construction Management",
+      "Construction Supervision",
+      "Planning and Organizing",
+      "Resettlement Programs"
+    ],
+    "association": ""
+  },
+  {
+    "image": "",
+    "name": "Peter Mkai",
+    "title": "Head - Land Management and Valuation",
+    "description": "Real estate consultant with 8 years of experience in valuation, land administration, and investment analytics. Strong background in project management and land economics.",
+    "credentials": [
+      "BSc Land Management and Valuation – Ardhi University",
+      "Master’s in Project Management – University of Dar es Salaam"
+    ],
+    "expertise": [
+      "Land Information Systems",
+      "Land Administration",
+      "Urban & Rural Planning",
+      "Land Economics",
+      "Land Policy & Taxation",
+      "Property Valuation",
+      "Procurement and Logistics"
+    ],
+    "association": ""
+  },
+  {
+    "image": "",
+    "name": "Ireneus Byarugaba",
+    "title": "Architectural Operations Manager",
+    "description": "Proficient in architectural design, urban development, landscape architecture, building information modeling, and construction. Experienced in creating innovative architectural solutions for diverse projects in urban environments.",
+    "credentials": [
+      "BSc Architecture – Ardhi University, Tanzania"
+    ],
+    "expertise": [
+      "Architectural Design",
+      "Urban Development and Housing",
+      "Architectural Science",
+      "Landscape Architecture",
+      "Building Information Modeling",
+      "Building Construction"
+    ],
+    "association": ""
+  },
+  {
+    "image": "arshard.png",
+    "name": "Arshard Bawazir",
+    "title": "Communications and IT Manager",
+    "description": "Young professional with experience in system analysis, IT management, and project management within Tanzania’s telecom and retail sectors.",
+    "credentials": [
+      "BSc in Business Information Technology – University of Dar es Salaam"
+    ],
+    "expertise": [
+      "IT Audit and Controls",
+      "Business Process Management",
+      "Web and Android Programming",
+      "Business Communication",
+      "Software Project Management",
+      "Business Law and Ethics",
+      "Software Engineering"
+    ],
+    "association": ""
+  }
+]

@@ -1,0 +1,113 @@
+    [
+        {
+            "id": 2,
+            "name": "Commercial Complex | Goba, Dar es Salaam, Tanzania",
+            "description": "Our work",
+            "colse": 1,
+            "image": [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp"
+            ],
+            "delay": 1000,
+            "link": "https://example.com/project2",
+            "path":"projects/Commercial-Complex-Goba-Dar-es-Salaam/"
+        },
+        {
+            "id": 3,
+            "name": "Proposed Presidential Library | Dodoma, Tanzania",
+            "description": "Our work",
+            "image": [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp"
+            ],
+            "cols": 2,
+            "delay": 0,
+            "link": "https://example.com/project2",
+            "path":"projects/Proposed-Presidential-Library/"
+        },
+        {
+            "id": 4,
+            "name": "Residential Apartments | Mbezi Beach, Dar es Salaam, Tanzania",
+            "description": "Our work",
+            "image": [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp"
+            ],
+            "cols": 2,
+            "delay": 1000,
+            "link": "https://example.com/project2",
+            "path":"projects/Residential-Apartments-Mbezi-Beach-Dar/"
+        },
+        {
+            "id": 5,
+            "name": "Medeli Conventional Centre | Dodoma, Tanzania",
+            "description": "Our work",
+            "image": [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp"
+            ],
+            "cols": 1,
+            "delay": 0,
+            "link": "https://example.com/project2",
+            "path":"projects/Medeli-Conventioanl-Centre-Dodoma/"
+        },
+        {
+            "id": 6,
+            "name": "Iyumbu health Centre | Dodoma, Tanzania",
+            "description": "Our work",
+            "image": [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp"
+            ],
+            "link": "https://example.com/project2",
+            "cols": 2,
+            "delay": 1000,
+            "path":"projects/Iyumbu/"
+        },
+        {
+            "id": 7,
+            "name": "VIJANA Multipurpose Hall | Dar es Salaam, Tanzania",
+            "description": "Our work",
+            "image": [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp"
+            ],
+            "cols": 2,
+            "delay": 0,
+            "link": "https://example.com/project2",
+            "path":"projects/VIJANA-Multipurpose-Hall-Dar-es-Salaam/"
+        },
+        {
+            "id": 1,
+            "name": "Channery Roof Rehabilitation | CANADIAN HIGH COMMISSION",
+            "description": "Description 1",
+            "image": "image1.webp",
+            "colse": 1,
+            "delay": 1000,
+            "link": "https://example.com/project1"
+        }
+    ]

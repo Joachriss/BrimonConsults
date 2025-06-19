@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body{
+  font-family: 'Jost', sans-serif;
+  /* background-color: #f8f9fa;
+  color: #212529; */
+}
+.st0 {
+  fill: #0acf83
+}
+
+.st1 {
+  fill: #d01b60
+  /* fill: #a259ff */
+}
+
+.st2 {
+  /* fill: #f24e1e */
+  fill: #d01b60
+}
+
+.st3 {
+  fill: #ff7262
+}
+
+.st4 {
+  fill: #1abcfe
+}
