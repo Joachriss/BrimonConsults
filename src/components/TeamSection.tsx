@@ -16,10 +16,7 @@ export const TeamSection = () => {
                     Our Team
                 </h2>
                 <p className="mb-10 font-light lg:text-xl text-center">
-                    {/* Our team is a diverse group of professionals with expertise in various fields, including project management, engineering, architecture, and environmental science. We are committed to delivering innovative solutions that meet the unique needs of each project while ensuring sustainability and community engagement. */}
-                    {/* At Brimon Consults Limited, our team is a diverse group of professionals with expertise in project management, engineering, architecture, and environmental science. We are committed to delivering innovative solutions that meet the unique needs of each project while ensuring sustainability and community engagement. */}
                     Meet our dedicated team of professionals at Brimon Consults
-                    {/* Our team is a diverse group of professionals with expertise in various fields, including project management, engineering, architecture, and environmental science. We are committed to delivering innovative solutions that meet the unique needs of each project while ensuring sustainability and community engagement. */}
                 </p>
                 <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-3 dark:text-gray-400">
                     {
