@@ -1,8 +1,7 @@
 import { motion } from "motion/react"
 import { FaAngleDoubleDown } from "react-icons/fa"
+import { Link } from "react-router"
 
-<video autoPlay loop muted className="w-full h-full">
-</video>
 
 export const HeroSection = () => {
   const scrollDown = () => {
@@ -37,10 +36,10 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 1 }}
             className="w-1/2 mb-5 border-4 border-[#d94766]"/>
             <div className="space-y-4 text-center space-x-2 sm:flex sm:space-y-0 sm:space-x-4">
-              <a href="#" target="_blank"
+              <Link to="company" target="_blank"
                 className="inline-flex bg-[#d94766] items-center justify-center px-5 py-3 text-sm font-medium text-center  rounded-lg sm:w-auto hover:bg-[#194062] focus:ring-4 focus:ring-gray-100 text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Learn more
-              </a>
+              </Link>
               <a href="#projects" className="inline-flex bg-transparent border border-[#FFF] hover:text-[#FFF] items-center justify-center px-5 py-3 text-sm font-medium text-center  rounded-lg sm:w-auto hover:bg-[#194062] focus:ring-4 focus:ring-gray-100 text-[#FFF] dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Our projects
               </a>
