@@ -6,7 +6,6 @@ export const ServicesSection = () => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
-      // animate={{ opacity: 1, y: 0 }}  
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, y: 0 }}
       className="bg-gray-50 dark:bg-gray-800"
@@ -21,7 +20,6 @@ export const ServicesSection = () => {
             personalized solutions, optimizing
             budgets, integrating sustainability, and
             ensuring successful project outcomes.
-            {/* Brimon Consults delivers tailored solutions across architecture, quantity surveying, and project management—ensuring technical excellence, cost efficiency, and sustainable impact. */}
           </p>
         </div>
 
