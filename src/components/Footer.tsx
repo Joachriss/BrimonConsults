@@ -91,7 +91,7 @@ export const Footer = () => {
 						className="flex items-center justify-center mb-5 text-2xl font-semibold text-white">
 						<img src={logo} className="w-22 mr-2" alt="Landwind Logo" />
 					</a>
-					<span className="block text-sm text-center text-gray-100">© {new Date().getFullYear()} BrimonConsults™. All Rights Reserved. Built by <a href="Joachriss.netlify.app" target="_blank" className="text-purple-200 hover:underline dark:text-purple-200">JoaChriss</a> .
+					<span className="block text-sm text-center text-gray-100">© {new Date().getFullYear()} BrimonConsults™. All Rights Reserved. Built by <a href="Joachriss.netlify.app" target="_blank" className="text-purple-200 hover:underline dark:text-purple-200">IkonCreatives</a> .
 					</span>
 					<ul className="flex justify-center mt-5 space-x-5">
 						<li>
