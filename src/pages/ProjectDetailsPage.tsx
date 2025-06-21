@@ -106,7 +106,6 @@ export const ProjectDetailsPage = () => {
                         }
                     </div>
                 </div>
-
             </section>
         </div>
     )

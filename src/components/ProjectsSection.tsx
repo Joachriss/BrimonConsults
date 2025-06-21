@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import projects from '../data/projects.json';
 import { Btn } from './buttons/Btn';
-import cvvv from "/projects/Medeli-Conventioanl-Centre-Dodoma/image1.webp"
+import cvvv from "/projects100/Medeli-Conventioanl-Centre-Dodoma/image1.webp"
 import { ProjectCard } from './cards/ProjectCard';
 import { Link } from 'react-router';
 export const ProjectsSection = () => {
@@ -33,7 +33,7 @@ export const ProjectsSection = () => {
                         >
                             {
                                 projects.map((project) => (
-                                    <Link to={`/projects/${project.name}`} key={project.id} className="flex space-x-3 hover:underline">
+                                    <Link to={`/projects100/${project.name}`} key={project.id} className="flex space-x-3 hover:underline">
                                         <svg className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd"
@@ -51,7 +51,7 @@ export const ProjectsSection = () => {
                     </div>
                     <div className="hidden md:grid overflow-hidden grid-cols-5 gap-4">
                         <div className="col-span-2 h-52 overflow-hidden ">
-                            {/* <img className="w-full h-full mb-4 rounded-lg object-cover" src={'/projects/Commercial-Complex-Goba-Dar-es-Salaam/IMG_7542.webp'} alt="project image 1" /> */}
+                            {/* <img className="w-full h-full mb-4 rounded-lg object-cover" src={'/projects100/Commercial-Complex-Goba-Dar-es-Salaam/IMG_7542.webp'} alt="project image 1" /> */}
                         </div>
                         <motion.div 
                         initial={{ opacity: 0, x: "20%" }}
@@ -65,11 +65,11 @@ export const ProjectsSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
                         className="col-span-3 h-52 overflow-hidden">
-                            <img className="w-full h-full rounded-lg object-cover" src={"/projects/Iyumbu/image6.webp"} alt="project image 3" />
+                            <img className="w-full h-full rounded-lg object-cover" src={"/projects100/Iyumbu/image6.webp"} alt="project image 3" />
 
                         </motion.div>
                         <div className="col-span-2 h-52 overflow-hidden">
-                            {/* <img className="w-full h-full rounded-lg object-cover" src={'/projects/Medeli-Conventioanl-Centre-Dodoma/WWWW_3-Photo.webp'} alt="project image 3" /> */}
+                            {/* <img className="w-full h-full rounded-lg object-cover" src={'/projects100/Medeli-Conventioanl-Centre-Dodoma/WWWW_3-Photo.webp'} alt="project image 3" /> */}
                         </div>
                         <div className="col-span-full text-center mt-8 text-xl">
                             {/* <a

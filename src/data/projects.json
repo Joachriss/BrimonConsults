@@ -14,7 +14,7 @@
             ],
             "delay": 1000,
             "link": "https://example.com/project2",
-            "path":"projects/Commercial-Complex-Goba-Dar-es-Salaam/"
+            "path":"projects100/Commercial-Complex-Goba-Dar-es-Salaam/"
         },
         {
             "id": 3,
@@ -31,7 +31,7 @@
             "cols": 2,
             "delay": 0,
             "link": "https://example.com/project2",
-            "path":"projects/Proposed-Presidential-Library/"
+            "path":"projects100/Proposed-Presidential-Library/"
         },
         {
             "id": 4,
@@ -48,7 +48,7 @@
             "cols": 2,
             "delay": 1000,
             "link": "https://example.com/project2",
-            "path":"projects/Residential-Apartments-Mbezi-Beach-Dar/"
+            "path":"projects100/Residential-Apartments-Mbezi-Beach-Dar/"
         },
         {
             "id": 5,
@@ -65,7 +65,7 @@
             "cols": 1,
             "delay": 0,
             "link": "https://example.com/project2",
-            "path":"projects/Medeli-Conventioanl-Centre-Dodoma/"
+            "path":"projects100/Medeli-Conventioanl-Centre-Dodoma/"
         },
         {
             "id": 6,
@@ -82,7 +82,7 @@
             "link": "https://example.com/project2",
             "cols": 2,
             "delay": 1000,
-            "path":"projects/Iyumbu/"
+            "path":"projects100/Iyumbu/"
         },
         {
             "id": 7,
@@ -99,7 +99,7 @@
             "cols": 2,
             "delay": 0,
             "link": "https://example.com/project2",
-            "path":"projects/VIJANA-Multipurpose-Hall-Dar-es-Salaam/"
+            "path":"projects100/VIJANA-Multipurpose-Hall-Dar-es-Salaam/"
         },
         {
             "id": 1,

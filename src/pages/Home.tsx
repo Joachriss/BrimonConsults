@@ -30,7 +30,7 @@ export const Home = () => {
             <section className="bg-gray-50 dark:bg-gray-800">
 
                 <div className="grid items-center grid-cols-1 md:grid-cols-4">
-                    <div className="w-full h-[40vh] md:h-[70vh] bg-cover bg-center col-span-1 bg-[url('/projects/Iyumbu/image4.webp')] md:col-span-3 overflow-hidden">
+                    <div className="w-full h-[40vh] md:h-[70vh] bg-cover bg-center col-span-1 bg-[url('/projects100/Iyumbu/image4.webp')] md:col-span-3 overflow-hidden">
                         <div className="h-full md:text-center items-center bg-black/50 w-full flex flex-col justify-center  text-white">
                             <svg className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

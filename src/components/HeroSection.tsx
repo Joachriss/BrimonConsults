@@ -14,7 +14,7 @@ export const HeroSection = () => {
     <section className="bg-white dark:bg-gray-900 relative">
       <div className="h-screen w-full">
         <video autoPlay loop muted className="w-full h-full object-cover">
-          <source src="/projects/Iyumbu/video22.mp4" type="video/mp4" />
+          <source src="/projects100/Iyumbu/video22.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="absolute z-0 h-screen inset-0 top-0 bg-black/50  w-full ">

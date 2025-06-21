@@ -7,7 +7,7 @@ export const PolicyPage = () => {
                 pageName="Policies"
                 recall="Our Policies"
                 services={["Human Rights Policy", "Health, Safety, Security, Environment & Social Policy"]}
-                image="bg-[url('/projects/Residential-Apartments-Mbezi-Beach-Dar/image2.webp')]"
+                image="bg-[url('/projects100/Residential-Apartments-Mbezi-Beach-Dar/image2.webp')]"
             />
 
         </section >

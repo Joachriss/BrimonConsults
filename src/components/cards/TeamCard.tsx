@@ -10,7 +10,7 @@ export const TeamCard = ({member, description}: {member: any,description: string
         >
             <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-md text-center flex h-full flex-col items-center gap-3">
                 <div className="overflow-hidden w-full h-60 ">
-                    <img src={member.image === '' ? user : `/team/${member.image}`} className="object-cover w-full h-full" alt="Team Member" />
+                    <img src={member.image === '' ? user : `/our_team/${member.image}`} className="object-cover w-full h-full" alt="Team Member" />
                 </div>
                 <div className='space-y-2 p-4'>
                     <h3 className="text-xl font-semibold text-[#194062] dark:text-purple-400">{member.name}</h3>

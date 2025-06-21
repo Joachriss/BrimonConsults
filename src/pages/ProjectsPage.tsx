@@ -11,7 +11,7 @@ export const ProjectsPage = () => {
                 pageName="Our Portfolio"
                 recall="Explore Our Projects"
                 services={projectNames}
-                image="bg-[url('/projects/Residential-Apartments-Mbezi-Beach-Dar/image2.webp')]"
+                image="bg-[url('/projects100/Residential-Apartments-Mbezi-Beach-Dar/image2.webp')]"
             />
             
             <motion.div
