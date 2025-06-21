@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Outlet } from "react-router";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { ContactPage } from "./pages/ContactPage";
@@ -29,7 +29,17 @@ export const router = createBrowserRouter([
             },
             {
                 path: "projects",
-                element: <ProjectsPage />
+                element: <Outlet />,
+                children: [
+                    {
+                        index: true,
+                        element: <ProjectsPage />
+                    },
+                    {
+                        path: ":project",
+                        element: <ProjectDetailsPage />
+                    }
+                ]
             },
             {
                 path: "projects/:project",
