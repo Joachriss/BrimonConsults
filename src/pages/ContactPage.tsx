@@ -1,6 +1,5 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { BookingForm } from "../components/forms/BookingForm";
-// import { ContactForm } from "../components/ContactForm";
 import { motion } from "motion/react";
 import { BsPostcardFill } from "react-icons/bs";
 
