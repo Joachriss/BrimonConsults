@@ -16,9 +16,9 @@ export const Home = () => {
         <div>
             <HeroSection />
             <AboutSection />
+            <ProjectsSection />
             <ServicesSection />
             <HowWeWork />
-            <ProjectsSection />
             <TeamSection />
 
 

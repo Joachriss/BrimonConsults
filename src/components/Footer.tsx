@@ -44,13 +44,13 @@ export const Footer = () => {
 						<h3 className="mb-6 text-sm font-semibold  uppercase text-white">Legal</h3>
 						<ul className="text-gray-100">
 							<li className="mb-4">
-								<Link to="policies" className="hover:underline">Privacy Policy</Link>
+								<Link to="/company" className="hover:underline">Privacy Policy</Link>
 							</li>
 							<li className="mb-4">
-								<Link to="Company" className="hover:underline">Licensing</Link>
+								<Link to="/Company" className="hover:underline">Licensing</Link>
 							</li>
 							<li className="mb-4">
-								<a href="#" className="hover:underline">Terms</a>
+								<Link to="/company" className="hover:underline">Terms</Link>
 							</li>
 						</ul>
 					</div>
@@ -68,7 +68,7 @@ export const Footer = () => {
 							<li className="mb-4 flex flex-col gap-x-2">
 								<div className="font-bold flex flex-row items-center"><MdLocationOn size={20} /> location</div>
 								{/* <MdLocationOn  size={20} /> */}
-								<a href="https://maps.app.goo.gl/bYEn3wPGEEpfFHWc8" className="hover:underline">
+								<a href="https://maps.app.goo.gl/guRv8SuoTwSsh6GF6" className="hover:underline">
 									Morocco Square - Tower II
 									(Exchange Tower)- 10th Floor
 									Kinondoni , Dar es salaam, Tanzania

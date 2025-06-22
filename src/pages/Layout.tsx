@@ -7,6 +7,7 @@ export const Layout = () => {
   return (
     <>
       <Navbar />
+      <div className="pt-10"></div>
       <Outlet />
       <ToTop />
       <Footer />

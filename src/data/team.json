@@ -63,7 +63,7 @@
   {
     "image": "gregory.jpg",
     "name": "Gregory Feist",
-    "title": "Operations & Construction Director",
+    "title": "Business Development Director",
     "description": "Over 25 years of leadership in civil and building construction across Greenfield and Brownfield sites. Strong project management and critical-path skills within Oil & Gas and private sectors.",
     "credentials": [
       "Diploma – Civil Engineering (Brighton College, Vancouver, Canada)",
@@ -77,23 +77,6 @@
       "Social Risk Management",
       "Financial Advisory",
       "Contract Management"
-    ],
-    "association": ""
-  },
-  {
-    "image": "rashid.jpg",
-    "name": "Rashid Nyagabona",
-    "title": "Building & Civil Works Manager",
-    "description": "Civil engineer with 12+ years of experience in construction and resettlement programs. Strong analytical skills and knowledge in Oil and Gas industry.",
-    "credentials": [
-      "BSc Civil Engineering – Nottingham University, UK",
-      "MSc Civil Engineering – Nottingham University, UK"
-    ],
-    "expertise": [
-      "Construction Management",
-      "Construction Supervision",
-      "Planning and Organizing",
-      "Resettlement Programs"
     ],
     "association": ""
   },

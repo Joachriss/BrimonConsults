@@ -7,51 +7,55 @@ import { CompanyPage } from "./pages/CompanyPage";
 import { ProjectDetailsPage } from "./pages/ProjectDetailsPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import { TeamPage } from "./pages/TeamPage";
-import { PolicyPage } from "./pages/PolicyPage";
+import { ErrorPage } from "./pages/ErrorPage";
+import App from "./App";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout />,
+        element: <App />,
+        errorElement: <ErrorPage />,
         children: [
             {
-                index: true,
-                element: <Home />,
-            },
-            {
-                path: "contacts",
-                element: <ContactPage />,
-            },
-            {
-                path: "company",
-                element: <CompanyPage />
-            },
-            {
-                path: "projects",
-                element: <Outlet />,
+                element: <Layout />,
                 children: [
                     {
                         index: true,
-                        element: <ProjectsPage />
+                        element: <Home />,
                     },
                     {
-                        path: ":project",
-                        element: <ProjectDetailsPage />
+                        path: "contacts",
+                        element: <ContactPage />,
+                    },
+                    {
+                        path: "company",
+                        element: <CompanyPage />
+                    },
+                    {
+                        path: "projects",
+                        element: <Outlet />,
+                        children: [
+                            {
+                                index: true,
+                                element: <ProjectsPage />
+                            },
+                            {
+                                path: ":project",
+                                element: <ProjectDetailsPage />
+                            }
+                        ]
+                    },
+                    {
+                        path: "services",
+                        element: <ServicesPage />
+                    },
+                    {
+                        path: "team",
+                        element: <TeamPage />
                     }
+                    
                 ]
-            },
-            {
-                path: "services",
-                element: <ServicesPage />
-            },
-            {
-                path: "team",
-                element: <TeamPage />
-            },
-            {
-                path: "policies",
-                element: <PolicyPage />
             }
         ]
     },

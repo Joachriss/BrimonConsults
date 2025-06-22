@@ -4,10 +4,11 @@ import './index.css'
 import { router } from './router.tsx'
 import { RouterProvider } from 'react-router'
 import axios from 'axios'
+import { AuthContextProvider } from '../context/AuthContext.tsx'
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   </StrictMode>,
 )

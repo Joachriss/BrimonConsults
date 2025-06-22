@@ -3,8 +3,12 @@ import { PageHeader } from "../components/PageHeader"
 import team from "../data/team.json"
 import { TeamCard } from "../components/cards/TeamCard"
 import { FaQuoteLeft } from "react-icons/fa"
+import { useEffect } from "react"
 
 export const TeamPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
     return (
         <section className="w-full">
             <PageHeader recall="Meet Our Team" services={["Leadership", "Management", "Team Work"]} pageName="Our Team" image="bg-[url('/projects100/Commercial-Complex-Goba-Dar-es-Salaam/image2.webp')]" />
@@ -31,7 +35,7 @@ export const TeamPage = () => {
                 <div className="px-2 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
                         team.map((member, index) => (
-                            <TeamCard key={index} member={member} description={member.description} />
+                            <TeamCard key={index} member={member} show={true} />
                         ))
                     }
                 </div>

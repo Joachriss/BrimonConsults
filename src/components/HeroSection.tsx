@@ -28,7 +28,7 @@ export const HeroSection = () => {
               Building Sustainable Futures, <br />One Project at a Time.
             </motion.h1>
             <p className="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl ">This
-              By intergrating exo-friendly practices, innovative technologies, and community engagement, we strive to leave a lasting impact on both the enviroment and the lices of those we serve
+              By intergrating eco-friendly practices, innovative technologies, and community engagement, we strive to leave a lasting impact on both the enviroment and the lices of those we serve
             </p>
             <motion.hr 
             initial={{ width: 0 }}

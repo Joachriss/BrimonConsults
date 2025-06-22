@@ -5,7 +5,7 @@ import { BsPostcardFill } from "react-icons/bs";
 
 export const ContactPage = () => {
     return (
-        <motion.div className="container mx-auto py-10 px-4"
+        <motion.div className="container md:mt-10 mx-auto py-10 px-4"
             initial={{ opacity: 0, translateY: -50 }}
             exit={{ opacity: 0 }}
             viewport={{ once: false }}
@@ -33,7 +33,7 @@ export const ContactPage = () => {
                         {/* <div className="flex flex-row items-center gap-4"><div><FaPhone size={20} /></div> <div><strong>Phone:</strong> +123 456 7890</div></div> */}
                         <div className="flex flex-row items-center gap-4">
                             <div><FaMapMarkerAlt size={20} /></div>
-                            <a href="https://maps.app.goo.gl/bYEn3wPGEEpfFHWc8" target="_blank" className="hover:font-extrabold duration-200">
+                            <a href="https://maps.app.goo.gl/guRv8SuoTwSsh6GF6" target="_blank" className="hover:font-extrabold duration-200">
                                 <strong>Location:</strong>Morocco Square - Tower II
                                 (Exchange Tower)- 10th Floor
                                 Kinondoni , Dar es salaam, Tanzania
@@ -52,7 +52,7 @@ export const ContactPage = () => {
                 <BookingForm />
             </div>
             <div className="my-10">
-                <iframe className="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5227.807488329311!2d39.261189268603005!3d-6.777548992802991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d0065072cd5%3A0x476bd76e7cece22b!2sMOROCCO%20SQUARE%20NHC!5e0!3m2!1sen!2stz!4v1749160996937!5m2!1sen!2stz" loading="lazy"></iframe>
+                <iframe className="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.942990254!2d39.260587908232736!3d-6.776793593191846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d0049860211%3A0x5f0f3b992212d915!2sBrimon%20Consults%20Limited!5e0!3m2!1sen!2stz!4v1750599981681!5m2!1sen!2stz"loading="lazy"></iframe>
             </div>
 
             {/* Join our team */}

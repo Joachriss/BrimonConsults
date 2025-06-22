@@ -16,7 +16,14 @@ export const Navbar = () => {
         setIsOpen(!isOpen);
     };
     return (
-        <header className="fixed w-full z-50" >
+        <header className="fixed t-0 w-full z-50" >
+            <div className="bg-linear-to-r from-[#d94766] to-[#194062] text-sm text-white py-1 flex-row px-5 hidden md:flex items-center gap-x-5">
+                <a href="https://www.instagram.com/brimonconsults?igsh=MWFqaXV3bjJ4d3U0Zw%3D%3D&utm_source=qr" target="_blank" className="flex flex-row items-center gap-x-2">
+                    <FaInstagram size={20} />
+                    <p>Follow us on Instagram</p>
+                </a>
+                <a href="tel:255760941503" className="ml-auto">Call us on +255 760 941 503</a>
+            </div>
             <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
                 <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                     <Link to="/" className="flex items-center">
