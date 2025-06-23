@@ -129,7 +129,7 @@ export const TeamSection = () => {
                         ))
                     }
 
-                    <div className="text-4xl text-[#194a68] font-bold col-span-full">The collegues</div>
+                    <div className="text-4xl text-[#194a68] font-bold col-span-full">The Team</div>
 
                     {
                         team.slice(1).map((member, index) => (

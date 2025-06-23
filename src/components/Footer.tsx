@@ -27,7 +27,7 @@ export const Footer = () => {
 						</ul>
 					</div>
 					<div>
-						<h3 className="mb-6 text-sm font-semibold uppercase text-white">Help center</h3>
+						<h3 className="mb-6 text-sm font-semibold uppercase text-white">Social Media</h3>
 						<ul className="text-gray-100">
 							<li className="mb-4">
 								<a href="#" className="hover:underline">Twitter</a>

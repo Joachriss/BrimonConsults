@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
 import user from '/user.png';
+import { useState } from 'react';
+import TeamDialog from '../dialogs/TeamDialog';
 export const TeamCard = ({ member, show }: { member: any, show: boolean }) => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <motion.div
             initial={{ opacity: 0, rotateY: 90 }}
@@ -10,7 +13,7 @@ export const TeamCard = ({ member, show }: { member: any, show: boolean }) => {
         >
             <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-md text-center flex h-full flex-col items-center gap-3">
                 <div className="overflow-hidden w-full h-60 ">
-                    <img src={member.image === '' ? user : `/our_team/${member.image}`} className="object-cover w-full h-full" alt="Team Member" />
+                    <img onClick={() => setIsOpen(true)} src={member.image === '' ? user : `/our_team/${member.image}`} className="object-cover w-full h-full" alt="Team Member" />
                 </div>
                 <div className='space-y-2 p-4'>
                     <h3 className="text-xl font-semibold text-[#194062] dark:text-purple-400">{member.name}</h3>
@@ -42,6 +45,7 @@ export const TeamCard = ({ member, show }: { member: any, show: boolean }) => {
                     }
                 </div>
             </div>
+            <TeamDialog setIsServiceOpen={setIsOpen} isServiceOpen={isOpen} member={member}/>
         </motion.div>
     )
 }

@@ -41,7 +41,7 @@
     ]
   },
   {
-    "image": "",
+    "image": "bennet.jpg",
     "name": "Bennet Katabarwa",
     "title": "Technical Director",
     "description": "Over 30 years' experience in architectural and design services across Africa and the Middle East. Specialized in concept development, project management, and design of complex structures.",
@@ -81,7 +81,7 @@
     "association": ""
   },
   {
-    "image": "",
+    "image": "peter.jpg",
     "name": "Peter Mkai",
     "title": "Head - Land Management and Valuation",
     "description": "Real estate consultant with 8 years of experience in valuation, land administration, and investment analytics. Strong background in project management and land economics.",
@@ -101,7 +101,7 @@
     "association": ""
   },
   {
-    "image": "",
+    "image": "Ireneus.png",
     "name": "Ireneus Byarugaba",
     "title": "Architectural Operations Manager",
     "description": "Proficient in architectural design, urban development, landscape architecture, building information modeling, and construction. Experienced in creating innovative architectural solutions for diverse projects in urban environments.",
@@ -134,6 +134,23 @@
       "Software Project Management",
       "Business Law and Ethics",
       "Software Engineering"
+    ],
+    "association": ""
+  },
+  {
+    "image": "rashid.jpg",
+    "name": "Rashid Nyagabona",
+    "title": "Building & Civil Works Manager ",
+    "description": "Innovative civil engineer with over 12 years of experience in construction works, from the initial conceptual stage to execution. A Civil Engineer who enjoys problem solving using established analytical methods and engineering principles with vast experience in Resettlement Programs and highly exposed to the Oil and Gas Industry.",
+    "credentials": [
+      "Bsc Civil Engineering – Nottingham University, United Kingdom (UK)", 
+      "Master’s Sc in Civil Engineering – Nottingham University, United Kingdom"
+    ],
+    "expertise": [
+      "Construction Management",
+      "Construction Supervision",
+      "Planning and Organizing",
+      "Resettlement Programs"
     ],
     "association": ""
   }
