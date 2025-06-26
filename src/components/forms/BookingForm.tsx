@@ -8,26 +8,27 @@ export const BookingForm = () => {
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [subject, setSubject] = React.useState('')
-    const [inquiry, setInquiry] = React.useState('')
+    const [message, setMessage] = React.useState('')
     const [loading, setLoading] = React.useState(false)
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setLoading(true)
         try {
-            const response = await axios.post("inquiries/sendinquiry", { name, email, subject, inquiry });
+            const response = await axios.post("/contacts/createcontact", { name, email, subject, message });
+            console.log(response);
             if (response.status === 201) {
-                toast.success("Inquiry submitted successfully!");
+                toast.success(response.data.message);
                 setLoading(false);
                 setName('');
                 setEmail('');
                 setSubject('');
-                setInquiry('');
+                setMessage('');
             }
         } catch (error: any) {
-            toast.error("Failed to submit inquiry. Please try again later.");
             setLoading(false);
-            console.log(error.message);
+            toast.error("Something went wrong");
+            console.log(error);
         }
 
     }
@@ -69,13 +70,13 @@ export const BookingForm = () => {
                     className="w-full p-2 mb-4 rounded-lg border-b border-gray-300 focus:outline-none"
                 />
                 <textarea
-                    value={inquiry}
-                    name={'inquiry'}
-                    onChange={(e) => setInquiry(e.target.value)}
-                    placeholder="Meeting Inquiry"
+                    value={message}
+                    name={'message'}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Message"
                     className="w-full p-2 mb-4 rounded-lg border-b border-gray-300 focus:outline-none"
                 ></textarea>
-                <button disabled={loading} className="bg-[#d94a68] max-w-[200px] mx-auto text-white px-6 py-2 rounded-lg hover:bg-[#194062]">
+                <button disabled={loading} type='submit' className="bg-[#d94a68] max-w-[200px] mx-auto text-white px-6 py-2 rounded-lg hover:bg-[#194062]">
                     {loading ? <RoundSpinner /> : 'Book a Meeting'}
                 </button>
             </form>
