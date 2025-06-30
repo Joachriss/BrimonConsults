@@ -22,7 +22,7 @@ export const CompanyPage = () => {
   return (
     <section className="w-full bg-white dark:bg-gray-900">
       <PageHeader pageName="Who We Are" recall="Our company" services={["Our Vision", "Our Mission", "Our Values", "Certifications & Licenses"]} image="bg-[url('/projects100/Proposed-Presidential-Library/image2.webp')]" />
-      <div className="max-w-screen-xl overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
+      <div className="max-w-full overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
         <h1 className="md:text-5xl text-3xl text-[#194062] dark:text-white mb-4">Who <span className="text-[#d94a68]">We Are</span></h1>
         <motion.p
           initial={{ x: -1300 }}
@@ -41,7 +41,6 @@ export const CompanyPage = () => {
           initial={{ x: -1300 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 1.5 }}
-          // viewport={{ once: true }}
           className="text-lg text-gray-600 dark:text-gray-400"
         >
           From project initiation to completion, we support clients across the construction industry with a focus on enhancing lives and creating sustainable legacies.
@@ -51,7 +50,7 @@ export const CompanyPage = () => {
 
       {/* Vision and Mission */}
       <div className="w-full my-5 bg-[url('/construction.webp')] dark:bg-[#d94a68] bg-cover bg-center bg-fixed">
-        <div className="w-full h-fit bg-black/70 justify-center grid grid-cols-1 items-center md:grid-cols-2 gap-y-8 gap-x-4 overflow-hidden mx-auto px-4 md:px-42 py-18 md:py-28">
+        <div className="w-full h-fit bg-black/70 justify-center grid grid-cols-1 items-center md:grid-cols-2 gap-y-8 md:gap-x-4 overflow-hidden mx-auto px-4 md:px-42 py-18 md:py-28">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,13 +127,13 @@ export const CompanyPage = () => {
           </motion.div>
 
           {/* Our Policies */}
-          <section>
+          <section className='text-justify'>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-row gap-x-4 gap-y-2 mt-20"
+              className="flex flex-row w-gap-x-4 gap-y-2 mt-20"
             >
               <GrCertificate size={50} className='text-[#d94a68]' />
               <h1 className="md:text-5xl text-3xl text-[#194062]">Our <span className='text-[#d94a68]'>Policies</span></h1>
@@ -222,32 +221,10 @@ export const CompanyPage = () => {
                 Information, advice, facilities, and products to promote the economic minimization of energy use, waste produced, fuel usage and water consumption.
               </li>
             </ul>
-
-
-            {/* <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="grid p-8 grid-cols-1 mt-10 items-center md:grid-cols-2 gap-4"
-            >
-              <img src="/certificates2.png" alt="" />
-              <img src="/certificates.png" alt="" />
-            </motion.div>
-            <div className=" hidden p-8 grid-cols-2 mt-10 md:grid-cols-3 gap-4">
-              {
-                values.map((value, index) => (
-                  <div key={index} className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-x-4 gap-y-2">
-                    <img src={value.icon} alt={value.value} className="w-16 h-16 mb-2" />
-                    <h1 className="text-xl text-center text-gray-600">{value.value}</h1>
-                  </div>
-                ))
-              }
-            </div> */}
           </section>
 
           {/* Our Certifications & Licenses */}
-          <section>
+          <section className='overflow-hidden'>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -259,7 +236,7 @@ export const CompanyPage = () => {
               <h1 className="md:text-5xl text-3xl text-[#194062]">Our <span className='text-[#d94a68]'>Certifications & Licenses</span></h1>
 
             </motion.div>
-            <p className='text-xl text-center px-10 text-gray-600 dark:text-gray-400 mt-4'>
+            <p className='text-xl text-start md:text-center px-10 text-gray-600 dark:text-gray-400 mt-4'>
               We are proud to hold the following certifications and licenses, which reflect our commitment to quality, safety, and excellence in the construction industry:
             </p>
             <motion.div
@@ -283,8 +260,6 @@ export const CompanyPage = () => {
               }
             </div>
           </section>
-
-
         </div>
       </section>
     </section>

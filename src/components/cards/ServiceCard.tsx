@@ -10,7 +10,8 @@ export const ServiceCard = (props:  any) => {
                 <img src={`/icons/${service.image}.svg`} className="group-hover:rotate-y-180 duration-600 ease-in-out object-contain" alt={service.title} />
             </div>
             <h3 className="text-xl font-semibold text-[#194062] dark:text-purple-400">{service.title}</h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-300">{service.description}</p>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">{service.subject}</p>
+            
             <ServicesDialog isServiceOpen={isServiceOpen} setIsServiceOpen={setIsServiceOpen} service={service} />
         </div>
     )

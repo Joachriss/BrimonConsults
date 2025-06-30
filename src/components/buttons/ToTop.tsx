@@ -20,7 +20,7 @@ export const ToTop = () => {
         })
     }
   return (
-    <button onClick={goToTop} className={`fixed ${isTop ? "hidden" : "block"} bottom-10 cursor-pointer right-10 z-50 bg-[#d94a68] border border-white p-2 rounded-xl `}>
+    <button onClick={goToTop} className={`fixed ${isTop ? "hidden" : "block"} bottom-10 cursor-pointer md:right-10 right-3 z-50 bg-[#d94a68] border border-white p-2 rounded-xl `}>
         <IoArrowUp size={25} className="text-white"/>
     </button>
   )
