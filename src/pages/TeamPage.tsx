@@ -34,18 +34,18 @@ export const TeamPage = () => {
                 team.slice(0, 1).map((member, index) => (
                     <div key={index} className="max-w-screen-xl my-10 grid grid-cols-1 md:grid-cols-2 gap-3 items-center min-h-[50vh] mx-auto">
                         <div id="profile" className="w-full rounded-lg order-2 lg:rounded-l-lg h-full lg:rounded-r-none bg- opacity-75 mx-2 lg:mx-0">
-                            <div className="p-4 md:p-12 text-center lg:text-left">
+                            <div className="p-4 md:p-12 text-left">
 
                                 <h1 className="text-3xl text-[#194a68] font-bold pt-8 lg:pt-0">{member.name}</h1>
                                 <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-[#d94a68] opacity-25"></div>
-                                <p className="pt-4 text-lg font-bold flex items-center justify-center lg:justify-start">
+                                <p className="pt-4 text-lg font-bold flex items-center justify-start">
                                     <svg className="h-4 fill-current text-[#d94a68] pr-4" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 20 20">
                                         <path
                                             d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
                                     </svg> {member.title}
                                 </p>
-                                <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+                                <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-start">
                                     <svg className="h-4 fill-current text-[#d94a68] pr-4" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 20 20">
                                         <path
