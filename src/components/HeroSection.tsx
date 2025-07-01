@@ -36,7 +36,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 1 }}
             className="w-1/2 mb-5 border-4 border-[#d94766]"/>
             <div className="space-y-4 text-center space-x-2 sm:flex sm:space-y-0 sm:space-x-4">
-              <Link to="company" target="_blank"
+              <Link to="company"
                 className="inline-flex bg-[#d94766] items-center justify-center px-5 py-3 text-sm font-medium text-center  rounded-lg sm:w-auto hover:bg-[#194062] focus:ring-4 focus:ring-gray-100 text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Learn more
               </Link>
