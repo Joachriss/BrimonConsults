@@ -80,7 +80,7 @@ export const TeamPage = () => {
                 <div className="px-2 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
                         team.slice(1, team.length).map((member, index) => (
-                            <TeamCard key={index} member={member} show={true} />
+                            <TeamCard key={index} member={member} show={false} />
                         ))
                     }
                 </div>

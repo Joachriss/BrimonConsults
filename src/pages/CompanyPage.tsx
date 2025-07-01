@@ -22,7 +22,7 @@ export const CompanyPage = () => {
   return (
     <section className="w-full bg-white dark:bg-gray-900">
       <PageHeader pageName="Who We Are" recall="Our company" services={["Our Vision", "Our Mission", "Our Values", "Certifications & Licenses"]} image="bg-[url('/projects100/Proposed-Presidential-Library/image2.webp')]" />
-      <div className="max-w-full overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
+      <div className="max-w-screen-xl overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
         <h1 className="md:text-5xl text-3xl text-[#194062] dark:text-white mb-4">Who <span className="text-[#d94a68]">We Are</span></h1>
         <motion.p
           initial={{ x: -1300 }}

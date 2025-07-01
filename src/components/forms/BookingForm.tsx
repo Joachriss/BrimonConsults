@@ -13,10 +13,27 @@ export const BookingForm = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+
+        if (!name) {
+            toast.error("Please enter your name");
+            return;
+        }
+
+        if (!email) {
+            toast.error("Please enter your email");
+            return;
+        }
+        if(!subject){
+            toast.error("Please enter your subject");
+            return;
+        }
+        if(!message){
+            toast.error("Please enter your message");
+            return;
+        }
         setLoading(true)
         try {
             const response = await axios.post("/contacts/createcontact", { name, email, subject, message });
-            console.log(response);
             if (response.status === 201) {
                 toast.success(response.data.message);
                 setLoading(false);
@@ -28,9 +45,7 @@ export const BookingForm = () => {
         } catch (error: any) {
             setLoading(false);
             toast.error("Something went wrong");
-            console.log(error);
         }
-
     }
 
     return (

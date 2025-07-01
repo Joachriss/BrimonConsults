@@ -1,37 +1,80 @@
 import { useState } from "react";
 
 export const Faq = () => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-    const faq = [
-        {
-            question: "Who are we?", answer: "<p className='mb-2 text-gray-500 dark:text-gray-400'>Landwind is an open-source library of Brimon Consults Limited(BCL) is a construction consultancy firm with a dedicated team offering innovative project management solutions tailored to specific needs.Our diverse expertise spans Industrial work and mining urban development, transportation, infrastructure, water, renewable energy, and environmental initiatives.We prioritize collaboration and continuous learning, assembling seasoned professionals to navigate project complexities and deliver successful outcomes</p ><p className='text-gray-500 dark:text-gray-400'>Check out this guide to <Link to='company' className='text-[#194062] font-bold dark:text-purple-400 hover:underline'>learn More about us </Link> and Let's start working together.</p>"
-        },
-        {
-            question: "What services do we offer?", answer: "We offer a wide range of construction services, including land acquisition, project management, and construction management, ensuring efficient project execution and maximizing value for our clients. <p><Link to='company' className='text-[#194062] font-bold dark:text-purple-400 hover:underline'>learn More about our services </Link> and Let's start working together.<p/>"
-        }
-    ]
-    return (
-        <div id="accordion-flush" data-accordion="collapse" data-active-classnamees="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classnamees="text-gray-500 dark:text-gray-400">
-            {
-                faq.map((faq, index) => (
-                    // <FaqItem key={index} question={faq.question} answer={faq.answer} />
-                    <div key={index}>
-                        <h3 id="accordion-flush-heading-1">
-                            <button type="button" onClick={() => setIsVisible(!isVisible)} className="flex items-center justify-between w-full py-5 font-medium text-left text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                <span>{faq.question}</span>
-                                <svg data-accordion-icon="" className={`w-6 duration-300 ease-in-out transform h-6 ${isVisible ? 'rotate-180' : 'rotate-0'} shrink-0`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                            </button>
-                        </h3>
-                        <div id="accordion-flush-body-1" className={`overflow-hidden transform  ${isVisible ? '-h-full' : 'h-0'}`} aria-labelledby="accordion-flush-heading-1">
-                            <div dangerouslySetInnerHTML={{ __html: faq.answer }} className={`py-5 border-b border-gray-200 dark:border-gray-700`}>
-                                
-                            </div>
-                        </div>
-                    </div>
-                ))
-            }
+  const faq = [
+    {
+      question: "Who are we?",
+      answer: `
+        <p class='mb-2 text-gray-500 dark:text-gray-400'>
+          Brimon Consults Limited (BCL) is a construction consultancy firm with a dedicated team offering innovative project management solutions tailored to specific needs.
+        </p>
+        <p class='text-gray-500 dark:text-gray-400'>
+          Check out this guide to 
+          <a href='/company' class='text-[#194062] font-bold dark:text-purple-400 hover:underline'> learn more about us</a> and let's start working together.
+        </p>
+      `
+    },
+    {
+      question: "What services do we offer?",
+      answer: `
+        <p class='text-gray-500 dark:text-gray-400'>
+          We offer a wide range of construction services, including land acquisition, project management, and construction management.
+        </p>
+        <p>
+          <a href='/company' class='text-[#194062] font-bold dark:text-purple-400 hover:underline'> Learn more about our services</a>.
+        </p>
+      `
+    }
+  ];
 
-        </div>
-    )
-}
+  const toggleAccordion = (index: number) => {
+    setCurrentIndex(prev => (prev === index ? null : index));
+  };
+
+  return (
+    <div className="w-full max-w-2xl mx-auto" id="accordion-flush">
+      {faq.map((item, index) => {
+        const isOpen = currentIndex === index;
+
+        return (
+          <div key={index} className="border-b border-gray-200 dark:border-gray-700">
+            <button
+              type="button"
+              onClick={() => toggleAccordion(index)}
+              className="w-full flex justify-between items-center py-5 text-left font-medium text-gray-900 bg-white dark:bg-gray-900 dark:text-white"
+              aria-expanded={isOpen}
+              aria-controls={`faq-content-${index}`}
+              id={`faq-header-${index}`}
+            >
+              <span>{item.question}</span>
+              <svg
+                className={`w-6 h-6 transition-transform duration-300 transform ${isOpen ? "rotate-180" : ""}`}
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06 0L10 10.94l3.71-3.73a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div
+              id={`faq-content-${index}`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-screen py-4" : "max-h-0"} `}
+              aria-labelledby={`faq-header-${index}`}
+            >
+              <div
+                className="text-sm"
+                dangerouslySetInnerHTML={{ __html: item.answer }}
+              />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};

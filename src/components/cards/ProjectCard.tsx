@@ -24,7 +24,7 @@ export const ProjectCard = ({  cols,project }: {  cols: number | undefined, proj
                 ))
             }
             <div className="absolute bottom-0 w-full bg-linear-to-t from-black to-transparent h-3/4 pt-22 flex  text-white p-3  flex-col">
-                <h1 className="font-bold text-sm md:text-lg line-clamp-1 flex gap-x-1"><ImLocation2 size={20}/><div>{project.name}</div> </h1>
+                <h1 className="font-bold text-xs md:text-lg line-clamp-1 flex gap-x-1"><ImLocation2 size={20}/><div>{project.name}</div> </h1>
                 <p className="text-sm font-light line-clamp-1 hidden group-hover:block"> {project.description}</p>
             </div>
         </Link>
