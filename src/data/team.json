@@ -1,6 +1,6 @@
 [
   {
-    "image": "elvis.png",
+    "image": "elvis.jpg",
     "name": "Elvis B. Otieno",
     "title": "Managing Director",
     "description": "A diligent and results-oriented professional with over ten years of diverse experience in civil and building construction projects. Skilled in project and commercial management, quantity surveying, Oil and Gas, RAP implementation, valuation, and financial management.",
@@ -101,7 +101,7 @@
     "association": ""
   },
   {
-    "image": "Ireneus.png",
+    "image": "ireneus.jpg",
     "name": "Ireneus Byarugaba",
     "title": "Architectural Operations Manager",
     "description": "Proficient in architectural design, urban development, landscape architecture, building information modeling, and construction. Experienced in creating innovative architectural solutions for diverse projects in urban environments.",
@@ -119,7 +119,7 @@
     "association": ""
   },
   {
-    "image": "arshard.png",
+    "image": "arshard.jpg",
     "name": "Arshard Bawazir",
     "title": "Communications and IT Manager",
     "description": "Young professional with experience in system analysis, IT management, and project management within Tanzania’s telecom and retail sectors.",
@@ -138,20 +138,12 @@
     "association": ""
   },
   {
-    "image": "rashid.jpg",
-    "name": "Rashid Nyagabona",
-    "title": "Building & Civil Works Manager ",
-    "description": "Innovative civil engineer with over 12 years of experience in construction works, from the initial conceptual stage to execution. A Civil Engineer who enjoys problem solving using established analytical methods and engineering principles with vast experience in Resettlement Programs and highly exposed to the Oil and Gas Industry.",
-    "credentials": [
-      "Bsc Civil Engineering – Nottingham University, United Kingdom (UK)", 
-      "Master’s Sc in Civil Engineering – Nottingham University, United Kingdom"
-    ],
-    "expertise": [
-      "Construction Management",
-      "Construction Supervision",
-      "Planning and Organizing",
-      "Resettlement Programs"
-    ],
-    "association": ""
+    "image": "abdul.jpg",
+    "name": "Abdul Mohamed",
+    "title": "Senior Project Engineer",
+    "description": "Abdul brings extensive expertise in infrastructure development and construction engineering across East Africa.",
+    "credentials": ["B.Sc. Civil Engineering, PMP Certified"],
+    "expertise": ["Construction Management", "Structural Analysis", "Project Coordination"],
+    "association": "Tanzania Institution of Engineers (TIE)"
   }
 ]

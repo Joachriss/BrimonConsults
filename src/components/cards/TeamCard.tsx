@@ -12,7 +12,7 @@ export const TeamCard = ({ member, show }: { member: any, show: boolean }) => {
             className='group duration-300'
         >
             <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-md text-center flex h-full flex-col items-center gap-3">
-                <div className="overflow-hidden w-full h-60 ">
+                <div className="overflow-hidden w-full h-70 ">
                     <img onClick={() => setIsOpen(true)} src={member.image === '' ? user : `/our_team/${member.image}`} className="object-cover w-full h-full" alt="Team Member" />
                 </div>
                 <div className='space-y-2 p-4'>
