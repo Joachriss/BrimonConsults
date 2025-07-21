@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet } from "react-router";
-import { Layout } from "./pages/Layout";
+import { Layout } from "./layouts/Layout";
 import { Home } from "./pages/Home";
 import { ContactPage } from "./pages/ContactPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
@@ -9,7 +9,41 @@ import { ServicesPage } from "./pages/ServicesPage";
 import { TeamPage } from "./pages/TeamPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import App from "./App";
+import { DashboardLayout } from "./layouts/DashboardLayout";
 
+export const allMenus = [
+    {
+        "category":"Dashboard",
+        "subMenus":[
+            {
+                "label":"Dashboard",
+                "link":"/dashboard"
+            }
+        ]
+    },
+    {
+        "category":"Contacts",
+        "subMenus":[
+            {   
+                "label":"Contacts",
+                "link":"inquiries"
+            },
+        ]
+    },
+    {
+        "category":"Projects",
+        "subMenus":[
+            {
+                "label":"Projects",
+                "link":"projects-list"
+            },
+            {
+                "label":"Add project",
+                "link":"create-project"
+            }
+        ]
+    }
+]
 
 export const router = createBrowserRouter([
     {
@@ -55,6 +89,13 @@ export const router = createBrowserRouter([
                         element: <TeamPage />
                     }
                     
+                ]
+            },
+            {
+                path: "dashboard",
+                element:<DashboardLayout/>,
+                children:[
+
                 ]
             }
         ]

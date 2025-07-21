@@ -10,14 +10,14 @@ const TeamDialog = (props: any) => {
                 <div className="flex min-h-full items-center justify-center p-4">
                     <DialogPanel
                         transition
-                        className="min-w-[80%] h-[85vh] overflow-y-auto max-w-md rounded-xl bg-white p-2 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
+                        className="min-w-[80%] flex items-center max-w-md rounded-xl bg-white p-2 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
                     >
                         {/* <DialogTitle className="font-bold text-2xl text-[#d94766]">{member.title}</DialogTitle><hr className='border-gray-400' /> */}
-                        <div className="grid grid-cols-1 h-[50%] items-start md:grid-cols-2 gap-4">
-                            <div className="h-[550px] overflow-hidden w-full">
-                                <img src={`/our_team/${member.image}`} alt="team member" className="w-full h-full object-cover rounded-lg" />
+                        <div className="grid grid-cols-1 h-full p-2 items-start md:grid-cols-2 gap-4">
+                            <div className="h-full overflow-hidden w-full">
+                                <img src={`/our_team/${member.image}`} alt="team member" className="w-full h-full object-cover object-top rounded-lg" />
                             </div>
-                            <div className="flex flex-col justify-center p-6">
+                            <div className="flex flex-col overflow-y-auto justify-center p-6">
                                 <h1 className="text-2xl font-bold text-[#194062]">{member.name}</h1>
                                 <div className="mt-2 text-lg text-[#194062] dark:text-gray-400">{member.description}</div>
                                 <p className="text-lg text-[#194062]">{member.title}</p>

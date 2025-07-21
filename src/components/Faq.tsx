@@ -43,7 +43,7 @@ export const Faq = () => {
             <button
               type="button"
               onClick={() => toggleAccordion(index)}
-              className="w-full flex justify-between items-center py-5 text-left font-medium text-gray-900 bg-white dark:bg-gray-900 dark:text-white"
+              className="w-full flex justify-between items-center py-5 text-left font-extrabold text-gray-900 bg-white dark:bg-gray-900 dark:text-white"
               aria-expanded={isOpen}
               aria-controls={`faq-content-${index}`}
               id={`faq-header-${index}`}

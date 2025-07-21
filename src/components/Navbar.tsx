@@ -8,7 +8,7 @@ import { MdClose } from "react-icons/md";
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const linkActive = "block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-[#d94a68] lg:p-0 dark:text-white";
-    const linkInactive = "block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-black lg:p-0 dark:text-white";
+    const linkInactive = "block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-black lg:p-0 dark:text-white hover:text-[#c94a68]";
     const linkActiveMobile = " text-[#d94a68] px-6 py-2 text-lg rounded-lg hover:font-bold w-full font-bold scale-105";
     const linkInactiveMobile = " text-[#d94a68] px-6 py-2 text-lg rounded-lg hover:font-bold w-full";
 
