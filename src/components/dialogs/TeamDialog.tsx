@@ -1,49 +1,87 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
+import { IoClose } from 'react-icons/io5'
+import type { TUser } from '../../types'
+type TProps = {
+    member: TUser
+    isServiceOpen: boolean
+    setIsServiceOpen: (isOpen: boolean) => void
+}
 
-const TeamDialog = (props: any) => {
-    const { member, isServiceOpen, setIsServiceOpen } = props
+const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
 
     return (
-        <Dialog open={isServiceOpen} as="div" className="relative z-70 focus:outline-none" onClose={() => setIsServiceOpen(false)}>
+        <Dialog
+            open={isServiceOpen}
+            as="div"
+            className="relative z-50"
+            onClose={() => setIsServiceOpen(false)}
+        >
             <DialogBackdrop className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4">
-                    <DialogPanel
-                        transition
-                        className="min-w-[80%] flex items-center max-w-md rounded-xl bg-white p-2 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
-                    >
-                        {/* <DialogTitle className="font-bold text-2xl text-[#d94766]">{member.title}</DialogTitle><hr className='border-gray-400' /> */}
-                        <div className="grid grid-cols-1 h-full p-2 items-start md:grid-cols-2 gap-4">
-                            <div className="h-full overflow-hidden w-full">
-                                <img src={`/our_team/${member.image}`} alt="team member" className="w-full h-full object-cover object-top rounded-lg" />
-                            </div>
-                            <div className="flex flex-col overflow-y-auto justify-center p-6">
-                                <h1 className="text-2xl font-bold text-[#194062]">{member.name}</h1>
-                                <div className="mt-2 text-lg text-[#194062] dark:text-gray-400">{member.description}</div>
-                                <p className="text-lg text-[#194062]">{member.title}</p>
-                                <div className="text-start font-bold mt-2 text-gray-800">Credentials</div>
-                                <ul className="text-start disk list-disc ms-6">
-                                    {
-                                        member.credentials.map((credential: any, index: number) => (
-                                            <li key={index}>{credential}</li>
-                                        ))
-                                    }
+
+            <div className="fixed inset-0 z-50 w-screen overflow-y-auto flex items-center justify-center px-4 py-8">
+                <DialogPanel
+                    className="w-full max-w-5xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-300 dark:border-gray-700 relative"
+                >
+                    {/* Image section */}
+                    <div className="w-full md:w-1/2 h-96 md:h-auto">
+                        <img
+                            src={member.image as string}
+                            alt={member.name}
+                            className="w-full h-full object-cover object-top rounded-l-2xl"
+                        />
+                    </div>
+
+                    {/* Content section */}
+                    <div className="w-full md:w-1/2 p-6 overflow-y-auto">
+                        {/* Close button */}
+                        <button
+                            onClick={() => setIsServiceOpen(false)}
+                            className="absolute top-4 right-4 text-gray-600 hover:text-red-600"
+                        >
+                            <IoClose size={24} />
+                        </button>
+
+                        <h2 className="text-2xl font-bold text-[#194062]">{member.name}</h2>
+                        <p className="text-sm text-[#d94766] italic">{member.title}</p>
+
+                        <hr className="my-4 border-[#194062] w-1/4" />
+
+                        <p className="text-gray-800 dark:text-gray-300 text-sm leading-relaxed">
+                            {member.description}
+                        </p>
+
+                        {member?.credentials?.length > 0 && (
+                            <div className="mt-5">
+                                <h3 className="font-semibold text-[#194062] text-sm">Credentials</h3>
+                                <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm mt-1">
+                                    {member.credentials.map((item: string, index: number) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
                                 </ul>
-                                <div className="text-start font-bold mt-2 text-gray-800">Expertise</div>
-                                <ul className="text-start disk list-disc ms-6">
-                                    {
-                                        member.expertise.map((credential: any, index: number) => (
-                                            <li key={index}>{credential}</li>
-                                        ))
-                                    }
-                                </ul>
-                                <div className="flex gap-4 w-full justify-end mt-5">
-                                    <button className='p-2 rounded-xl cursor-pointer bg-[#d94766] text-white' onClick={() => setIsServiceOpen(false)}>close</button>
-                                </div>
                             </div>
+                        )}
+
+                        {member?.expertises?.length > 0 && (
+                            <div className="mt-4">
+                                <h3 className="font-semibold text-[#194062] text-sm">Expertise</h3>
+                                <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm mt-1">
+                                    {member.expertises.map((item: string, index: number) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        <div className="mt-6 flex justify-end">
+                            <button
+                                onClick={() => setIsServiceOpen(false)}
+                                className="px-4 py-2 bg-[#d94766] text-white rounded-lg hover:bg-[#b33753] transition"
+                            >
+                                Close
+                            </button>
                         </div>
-                    </DialogPanel>
-                </div>
+                    </div>
+                </DialogPanel>
             </div>
         </Dialog>
     )

@@ -1,24 +1,29 @@
-import { Outlet } from "react-router"
-import { ToTop } from "../components/buttons/ToTop"
+import { Navigate, Outlet, useLocation } from "react-router"
 import { Sidebar } from "../components/sidebar/Sidebar"
-import { DashboardNavbar } from "../components/DashboardNavbar"
+import { DashboardNavbar } from "../components/navbar/DashboardNavbar"
+import { useAuth } from "../../context/AuthContext"
 
 export const DashboardLayout = () => {
+  const location = useLocation();
+  const {isLoggedIn} = useAuth();
+  
+  // Simple admin dashboard access check
+  if(!isLoggedIn) {
+    return <Navigate to={'/auth/login'} state={{from:location.pathname}}/>
+  }
   return (
-    <div className="grid w-screen grid-cols-12 relative">
+    <div className="grid w-full grid-cols-12 relative">
       <div className="col-span-2 h-screen p-6 sticky top-0 z-20 text-white overflow-y-auto bg-[#194062]">
         <Sidebar/>
       </div>
       <div className="flex flex-col col-span-10">
-        <div className="p-5 text-white w-full z-20 sticky top-0 bg-[#]">
+        <div className="text-black w-full z-20 sticky top-0 bg-white shadow">
           <DashboardNavbar/>
         </div>
-        <div className="overflow-y-auto">
-          content
+        <div className="overflow-y-auto p-2 sm:p-5">
           <Outlet />
         </div>
       </div>
-      <ToTop />
     </div>
   )
 }

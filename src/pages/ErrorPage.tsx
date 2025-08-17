@@ -1,7 +1,9 @@
 import { Button } from "@headlessui/react"
 import { Link } from "react-router"
+import { pageTitle } from "../utils/pageTitle"
 
-export const ErrorPage = () => {
+export const ErrorPage = ({title}:{title:string}) => {
+  pageTitle(title);
   return (
     <div className="flex w-full h-screen text-center justify-center items-center flex-col">
       <div className="text-4xl font-bold">Error</div>

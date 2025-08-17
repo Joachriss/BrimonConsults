@@ -1,4 +1,4 @@
-import { Description, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
+import {  Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 
 const ServicesDialog = (props: any) => {
     const { service, isServiceOpen, setIsServiceOpen } = props
@@ -13,7 +13,7 @@ const ServicesDialog = (props: any) => {
                         className="w-full max-w-5xl rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
                     >
                         <DialogTitle className="font-bold text-2xl text-[#d94766]">{service.title}</DialogTitle><hr className='border-gray-400' />
-                        <Description className="mt-2 font-bold text-lg text-[#194062] dark:text-gray-400">{service.subject}</Description>
+                        {/* <Description className="mt-2 font-bold text-lg text-[#194062] dark:text-gray-400">{service.subject}</Description> */}
                         <p className="mt-2 text-gray-600 dark:text-gray-300">{service.description}</p>
                         <ul className="text-start disk list-disc ms-6">
                             {

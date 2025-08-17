@@ -1,6 +1,6 @@
 import { Outlet } from "react-router"
 import { Footer } from "../components/Footer"
-import { Navbar } from "../components/Navbar"
+import { Navbar } from "../components/navbar/Navbar"
 import { ToTop } from "../components/buttons/ToTop"
 import { ContactUs } from "../components/buttons/ContactUs"
 

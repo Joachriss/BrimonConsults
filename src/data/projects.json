@@ -13,7 +13,6 @@
                 "image6.webp"
             ],
             "delay": 1000,
-            "link": "https://example.com/project2",
             "path":"projects100/Commercial-Complex-Goba-Dar-es-Salaam/"
         },
         {
@@ -30,7 +29,6 @@
             ],
             "cols": 2,
             "delay": 0,
-            "link": "https://example.com/project2",
             "path":"projects100/Proposed-Presidential-Library/"
         },
         {
@@ -47,7 +45,6 @@
             ],
             "cols": 2,
             "delay": 1000,
-            "link": "https://example.com/project2",
             "path":"projects100/Residential-Apartments-Mbezi-Beach-Dar/"
         },
         {
@@ -64,7 +61,6 @@
             ],
             "cols": 1,
             "delay": 0,
-            "link": "https://example.com/project2",
             "path":"projects100/Medeli-Conventioanl-Centre-Dodoma/"
         },
         {
@@ -79,7 +75,6 @@
                 "image5.webp",
                 "image6.webp"
             ],
-            "link": "https://example.com/project2",
             "cols": 2,
             "delay": 1000,
             "path":"projects100/Iyumbu/"
@@ -98,16 +93,15 @@
             ],
             "cols": 2,
             "delay": 0,
-            "link": "https://example.com/project2",
             "path":"projects100/VIJANA-Multipurpose-Hall-Dar-es-Salaam/"
         },
         {
             "id": 1,
             "name": "Channery Roof Rehabilitation | CANADIAN HIGH COMMISSION",
             "description": "Description 1",
-            "image": "image1.webp",
-            "colse": 1,
-            "delay": 1000,
-            "link": "https://example.com/project1"
+            "image": ["image1.webp"],
+            "cols": 1,
+            "delay": 1000
+            
         }
     ]
