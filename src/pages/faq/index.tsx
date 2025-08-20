@@ -9,11 +9,13 @@ import type { IFaq } from "../../types";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { archiveFaq } from "../../services/faqServices";
+import ConfirmationDialog from "../../components/dialogs/ConfirmationDialog";
 
 export const Faqs = () => {
     const [isAddFAQOpen, setIsAddFAQOpen] = useState(false);
-    const [selectedFaq,setSelectedFaq]=useState<IFaq>()
-    const { isLoading, faqs,refetch } = useFaqs();
+    const [isDeleteFAQOpen, setIsDeleteFAQOpen] = useState(false);
+    const [selectedFaq, setSelectedFaq] = useState<IFaq | null>(null)
+    const { isLoading, faqs, refetch } = useFaqs();
 
     // Function to handle the deletion of a FAQ
     const deleteFaqMutation = useMutation({
@@ -21,6 +23,8 @@ export const Faqs = () => {
         mutationFn: (id: string) => archiveFaq(id),
         onSuccess: (data: any) => {
             toast.success(data.message || "FAQ deleted successfully");
+            setSelectedFaq(null);
+            setIsDeleteFAQOpen(false); // 👈 close the delete modal properly
             refetch();
         },
         onError: (error: any) => {
@@ -28,6 +32,7 @@ export const Faqs = () => {
         }
     });
     const onDeleteFaq = (id: string) => {
+        if(!selectedFaq)
         deleteFaqMutation.mutate(id);
     }
     return (
@@ -38,7 +43,7 @@ export const Faqs = () => {
                     label="Add FAQ"
                     icon={<IoMdAdd />}
                     loading={isLoading}
-                    onClick={() => setIsAddFAQOpen(true)}
+                    onClick={() => {setSelectedFaq(null); setIsAddFAQOpen(true); }}
                 />
             </div>
 
@@ -53,7 +58,7 @@ export const Faqs = () => {
                         return (
                             <div className="flex flex-row">
                                 <button className="p-1 rounded-xl cursor-pointer text-pink-600 hover:bg-pink-200" onClick={() => { setSelectedFaq(faq); setIsAddFAQOpen(true) }}><IoMdEye size={20} /></button>
-                                <button className="p-1 rounded-xl cursor-pointer text-red-600 hover:bg-red-200" onClick={() => onDeleteFaq(faq.id as string)}><IoMdTrash size={20} /></button>
+                                <button className="p-1 rounded-xl cursor-pointer text-red-600 hover:bg-red-200" onClick={() => { setSelectedFaq(faq); setIsDeleteFAQOpen(true) }}><IoMdTrash size={20} /></button>
                             </div>
                         )
                     }
@@ -61,7 +66,15 @@ export const Faqs = () => {
             />
 
             {/* Add project modal */}
-            <AddQnModal refetch={refetch} selectedFaq={selectedFaq} isOpen={isAddFAQOpen} setIsOpen={setIsAddFAQOpen} />
+            <AddQnModal refetch={refetch} selectedFaq={selectedFaq!} isOpen={isAddFAQOpen} onClose={() => { if(selectedFaq !== null){setSelectedFaq(null)};setIsAddFAQOpen(false);  }}  />
+
+            {/* delete project modal */}
+            <ConfirmationDialog
+                action="delete" isOpen={isDeleteFAQOpen} actionFn={() => onDeleteFaq(selectedFaq?.id as string)}
+                description={"Are you sure you want to delete this FAQ?. This action cannot be undone."}
+                onClose={() => { setIsDeleteFAQOpen(false); setSelectedFaq(null) }}
+                loading={deleteFaqMutation.isPending}
+            />
         </section>
     )
 }

@@ -10,19 +10,22 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { archiveUser } from "../../services/userServices";
 import type { TUser } from "../../types";
+import ConfirmationDialog from "../../components/dialogs/ConfirmationDialog";
 
 
 
 export const Staffs = () => {
-    const [isAddProjectOpen, setIsAddProjectOpen] = useState(false);
+    const [isAddUserOpen, setIsAddUserOpen] = useState(false);
+    const [isDeleteUserOpen, setIsDeleteUserOpen] = useState(false);
     const { isLoading, staffs,refetch } = useStaffs();
-    const [selectedStaff, setSelectedStaff] = useState<TUser>()
+    const [selectedStaff, setSelectedStaff] = useState<TUser|null>(null)
 
     const deleteUserMutation = useMutation({
         mutationKey: ["deleteUserMutation"],
         mutationFn: (id: string) => archiveUser(id),
         onSuccess: (data: any) => {
             toast.success(data.message || "Staff deleted successfully");
+            setSelectedStaff(null);
             refetch();
         },
         onError: (error: any) => {
@@ -41,7 +44,7 @@ export const Staffs = () => {
                     label="Add Staff"
                     icon={<IoMdAdd />}
                     loading={isLoading}
-                    onClick={() => setIsAddProjectOpen(true)}
+                    onClick={() => {setSelectedStaff(null); setIsAddUserOpen(true); }}
                 />
             </div>
 
@@ -50,13 +53,13 @@ export const Staffs = () => {
                 data={staffs}
                 hasActions={true}
                 hasSelection={false}
-                isLoading={false}
+                isLoading={isLoading}
                 actions={
                     (data: TUser) => {
                         return (
                             <div className="flex flex-row">
-                                <button className="p-1 rounded-xl cursor-pointer text-pink-600 hover:bg-pink-200" onClick={() => { setSelectedStaff(data); setIsAddProjectOpen(true) }}><BiSolidUserDetail  size={25} /></button>
-                                <button className="p-1 rounded-xl cursor-pointer text-red-600 hover:bg-red-200" onClick={() => onDeleteUser(data.id as string)}><IoMdTrash size={20} /></button>
+                                <button className="p-1 rounded-xl cursor-pointer text-pink-600 hover:bg-pink-200" onClick={() => { setSelectedStaff(data); setIsAddUserOpen(true) }}><BiSolidUserDetail  size={25} /></button>
+                                <button className="p-1 rounded-xl cursor-pointer text-red-600 hover:bg-red-200" onClick={() =>{ setSelectedStaff(data); setIsDeleteUserOpen(true)}}><IoMdTrash size={20} /></button>
                             </div>
                         )
                     }
@@ -64,7 +67,15 @@ export const Staffs = () => {
             />
 
             {/* Add project modal */}
-            <AddStaffModal refetch={refetch} user={selectedStaff} isOpen={isAddProjectOpen} setIsOpen={setIsAddProjectOpen} />
+            <AddStaffModal refetch={refetch} user={selectedStaff!} isOpen={isAddUserOpen} onClose={() => {if(selectedStaff) setSelectedStaff(null);setIsAddUserOpen(false)}} />
+
+            {/* delete project modal */}
+            <ConfirmationDialog
+                action="delete" isOpen={isDeleteUserOpen} actionFn={() => onDeleteUser(selectedStaff?.id as string)}
+                description={"Are you sure you want to delete this staff?"}
+                onClose={() => setSelectedStaff(null)}
+                loading={deleteUserMutation.isPending}
+            />
         </section>
     )
 }

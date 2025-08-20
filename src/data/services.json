@@ -3,7 +3,7 @@
     "image": "architecture",
     "title": "Architectural Services",
     "subject": "We deliver innovative, sustainable architectural designs for diverse projects—from residential to industrial developments.",
-    "description": "Our interdisciplinary architectural team leverages experience across Africa and the Middle East to offer a full range of design and planning services.\n\nWe deliver creative and environmentally responsible solutions that are tailored to our client’s needs and objectives.\n\nServices include feasibility studies, design development, development of construction drawings, permitting and approvals, interior design, sustainable design, historic preservation, site planning, and landscape architecture.\n\nWe also provide 3D modeling and visualization, urban design, and post-occupancy evaluation.\n\nWe offer architecture, interiors, workplace master planning and urban design.",
+    "description": "<p>BCL practices includes architecture, building engineering, interiors, workplace master planning, urban design, economics, and portfolio advisory experts. Our team designs and delivers some of the most complex and interesting projects from high end residentials, commercial complex, sporting venues, industrial facilities, warehouses etc. We integrate sustainable solutions into everything we do and approach every project with a high-performance design strategy.</p><p>Our architectural services include the following:</p>",
     "details": [
       "Feasibility studies",
       "Conceptual Design",
@@ -24,19 +24,19 @@
     "image": "quantity",
     "title": "Quantity Surveying",
     "subject": "Optimizing returns on investment, our cost management strategy ensures project feasibility and confidence in outcomes",
-    "description": "Our cost management strategy is focused on helping our clients realize the best value from their investment.\n\nWe help to keep costs down, deliver quality, and ensure our clients get value for their money.\n\nWe offer quantity surveying services on all phases of projects, from pre-contract feasibility studies and cost planning to post-contract cost control and final account preparation.",
+    "description": "<p>Our strategy for cost and commercial management is deeply rooted in our dedication to optimizing returns on investment for our clients. From the outset, we instill confidence in outcomes, ensuring project feasibility with a solid, well-defined foundation. Utilizing our established methodologies, cost models, data, and assurance techniques, we continually enhance cost efficiency at every phase. Additionally, leveraging our extensive market knowledge enables us to secure the most advantageous purchases available.</p><p>Taking full responsibility for your commercial objectives, we diligently work towards meeting cost and value goals throughout the project's lifespan, actively mitigating risks and addressing changes.</p><p>Our quantity surveying services encompass the following:</p><ul><li>Pre and Post Contract Management</li></ul>",
     "details": [
-      "Pre and Post Contract Management",
       "Feasibility studies",
-      "Estimating project costs",
-      "Comparative cost analysis during design",
-      "Tender document preparation",
-      "Tendering and negotiation",
-      "Tender analysis and reporting",
-      "Material scheduling",
-      "Labour-only contract preparation",
-      "Cost control and contract administration",
-      "Projection of future payments"
+      "Estimating the cost of proposed projects",
+      "Providing comparative cost information during design",
+      "Preparation of tender documents i.e. contract agreements",
+      "Initiating and participating fully in tendering",
+      "Negotiating tender sums with the contractors on behalf of the clients",
+      "Preparing tender analysis and reports",
+      "Preparation of schedule of materials",
+      "Preparation of labour only contracts",
+      "Advising on economical contract administration approaches",
+      "Advising on the projection of future payments required by the client"
     ],
     "additional": ""
   },
@@ -44,16 +44,19 @@
     "image": "project",
     "title": "Project Management",
     "subject": "We specialize in construction project management, ensuring success through tailored resources, effective team integration, and comprehensive project management services.",
-    "description": "We provide project management services that support our clients through all phases of project development, from concept to completion.\n\nOur services include feasibility studies, site selection, team formation and coordination, design and planning, contractor selection and negotiation, construction supervision, cost and schedule management, quality control, and project close-out.",
+    "description": "<p>As a pure construction project management consulting firm, we tailor resources, teams, and systems to ensure a successful outcome.</p><p>Multifaceted construction programs present complex challenges that require successful team integration, making building the right team to manage your project crucial to your success.</p><p>We focus on the big picture, establishing priorities and coordinating activities and participants to ensure that your projects are delivered safely, on time, and within budget. We identify issues and resolve conflicts using established procedures and processes that consistently yield excellent results.</p><p>Our project management services include the following:</p>",
     "details": [
-      "Owner’s/Client’s representation",
+      "Owner’s representative/Client’s representative",
+      "Owner’s project management",
       "Project delivery consulting",
       "Preconstruction management",
-      "Contract documentation",
+      "Model contract documents",
       "Project reviews and audits",
-      "Feasibility and constructability analysis",
+      "Feasibility analysis",
+      "Constructability reviews",
       "Procurement and contract management",
-      "Scheduling and cost control",
+      "Scheduling",
+      "Cost and schedule management",
       "Change order management",
       "Green building oversight"
     ],
@@ -63,7 +66,7 @@
     "image": "program",
     "title": "Program Management",
     "subject": "We excel in program management, ensuring efficiency without compromising quality, with expertise in cost, schedule, and quality management throughout projects.",
-    "description": "Our program management services are structured to support our clients in the successful delivery of complex programs.\n\nWe provide oversight and coordination to ensure that project goals are achieved efficiently and effectively.\n\nOur expertise includes capital planning, program management organizations, project portfolio management, and program reviews and audits.",
+    "description": "<p>Program management is our passion.</p><p>We synthesize the whole of our expertise to effectively manage cost, schedule, and quality throughout the entire project life cycle.</p><p>Our services make projects more efficient by controlling costs, schedules, and work scope without compromising quality. BCL professionals formally study many aspects of program and project management and have contributed significantly to their advancement. Within our ranks are licensed professional engineers, Project Management Professionals, and recipients of advanced academic credentials.</p><p>Our capabilities combine our expertise and experience in planning, engineering, and management and include the following:</p>",
     "details": [
       "Capital planning",
       "Program Management Organizations",
@@ -76,9 +79,10 @@
     "image": "construction",
     "title": "Construction Management",
     "subject": "Our comprehensive construction management services ensure successful outcomes, addressing everyday challenges while prioritizing safety, timelines, and budgets.",
-    "description": "We offer construction management services that provide clients with leadership, coordination, and direction through all phases of a construction project.\n\nOur approach ensures that projects are delivered on time, within budget, and in compliance with quality standards.\n\nOur services include constructability review, contract administration, construction scheduling, cost estimating, and change order management.",
+    "description": "<p>Our comprehensive construction management consulting services provide the best results for your project.</p><p>We have decades of construction project planning and management experience and apply this knowledge to your everyday project challenges.</p><p>Our experts understand the challenges that owners, contractors, engineers, and architects face throughout the construction process.</p><p>To address your specific project needs and requirements, BCL provides the following construction consulting services:</p>",
     "details": [
-      "CM agency and oversight",
+      "CM agency",
+      "Construction oversight",
       "Constructability review",
       "Contract administration",
       "Construction scheduling",
@@ -91,13 +95,14 @@
     "image": "control",
     "title": "Project Controls",
     "subject": "Effective project controls ensure success by balancing oversight with project complexity, optimizing resources to achieve desired outcomes efficiently.",
-    "description": "Our project controls services help clients manage and monitor project performance throughout the lifecycle of a project.\n\nWe support cost estimating, schedule management, earned value management, and change order control, ensuring projects remain on target and stakeholders stay informed.",
+    "description": "<p>Successful projects begin when proper planning and procedures are implemented systematically.</p><p>Project complexity, organizational maturity, team experience, budget, and other factors determine the level of project controls needed. Excessive control can cause project costs to spiral upward and divert resources from more important tasks. Lax control can lead to delays, errors, political repercussions, and diminished project quality.</p><p>As your agent, we provide the project controls tools and techniques to proactively control costs, schedules, and scope of work to reach the desired outcome.</p><p>Our project controls services include the following:</p>",
     "details": [
-      "Cost estimating, management and control",
+      "Cost estimating",
+      "Cost management and control",
       "Schedule management and control",
       "Change order management",
       "Earned value management",
-      "Risk monitoring and control",
+      "Risk monitor and control",
       "Value engineering",
       "Training"
     ],
@@ -107,11 +112,12 @@
     "image": "claims",
     "title": "Construction Claims",
     "subject": "We resolve construction disputes with expert claims analysis and management, ensuring optimal outcomes through experience and hands-on support.",
-    "description": "Our construction claims services offer clients expertise in managing disputes, mitigating risks, and resolving issues through negotiation, arbitration, or litigation.\n\nWe provide claims analysis, alternate dispute resolution, and expert witness testimony.",
+    "description": "<p>We provide solutions to your construction disputes.</p><p>Our claims group comprises foremost experts in analyzing complex claims and disputes that originate on construction and engineering projects.</p><p>When construction disputes or delays occur, stakes are high. Retaining competent construction experts to resolve those disputes significantly improves your outcome. Our experts have a wealth of experience in identifying, analyzing, preparing, and presenting claims and disputes on construction and engineering projects. Our hands-on experience has consistently proven invaluable to clients requiring expert advice or after-the-fact analyses of disputes and claims.</p><p>Our claims services include the following:</p>",
     "details": [
-      "Claims management and analysis",
+      "Claims management",
+      "Claims analysis",
       "Alternate dispute resolution",
-      "Expert witness services"
+      "Expert witness"
     ],
     "additional": ""
   },
@@ -119,12 +125,14 @@
     "image": "risk",
     "title": "Project Risk Management",
     "subject": "Our risk assessment experts enhance project success by identifying, analyzing, and mitigating potential delays and disruptions efficiently.",
-    "description": "We offer project risk management services that provide a structured approach to identifying and addressing potential risks.\n\nOur team helps clients mitigate uncertainties that may affect project objectives.\n\nServices include risk analysis and modeling, risk response planning, and training.",
+    "description": "<p>Our risk assessment experts prevent or mitigate costly potential delays and disruptions.</p><p>While components of project management – scope management, change management, and cost/schedule controls – are effective individually, an integrated risk management process is essential for successful project execution.</p><p>A well-defined and integrated risk management process maximizes value through judicious use of time and money. BCL risk management specialists identify and evaluate project risks, manage risk registers, facilitate qualitative risk assessments, conduct quantitative risk analyses, and develop risk mitigation strategies.</p><p>In conjunction with project stakeholders, we develop qualitative risk assessments; integrate those assessments into robust, quantitative cost and schedule risk analyses; and monitor and mitigate risks accordingly.</p><p>Our risk services include the following:</p>",
     "details": [
-      "Risk analysis and modeling",
-      "Cost and schedule risk assessments",
+      "Risk analysis",
+      "Cost risk assessment",
+      "Schedule risk assessment",
+      "Risk modeling",
       "Risk response planning",
-      "Risk register development",
+      "Cost and schedule risk management",
       "Risk training"
     ],
     "additional": ""
@@ -135,12 +143,13 @@
     "subject": "From due diligence to compliance monitoring, we offer comprehensive environmental and social management services",
     "description": "We support investment projects with a wide range of environmental and social performance services.\n\nWe ensure compliance with environmental and social regulations and help clients manage risks associated with development activities.\n\nOur services include due diligence assessments, safeguard compliance, ESG implementation, and development of ESMS and EMS.",
     "details": [
-      "Environmental & Social Due Diligence (ESDD)",
-      "Safeguard compliance monitoring",
-      "ESG implementation and review",
-      "ESMS and EMS (14001:2015) design and audits",
-      "Environmental and Social Management Plans (ESMPs)",
-      "Site-based environmental support and training"
+      "Environmental and Social Due Diligence (ESDD) services for new investments. Our ESDD approach focuses on the value creation achieved through improved environmental and social management",
+      "Safeguard Compliance Monitoring",
+      "Environmental, Social and Governance (ESG) implementation and review",
+      "Environmental and Social Management System (ESMS) design, implementation and audit",
+      "Environmental Management System (EMS) 14001:2015 design, implementation and audit",
+      "Design of practical and implementable Environmental and Social Management Plans (ESMP's)",
+      "Providing site based support to assist our Clients to recruit, train and integrate their Project and Operational Environmental and Social teams"
     ],
     "additional": ""
   },
@@ -148,13 +157,14 @@
     "image": "social",
     "title": "Social Risk Management",
     "subject": "We provide support in land acquisition, resettlement planning, and livelihood restoration",
-    "description": "Our social risk management team assists clients in managing social risks associated with infrastructure and development projects.\n\nWe help with land acquisition and resettlement planning, livelihood restoration, and compliance with international standards.",
+    "description": "Land Acquisition, Resettlement Planning and Livelihoods Restoration",
     "details": [
-      "Land Acquisition and Resettlement Planning",
-      "Livelihood Restoration",
       "Resettlement Action Plans",
-      "Social Baseline Studies",
-      "Monitoring and Evaluation"
+      "Resettlement housing programs",
+      "Planning and implementation support",
+      "Scoping and Social Baseline Studies",
+      "Monitoring and Evaluation",
+      "Land Management"
     ],
     "additional": ""
   },
@@ -164,13 +174,13 @@
     "subject": "We evaluate project cost control, cost engineering and performance. Identifying areas of potential financial risk and proposing mitigation approach.",
     "description": "Our financial advisory services provide comprehensive oversight and strategic insights that help clients identify and mitigate financial risks.\n\nWe support projects with cost control audits, budgeting, forecasting, and management control assessments.",
     "details": [
-      "Project cost control",
-      "Performance audits",
-      "Budget and cost forecast accuracy evaluation",
-      "Financial and management control assessments",
-      "Financial risk identification and mitigation",
-      "Overbilling evaluation",
-      "System and control development"
+      "Project Cost Control & Performance Audit",
+      "Evaluate the accuracy of budgets, cost forecasts, and projected cash flow",
+      "Assess costs incurred as compared to the progress achieved",
+      "Assess financial and management controls",
+      "Perform financial oversight and identify areas of potential financial risk",
+      "Evaluate potential over-billing",
+      "Develop enhanced financial oversight systems and controls"
     ],
     "additional": ""
   },
@@ -178,7 +188,7 @@
     "image": "quantity",
     "title": "Industrial & Mining",
     "subject": "We provide architectural, quantity surveying, and project management solutions for industrial and mining sectors, ensuring efficiency, compliance, and sustainability.",
-    "description": "We serve industrial and mining clients with integrated solutions across architecture, project management, and quantity surveying disciplines.\n\nOur services are designed to ensure regulatory compliance, sustainability, and operational efficiency.",
+    "description": "<p>We serve industrial and mining clients with integrated solutions across architecture, project management, and quantity surveying disciplines.</p><p>Our services are designed to ensure regulatory compliance, sustainability, and operational efficiency.</p>",
     "details": [],
     "additional": ""
   }

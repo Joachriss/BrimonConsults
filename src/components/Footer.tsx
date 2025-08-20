@@ -1,8 +1,9 @@
-import { FaPhoneAlt, FaRegEnvelope, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaPhoneAlt, FaRegEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { BsPostcardFill } from "react-icons/bs";
 import { Link } from "react-router";
 import logo from "/logo/Logo-dark.png";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Footer = () => {
     return (
@@ -53,11 +54,11 @@ export const Footer = () => {
                                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
                                 <FaInstagram />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer"
+                            <a href="https://x.com/brimonconsults?s=21" target="_blank" rel="noopener noreferrer"
                                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-                                <FaTwitter />
+                                <FaXTwitter />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer"
+                            <a href="https://www.linkedin.com/company/brimon-consults/" target="_blank" rel="noopener noreferrer"
                                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
                                 <FaLinkedinIn />
                             </a>

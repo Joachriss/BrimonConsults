@@ -3,10 +3,7 @@ import type { IFaq } from "../types";
 
 export async function getFaqs(page: number = 1, limit: number = 10) {
     const response = await axios.get("/faqs", { params: { page, limit } }); // make sure the path is correct
-    const faqs = response.data; 
-    // if .faqs doesn't exist, fall back to the data itself, else empty array
-
-    return faqs;
+    return response.data;
 }
 
 
@@ -24,6 +21,6 @@ export async function editFaq (data:IFaq){
 }
 
 export async function archiveFaq(id: string) {
-    const response = await axios.delete(`faqs/archive/${id}`);
+    const response = await axios.put(`faqs/archive/${id}`);
     return response.data;
 }

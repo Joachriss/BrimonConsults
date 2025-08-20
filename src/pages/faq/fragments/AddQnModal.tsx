@@ -9,12 +9,12 @@ import { useEffect } from "react";
 
 interface dialogProps {
     isOpen: boolean;
-    setIsOpen: (isOpen: boolean) => void;
+    onClose: () => void;
     selectedFaq?: IFaq;
     refetch: any
 }
 
-export const AddQnModal = ({ isOpen, setIsOpen, selectedFaq, refetch }: dialogProps) => {
+export const AddQnModal = ({ isOpen, onClose, selectedFaq, refetch }: dialogProps) => {
     // Initialize form with react-hook-form
     const { register, reset, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -32,14 +32,21 @@ export const AddQnModal = ({ isOpen, setIsOpen, selectedFaq, refetch }: dialogPr
                 answer: selectedFaq.answer,
                 id: selectedFaq.id
             });
+        }else{
+            reset({
+                question: "",
+                answer: "",
+                id: ""
+            });
         }
     }, [selectedFaq, reset]);
 
     // create
     const faqCreateMutation = useMutation({
+        mutationKey: ["createFaq"],
         mutationFn: (data: IFaq) => createFaq(data),
         onSuccess: (data: any) => {
-            setIsOpen(false);
+            onClose();
             reset();
             toast.success(data.message || "FAQ created successifully")
         },
@@ -51,9 +58,10 @@ export const AddQnModal = ({ isOpen, setIsOpen, selectedFaq, refetch }: dialogPr
 
     // edit
     const faqEditMutation = useMutation({
+        mutationKey: ["editFaq"],
         mutationFn: (data: IFaq) => editFaq(data),
         onSuccess: (data: any) => {
-            setIsOpen(false);
+            onClose();
             reset();
             toast.success(data.message || "FAQ edited successifully")
         },
@@ -75,7 +83,7 @@ export const AddQnModal = ({ isOpen, setIsOpen, selectedFaq, refetch }: dialogPr
 
     }
     return (
-        <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none" onClose={() => setIsOpen(false)}>
+        <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none" onClose={() => onClose()}>
             <DialogBackdrop className="fixed w-full h-full inset-0 bg-black/50 backdrop-blur-sm" />
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
                 <div className="flex min-h-full items-center justify-center p-4">
@@ -110,7 +118,7 @@ export const AddQnModal = ({ isOpen, setIsOpen, selectedFaq, refetch }: dialogPr
                         </div>
 
                         <div className="flex gap-4 w-full justify-end mt-5">
-                            <button type="button" className='p-2 rounded-xl cursor-pointer bg-red-600 text-white' onClick={() => setIsOpen(false)}>Cancel</button>
+                            <button type="button" className='p-2 rounded-xl cursor-pointer bg-red-600 text-white' onClick={() => onClose()}>Cancel</button>
                             <Button
                                 type="submit"
                                 label={selectedFaq ? "Edit" : "Submit"}

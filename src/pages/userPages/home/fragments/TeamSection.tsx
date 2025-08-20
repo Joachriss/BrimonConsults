@@ -118,13 +118,23 @@ export const TeamSection = () => {
                                                             ))}
                                                     </div>
 
-                                                    <div className="pt-12 pb-8">
+                                                    {/* Buttons */}
+                                                    <div className="flex gap-4 mt-8">
                                                         <Link
                                                             to="team"
-                                                            className="bg-[#d94a68] hover:bg-[#194a68] text-white font-bold py-2 px-4 rounded-full"
+                                                            className="inline-block bg-[#d94a68] hover:bg-[#194a68] transition text-white font-semibold py-2 px-6 rounded-full"
                                                         >
                                                             Get In Touch
                                                         </Link>
+                                                        {/* {manager.profilePdf && ( */}
+                                                        <a
+                                                            href="/docs/Brimon_Consults_Company_Profile_April_2025.pdf"
+                                                            download
+                                                            className="inline-block bg-[#194a68] hover:bg-[#d94a68] transition text-white font-semibold py-2 px-6 rounded-full"
+                                                        >
+                                                            Download Profile
+                                                        </a>
+                                                        {/* )} */}
                                                     </div>
                                                 </div>
                                             </div>

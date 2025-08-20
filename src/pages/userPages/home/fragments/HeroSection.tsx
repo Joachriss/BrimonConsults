@@ -62,7 +62,7 @@ export const HeroSection = () => {
               {/* JCM New Download Button */}
               <a
                 href="/docs/Brimon_Consults_Company_Profile_April_2025.pdf" // put your actual path
-                download="/docs/Brimon_Consults_Company_Profile_April_2025.pdf"
+                download="Brimon_Consults_Company_Profile_April_2025.pdf"
                 className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-lg bg-white text-[#194062] hover:bg-gray-200 transition"
               >
                 <FaFileDownload className="mr-2" />

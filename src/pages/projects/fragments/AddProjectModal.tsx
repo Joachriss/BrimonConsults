@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 interface dialogProps {
     isOpen: boolean;
-    setIsOpen: (isOpen: boolean) => void;
+    onClose: () => void;
     project?: TProject; // Define the type for project if available
     refetch: () => void; // Optional refetch function to refresh project list after creation or edit
 }
@@ -26,7 +26,7 @@ const projectSchema = z.object({
 });
 
 
-export const AddProjectModal = ({ project, isOpen, setIsOpen,refetch }: dialogProps) => {
+export const AddProjectModal = ({ project, isOpen, onClose,refetch }: dialogProps) => {
     const { register, control,reset, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(projectSchema),
         defaultValues: {
@@ -64,7 +64,7 @@ export const AddProjectModal = ({ project, isOpen, setIsOpen,refetch }: dialogPr
             toast.success(data.message);
             reset();
             if(refetch) refetch();
-            setIsOpen(false);
+            onClose();
         },
         onError: (data: any) => {
             toast.error(data.response.data.error);
@@ -78,7 +78,7 @@ export const AddProjectModal = ({ project, isOpen, setIsOpen,refetch }: dialogPr
             toast.success(data.message);
             reset();
             if(refetch) refetch(); 
-            setIsOpen(false);
+            onClose();
         },
         onError: (data: any) => {
             toast.error(data.response.data.error);
@@ -112,7 +112,7 @@ export const AddProjectModal = ({ project, isOpen, setIsOpen,refetch }: dialogPr
     }
 
     return (
-        <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none" onClose={() => setIsOpen(false)}>
+        <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none" onClose={() => onClose()}>
             <DialogBackdrop className="fixed w-full h-full inset-0 bg-black/50 backdrop-blur-sm" />
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex min-h-full items-center justify-center p-4">
@@ -151,7 +151,7 @@ export const AddProjectModal = ({ project, isOpen, setIsOpen,refetch }: dialogPr
 
 
                         <div className="flex gap-4 w-full justify-end mt-5">
-                            <button type="button" className='p-2 rounded-xl cursor-pointer bg-red-600 text-white' onClick={() => setIsOpen(false)}>Cancel</button>
+                            <button type="button" className='p-2 rounded-xl cursor-pointer bg-red-600 text-white' onClick={() => onClose()}>Cancel</button>
                             <Button
                                 type="submit"
                                 label="Submit"

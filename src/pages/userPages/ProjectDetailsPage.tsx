@@ -6,6 +6,7 @@ import { FaAngleDoubleDown } from "react-icons/fa";
 import { pageTitle } from "../../utils/pageTitle";
 import { useProjects } from "../../hooks/useProjects";
 import type { TProject } from "../../types";
+import { ImageModal } from "../../components/dialogs/ImageDialog";
 
 export const ProjectDetailsPage = ({ title }: { title: string }) => {
     pageTitle(title)
@@ -13,15 +14,16 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
     const { projects } = useProjects()
 
     const projectName = params.project;
-    const project = projects?.results.find((p:TProject) => p.title === projectName) || projects[0];
+    const project = projects?.results.find((p: TProject) => p.title === projectName);
     const isSliding = true;
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedImage, setSelectedImage] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
         if (isSliding) {
             const slideInterval = setInterval(() => {
-                setCurrentIndex((prevIndex) => (prevIndex + 1) % project.images.length);
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % project?.images?.length);
             }, 5000);
 
             return () => clearInterval(slideInterval);
@@ -35,16 +37,20 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
             behavior: "smooth"
         })
     }
+    const onOpenImage = (image: string) => { setSelectedImage(image) }
+    console.log("image", selectedImage)
+    const onCloseImage = () => { setSelectedImage('') }
     return (
         <div className="w-full overflow-hidden">
             <section className="bg-white dark:bg-gray-900 relative w-full h-screen">
                 <div className="relative w-full h-s">
                     {
-                        Array.isArray(project.images) &&
+                        Array.isArray(project?.images) &&
                         <div className={`h-screen w-full  transition-transform duration-1000`} >
-                            {project.images.map((image: string, index:Key) => (
-                                <img src={image} className={`w-full z-10 absolute h-screen object-cover transition-transform duration-1000 ${index === currentIndex ? 'translate-x-0' : 'translate-x-full '} `} key={index} alt="" />
+                            {project?.images.map((image: string, index: Key) => (
+                                <img src={image}  className={`w-full z-10 absolute h-screen object-cover transition-transform duration-1000 ${index === currentIndex ? 'translate-x-0' : 'translate-x-full '} `} key={index} alt="" />
                             ))}
+
                         </div>
                     }
                 </div>
@@ -57,7 +63,7 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.8 }}
                                     className="max-w-2xl mb-4 text-center md:text-start text-4xl font-bold leading-none tracking-tight md:text-5xl text-white xl:text-6xl dark:text-white">
-                                    {project.title}
+                                    {project?.title}
                                 </motion.h1>
                             </div>
                             <motion.div
@@ -79,13 +85,13 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                 <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                     <div className="max-w-screen-md">
                         <h2 className="mb-4 md:text-5xl text-3xl tracking-tight text-[#194062] dark:text-white">Project Details</h2>
-                        <p className="text-gray-500 sm:text-xl dark:text-gray-400">{project.title}</p>
+                        <p className="text-gray-500 sm:text-xl dark:text-gray-400">{project?.title}</p>
                         <hr className="w-1/2 mt-7 border-4 border-[#d94a68]" />
                     </div>
                 </div>
                 <div className="max-w-screen-xl mx-auto px-4 py-8">
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {Array.isArray(project.images) && project.images.map((image: string, index: number) => (
+                        {Array.isArray(project?.images) && project?.images.map((image: string, index: number) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
@@ -93,10 +99,12 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.5 }}
                                 className="group duration-300"
+                                onClick={() => { onOpenImage(image) }}
                             >
-                                <img src={image} alt={project.title} className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300" />
+                                <img src={image} alt={project?.title} className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300" />
                             </motion.div>
                         ))}
+                        <ImageModal isOpen={selectedImage !== ''} onClose={() => onCloseImage()} image={selectedImage} />
                     </div>
                 </div>
 
@@ -105,8 +113,8 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                     <h2 className="mb-4 text-5xl tracking-tight text-[#194062] dark:text-white py-8">More Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {
-                            projects?.results.slice(0, 3).filter((p:TProject) => p.title !== project.title).map((project:TProject, index:Key) => (
-                                <ProjectCardNormal index={index} project={project} />
+                            projects?.results.slice(0, 3).filter((p: TProject) => p.id !== project?.id).map((project: TProject, index: Key) => (
+                                <ProjectCardNormal key={index} index={index} project={project} />
                             ))
                         }
                     </div>

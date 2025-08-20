@@ -5,12 +5,12 @@ import { useLocation, useNavigate } from "react-router";
 import { Loader } from "../src/components/Loader";
 
 type AuthContextType = {
-    user: { 
-        id: string | null; 
-        name: string | null; 
-        email: string | null; 
-        image: string | null; 
-        role: string | null; 
+    user: {
+        id: string | null;
+        name: string | null;
+        email: string | null;
+        image: string | null;
+        role: string | null;
     };
     setUser: React.Dispatch<React.SetStateAction<AuthContextType["user"]>>;
     login: (email: string, password: string) => Promise<void>;
@@ -41,10 +41,11 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
 
     // authenticating user session
     const getProfile = async () => {
+        setLoading(true);
         try {
             const response = await axios.get(`/auth/getprofile`);
-
-            if (response.data && response.data.user) {
+            console.log(response);
+            if (response?.data?.user) {
                 setUser({
                     id: response.data.user._id,
                     name: response.data.user.name,
@@ -54,18 +55,15 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
                 });
                 setIsLoggedIn(true);
             } else {
-                setUser({ id: null, name: null, email: null,image: null, role: null });
-                localStorage.removeItem('token');
-                setIsLoggedIn(false);
+                throw new Error("No user found");
             }
 
         } catch (err: any) {
             if (err.response.status === 401) {
                 setIsLoggedIn(false);
-                localStorage.removeItem('token');
             }
             console.log("Profile error:", err.response.data.error);
-            setUser({ id: null, name: null, email: null,image: null, role: null });
+            setUser({ id: null, name: null, email: null, image: null, role: null });
         } finally {
             setLoading(false);
         }
@@ -73,7 +71,13 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
     }
 
     useEffect(() => {
+        if (!(window.location.pathname.includes('/auth') || window.location.pathname.includes('/admin'))) {
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000);
+        }
         getProfile();
+
     }, []);
 
     // login
@@ -87,7 +91,7 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
             }
 
             // role check
-            if (['ADMINISTRATOR',"MANAGER", 'STAFF'].includes(response.data.user.role)) {
+            if (['ADMINISTRATOR', "MANAGER", 'STAFF'].includes(response.data.user.role)) {
                 await getProfile();
                 toast.success(response.data.message);
                 if (location.state) {
@@ -101,7 +105,7 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
         }
         catch (error: any) {
             console.error("Login error:", error);
-
+            setLoading(false);
             let message = "Something went wrong, please try again";
 
             // Axios error
@@ -115,31 +119,28 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
 
             toast.error(message);
         }
-        finally {
-            setLoading(false);
-        }
     };
 
 
     // register
     const register = async (name: string, email: string, password: string, confirmPassword: string) => {
-        setLoading(true);
         try {
+            setLoading(true);
             const response = await axios.post('/auth/register', { name, email, password, confirmPassword });
             if (response.data.error) {
-                setLoading(false)
                 toast.error(response.data.error);
                 return;
             }
             toast.success(response.data.message);
-            setLoading(false);
             navigate('/auth/login', { replace: true });
 
         }
         catch (error: any) {
-            setLoading(false);
             console.log(error.response.data.error);
             toast.error(error.response.data.error);
+        }
+        finally {
+            setLoading(false);
         }
     }
 
@@ -147,22 +148,28 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
     // logout
     const logout = async () => {
         try {
+            setLoading(true)
             const response = await axios.post('/auth/logout');
             toast.success(response.data.message);
-            setUser({ id: null, name: null, email: null,image: null, role: null });
+            setUser({ id: null, name: null, email: null, image: null, role: null });
             localStorage.removeItem('token');
             navigate('/auth/login');
         } catch (error: any) {
             toast.error(error.response.data.error);
         }
+        finally {
+            setLoading(false);
+        }
     }
 
 
     // loading state
-    if (loading) {
-        return (
-            <Loader />
-        );
+    {
+        if (!(window.location.pathname.includes('/auth') || window.location.pathname.includes('/admin'))) {
+            if (loading) {
+                return <Loader />
+            }
+        }
     }
 
 

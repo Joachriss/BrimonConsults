@@ -19,8 +19,8 @@ export const Faq = () => {
           <div className="col-span-full flex items-center justify-center h-full w-full">
             <LuLoader className="w-14 h-14 text-[#d94766] duration-300 animate-spin" />
           </div>
-          : faqs?.length > 0 ?
-            faqs?.map((item: IFaq, index: any) => {
+          : faqs?.results?.length > 0 ?
+            faqs?.results?.map((item: IFaq, index: any) => {
               const isOpen = currentIndex === index;
 
               return (

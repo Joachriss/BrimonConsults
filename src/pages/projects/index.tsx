@@ -9,11 +9,13 @@ import type { TProject } from "../../types";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { archiveProject } from "../../services/projectServices";
+import ConfirmationDialog from "../../components/dialogs/ConfirmationDialog";
 
 
 
 export const Projects = () => {
     const [isAddProjectOpen, setIsAddProjectOpen] = useState(false);
+    const [isDeleteProjectOpen, setIsDeleteProjectOpen] = useState(false);
     const { isLoading, projects, refetch } = useProjects();
     const [selectedProject, setSelectedProject] = useState<TProject>()
 
@@ -22,6 +24,7 @@ export const Projects = () => {
         mutationFn: (id: string) => archiveProject(id),
         onSuccess: (data: any) => {
             toast.success(data.message || "Project deleted successfully");
+            setSelectedProject(undefined);
             refetch();
         },
         onError: (error: any) => {
@@ -41,7 +44,7 @@ export const Projects = () => {
                     label="Add Project"
                     icon={<IoMdAdd />}
                     loading={isLoading}
-                    onClick={() => setIsAddProjectOpen(true)}
+                    onClick={() => {setIsAddProjectOpen(true); setSelectedProject(undefined)}}
                 />
             </div>
 
@@ -50,13 +53,13 @@ export const Projects = () => {
                 data={projects}
                 hasActions={true}
                 hasSelection={false}
-                isLoading={false}
+                isLoading={isLoading}
                 actions={
                     (data: TProject) => {
                         return (
                             <div className="flex flex-row">
                                 <button className="p-1 rounded-xl cursor-pointer text-pink-600 hover:bg-pink-200" onClick={() => { setSelectedProject(data); setIsAddProjectOpen(true) }}><IoMdEye size={20} /></button>
-                                <button className="p-1 rounded-xl cursor-pointer text-red-600 hover:bg-red-200" onClick={() => onDeleteProject(data.id as string)}><IoMdTrash size={20} /></button>
+                                <button className="p-1 rounded-xl cursor-pointer text-red-600 hover:bg-red-200" onClick={() => {  setSelectedProject(data); setIsDeleteProjectOpen(true)}}><IoMdTrash size={20} /></button>
                             </div>
                         )
                     }
@@ -64,7 +67,15 @@ export const Projects = () => {
             />
 
             {/* Add project modal */}
-            <AddProjectModal refetch={refetch} project={selectedProject} isOpen={isAddProjectOpen} setIsOpen={setIsAddProjectOpen} />
+            <AddProjectModal refetch={refetch} project={selectedProject} isOpen={isAddProjectOpen} onClose={() => {if(selectedProject) setSelectedProject(undefined); setIsAddProjectOpen(false)}} />
+
+            {/* delete project modal */}
+            <ConfirmationDialog
+                action="delete" isOpen={isDeleteProjectOpen && !!selectedProject} actionFn={() => onDeleteProject(selectedProject?.id as string)}
+                description={"Are you sure you want to delete this project?"}
+                onClose={() => setSelectedProject(undefined)}
+                loading={deleteProjectMutation.isPending}
+            />
         </section >
     )
 }

@@ -1,8 +1,16 @@
-import  { motion } from 'motion/react'
-import  { ReactTyped } from 'react-typed'
+import { motion } from 'motion/react'
+import { FaDownload } from 'react-icons/fa';
+import { ReactTyped } from 'react-typed'
 
-export const PageHeader = (props:any) => {
-    const {pageName,services,recall,image} = props;
+type TProps = {
+    pageName: string;
+    services: any;
+    recall: string;
+    image: string;
+    download?: boolean;
+}
+
+export const PageHeader = ({ pageName, services, recall, image, download = false }: TProps) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: -50 }
@@ -21,8 +29,8 @@ export const PageHeader = (props:any) => {
                 className="text-white p-4  md:p-8 overflow-hidden bg-[#d94a68] rounded-tr-full rounded-br-full"
             >
                 <motion.h1
-                    initial={{ y:"-140%" }}
-                    animate={{ y:0 }}
+                    initial={{ y: "-140%" }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.4, delay: 1.5 }}
                     className="text-center text-white font-bold text-5xl md:text-7xl"
                 >
@@ -31,7 +39,7 @@ export const PageHeader = (props:any) => {
 
 
             </motion.div>
-            <div className="mt-4 w-full t px-2 md:ps-8">
+            <div className="mt-4 w-full t px-2 md:ps-8 flex flex-col md:flex-row">
                 <ReactTyped
                     strings={services}
                     typeSpeed={20}
@@ -41,6 +49,17 @@ export const PageHeader = (props:any) => {
                 >
                     <input type="text" className="w-full" />
                 </ReactTyped>
+                {
+                    download &&
+                    <a
+                        href="/docs/Brimon_Consults_Company_Profile_April_2025.pdf"
+                        download="Brimon_Consults_Company_Profile_April_2025.pdf"
+                        className="flex flex-row whitespace-nowrap mx-auto mt-5 md:mt-0 items-center w-fit justify-center px-5 py-3 text-sm font-medium rounded-lg bg-white text-[#d94a68] hover:bg-gray-200 transition"
+                    >
+                        <FaDownload size={25} className="mr-2" />
+                        Company Profile
+                    </a>
+                }
             </div>
         </motion.div >
     )

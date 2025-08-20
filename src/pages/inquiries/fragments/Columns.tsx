@@ -15,7 +15,7 @@ export const columns: IColumn[] = [
         element: (data: IInquiry) => {
             return (
                 <div className="flex flex-row gap-1 items-center overflow-hidden">
-                    <div className="line-clamp-1">{data.message}</div>
+                    <div className="line-clamp-1">{data.subject}</div>
                 </div>
             )
         }

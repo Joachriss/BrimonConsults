@@ -2,10 +2,13 @@ import { Navigate, Outlet, useLocation } from "react-router"
 import { Sidebar } from "../components/sidebar/Sidebar"
 import { DashboardNavbar } from "../components/navbar/DashboardNavbar"
 import { useAuth } from "../../context/AuthContext"
+import { Loader } from "../components/Loader"
 
 export const DashboardLayout = () => {
   const location = useLocation();
-  const {isLoggedIn} = useAuth();
+  const {isLoggedIn,loading} = useAuth();
+
+  if (loading) {return <Loader/>}
   
   // Simple admin dashboard access check
   if(!isLoggedIn) {

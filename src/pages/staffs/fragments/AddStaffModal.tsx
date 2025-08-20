@@ -14,7 +14,7 @@ import type { TUser } from "../../../types";
 
 interface dialogProps {
     isOpen: boolean;
-    setIsOpen: (isOpen: boolean) => void;
+    onClose: () => void;
     user?: TUser;
     refetch: () => void; // Optional refetch function to refresh staff list after creation or edit
 }
@@ -76,7 +76,7 @@ const userSchema = z.object({
 
 export type TUserType = z.infer<typeof userSchema>
 
-export const AddStaffModal = ({ isOpen, setIsOpen, refetch, user }: dialogProps) => {
+export const AddStaffModal = ({ isOpen, onClose, refetch, user }: dialogProps) => {
 
     const { register, handleSubmit, reset, control, formState: { errors } } = useForm<TUser>({
         resolver: zodResolver(userSchema),
@@ -105,6 +105,18 @@ export const AddStaffModal = ({ isOpen, setIsOpen, refetch, user }: dialogProps)
                 socialMedia: user?.socialMedia?.some((media: any) => media.link !== "") ? user.socialMedia?.map((media: any) => ({ name: media.name, link: media.link })) : socialMediaList.map((item) => ({ name: item.name, link: "" })),
                 image: user.image
             })
+        }else{
+            reset({
+                id: undefined,
+                name: "",
+                title: "",
+                email: "",
+                description: "",
+                credentials: [],
+                expertises: [],
+                socialMedia: socialMediaList.map((item) => ({ name: item.name, link: "" })),
+                image: ''
+            });
         }
     }, [user, reset]);
 
@@ -122,7 +134,7 @@ export const AddStaffModal = ({ isOpen, setIsOpen, refetch, user }: dialogProps)
             toast.success(data.message);
             reset();
             if (refetch) refetch(); // Call refetch if provided
-            setIsOpen(false);
+            onClose();
         },
         onError: (data: any) => {
             console.log(data);
@@ -137,7 +149,7 @@ export const AddStaffModal = ({ isOpen, setIsOpen, refetch, user }: dialogProps)
             toast.success(data.message);
             reset();
             if (refetch) refetch(); // Call refetch if provided
-            setIsOpen(false);
+            onClose();
         },
         onError: (data: any) => {
             console.log(data);
@@ -166,7 +178,7 @@ export const AddStaffModal = ({ isOpen, setIsOpen, refetch, user }: dialogProps)
     }
 
     return (
-        <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none" onClose={() => setIsOpen(false)}>
+        <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none" onClose={() => onClose()}>
             <DialogBackdrop className="fixed w-full h-full inset-0 bg-black/50 backdrop-blur-sm" />
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
                 <div className="flex min-h-full items-center justify-center p-4">
@@ -270,7 +282,7 @@ export const AddStaffModal = ({ isOpen, setIsOpen, refetch, user }: dialogProps)
 
 
                             <div className="flex gap-4 w-full justify-end mt-5">
-                                <button type="button" className='p-2 rounded-xl cursor-pointer bg-red-600 text-white' onClick={() => setIsOpen(false)}>Cancel</button>
+                                <button type="button" className='p-2 rounded-xl cursor-pointer bg-red-600 text-white' onClick={() => onClose()}>Cancel</button>
                                 <Button
                                     type="submit"
                                     label="Submit"
