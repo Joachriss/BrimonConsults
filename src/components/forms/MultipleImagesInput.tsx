@@ -106,7 +106,7 @@ export const MultipleImagesInput = ({ name, isMultiple, control }: IProps) => {
           <div className="w-full col-span-full text-2xl h-full flex flex-col gap-3 items-center justify-center text-gray-400">
             <div>Drop images here or click to upload</div>
             <IoImagesOutline />
-            <div className="text-xs text-red-600 text-center">Maximum file size per image: 200kb <br />Allowed formats: .webp, .jpg, .jpeg, .png <br /></div>
+            <div className="text-xs text-red-600 text-center">Maximum file size per image: 1MB<br />Allowed formats: .webp, .jpg, .jpeg, .png <br /></div>
           </div>
 
       )}

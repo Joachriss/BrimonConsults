@@ -88,7 +88,7 @@ export const TeamCard = ({ member, show }: { member: any; show: boolean }) => {
             initial={{ opacity: 0, y: 90 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="group flex-shrink-0 h-full"
+            className="group h-full"
         >
             <div className="relative w-full h-full rounded-2xl bg-white dark:bg-gray-900 shadow-xl overflow-hidden flex flex-col items-center text-center p-4 space-y-4 transition-transform duration-300 hover:-translate-y-1">
                 {/* Profile Image */}

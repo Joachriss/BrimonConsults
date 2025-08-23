@@ -1,6 +1,8 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { IoClose } from 'react-icons/io5'
 import type { TUser } from '../../types'
+import { socialMediaIcons } from '../../pages/userPages/TeamPage'
+import { FaEnvelope } from 'react-icons/fa'
 type TProps = {
     member: TUser
     isServiceOpen: boolean
@@ -23,7 +25,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                     className="w-full max-w-5xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-300 dark:border-gray-700 relative"
                 >
                     {/* Image section */}
-                    <div className="w-full md:w-1/2 h-96 md:h-auto">
+                    <div className="p-3 w-full md:w-[40%]  md:h-auto">
                         <img
                             src={member.image as string}
                             alt={member.name}
@@ -32,7 +34,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                     </div>
 
                     {/* Content section */}
-                    <div className="w-full md:w-1/2 p-6 overflow-y-auto">
+                    <div className="w-full p-6 overflow-y-auto">
                         {/* Close button */}
                         <button
                             onClick={() => setIsServiceOpen(false)}
@@ -50,27 +52,46 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                             {member.description}
                         </p>
 
-                        {member?.credentials?.length > 0 && (
-                            <div className="mt-5">
-                                <h3 className="font-semibold text-[#194062] text-sm">Credentials</h3>
-                                <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm mt-1">
-                                    {member.credentials.map((item: string, index: number) => (
-                                        <li key={index}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
 
-                        {member?.expertises?.length > 0 && (
-                            <div className="mt-4">
-                                <h3 className="font-semibold text-[#194062] text-sm">Expertise</h3>
-                                <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm mt-1">
-                                    {member.expertises.map((item: string, index: number) => (
-                                        <li key={index}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {member?.credentials?.length > 0 && (
+                                <div className="mt-5">
+                                    <h3 className="font-semibold text-[#194062] text-sm">Credentials</h3>
+                                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm mt-1">
+                                        {member.credentials.map((item: string, index: number) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {member?.expertises?.length > 0 && (
+                                <div className="mt-4">
+                                    <h3 className="font-semibold text-[#194062] text-sm">Expertise</h3>
+                                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm mt-1">
+                                        {member.expertises.map((item: string, index: number) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                        {/* Socials */}
+                        <div className="flex gap-4 mt-6 relative z-10">
+                            {member?.socialMedia
+                                ?.filter((sm: any) => sm.link)
+                                ?.map((sm: any, idx: number) => (
+                                    <a
+                                        key={sm.name + idx}
+                                        href={sm.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-3 rounded-full border border-gray-300 hover:border-[#194a68] hover:bg-[#194a68]/10 transition shadow-sm"
+                                    >
+                                        {socialMediaIcons[sm.name] || <FaEnvelope />}
+                                    </a>
+                                ))}
+                        </div>
 
                         <div className="mt-6 flex justify-end">
                             <button

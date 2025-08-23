@@ -10,7 +10,7 @@ import { LuLoader } from 'react-icons/lu';
 import { MdSearchOff } from 'react-icons/md';
 export const ProjectsSection = () => {
     const { projects, isLoading } = useProjects()
-        const projectList = projects?.results || [];
+    const projectList = projects?.results || [];
     return (
         <motion.section
             id="projects"
@@ -96,31 +96,14 @@ export const ProjectsSection = () => {
                                 <ProjectCard
                                     key={index}
                                     cols={
-                                        index%2 === 0 ? 
-                                        index === 2 ? 
-                                        3:1 : index === 3 ? 1 : 3
+                                        index % 2 === 0 ?
+                                            index === 2 ?
+                                                3 : 1 : index === 3 ? 1 : 3
                                     }
-                                    project={project} 
-                                    />
+                                    project={project}
+                                />
                             ))
                         }
-
-                        {/* <ProjectCard
-                            cols={1}
-                            project={projects[randomProject()]}
-                        />
-                        <ProjectCard
-                            cols={3}
-                            project={projects[randomProject()]}
-                        />
-                        <ProjectCard
-                            cols={3}
-                            project={projects[randomProject()]}
-                        />
-                        <ProjectCard
-                            cols={1}
-                            project={projects[randomProject()]}
-                        /> */}
                     </div>
                     <div className="col-span-full mt-4 w-full flex justify-center">
                         <Btn name="View More" w='md:min-w-20' location={'projects'} />

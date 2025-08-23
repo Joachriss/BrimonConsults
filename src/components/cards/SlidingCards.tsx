@@ -20,11 +20,11 @@ export const CardCarousel = ({ team }: HorizontalCardScrollerProps) => {
     };
 
     return (
-        <div className="relative w-full overflow-hidden mx-auto col-span-full h-fit">
+        <div className="relative w-full overflow-hidden mx-auto col-span-full min-h-fit">
             {/* Left Button */}
             <button
                 onClick={() => scrollOneCard("left")}
-                className="absolute left-3 top-1/2 z-10 -translate-y-1/2 p-2 bg-white rounded-full shadow"
+                className="absolute left-3 hover:scale-110 hover:shadow-xl duration-200 ease-in-out top-1/2 z-10 -translate-y-1/2 p-2 bg-white rounded-full shadow"
             >
                 <MdArrowBackIos className="md:w-8 md:h-8 text-[#194062]" />
             </button>
@@ -32,7 +32,7 @@ export const CardCarousel = ({ team }: HorizontalCardScrollerProps) => {
             {/* Right Button */}
             <button
                 onClick={() => scrollOneCard("right")}
-                className="absolute right-3 top-1/2 z-10 -translate-y-1/2 p-2 bg-white rounded-full shadow"
+                className="absolute right-3 hover:scale-110 hover:shadow-xl duration-200 ease-in-out top-1/2 z-10 -translate-y-1/2 p-2 bg-white rounded-full shadow"
             >
                 <MdArrowForwardIos className="md:w-8 md:h-8 text-[#194062]" />
             </button>
@@ -40,12 +40,12 @@ export const CardCarousel = ({ team }: HorizontalCardScrollerProps) => {
             {/* Scrollable container */}
             <div
                 ref={scrollRef}
-                className="flex overflow-x-auto w-full overflow-hidden py-6 sm:max-w-[80%] scrollbar-none no-scrollbar mx-auto scroll-smooth snap-x snap-mandatory gap-x-6 px-4"
+                className="flex overflow-x-auto w-full h-auto overflow-hidden py-6 sm:max-w-[80%] scrollbar-none no-scrollbar mx-auto scroll-smooth snap-x snap-mandatory gap-x-6 px-4"
             >
                 {team?.map((member, i:Key) => (
                     <div
                         key={i}
-                        className="w-full sm:w-1/2 md:w-1/3 h-fit  flex-shrink-0 snap-start"
+                        className="w-full sm:w-1/2 md:w-1/3 h-full flex-shrink-0 snap-start"
                     >
                         <TeamCard member={member} show={false} />
                     </div>

@@ -1,12 +1,21 @@
-import { MdLogout } from "react-icons/md";
+import {MdLogout, MdMenu } from "react-icons/md";
 import { useAuth } from "../../../context/AuthContext";
+type Props = {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export const DashboardNavbar = () => {
+export const DashboardNavbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
   const { user, logout } = useAuth();
   return (
     <header className="flex flex-row items-center justify-end text-black w-full">
-      <nav className="w-full flex justify-end gap-4 p-3">
-
+      <nav className="w-full flex justify-between md:justify-end gap-4 p-3">
+        <button
+          className="md:hidden p-1"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
+          <MdMenu size={27} />
+        </button>
 
         <div className="flex flex-row items-center gap-3">
           <div className="flex flex-col text-end">

@@ -1,15 +1,15 @@
 import { motion } from "motion/react"
 import { PageHeader } from "../../components/PageHeader"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaQuoteLeft, FaTwitter } from "react-icons/fa"
-import { useEffect, type JSX } from "react"
-import { CardCarousel } from "../../components/cards/SlidingCards"
+import { FaAward, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaQuoteLeft, FaStar, FaTwitter } from "react-icons/fa"
+import { useEffect, type JSX, type Key } from "react"
 import { pageTitle } from "../../utils/pageTitle"
 import { useStaffs } from "../../hooks/useStaffs"
 import type { TUser } from "../../types"
 import { LuLoader } from "react-icons/lu"
-import { MdSearchOff } from "react-icons/md"
+import { MdSearchOff, MdWorkOutline } from "react-icons/md"
 import user from "/user.webp"
 import { Link } from "react-router"
+import { TeamCard } from "../../components/cards/TeamCard"
 
 export const socialMediaIcons: Record<string, JSX.Element> = {
     LINKEDIN: <FaLinkedinIn className="hover:text-[#184062] transition" />,
@@ -55,95 +55,105 @@ export const TeamPage = ({ title }: { title: string }) => {
                         (() => {
                             const manager = teamList.find((member: TUser) => member.role === "MANAGER");
                             return manager ? (
-                                <div
+                                <section
                                     key={manager.id}
-                                    className="max-w-screen-xl my-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mx-auto px-4"
+                                    className="max-w-screen-xl my-16 mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-1 gap-12 items-center relative"
                                 >
-                                    {/* Text Section */}
-                                    <div className="order-2 lg:order-1 bg-white/70 dark:bg-gray-900/70 backdrop-blur rounded-2xl shadow-lg p-8">
-                                        {/* Name */}
-                                        <h1 className="text-4xl font-bold text-[#194a68]">{manager.name}</h1>
-                                        <p className="mt-2 text-lg font-medium text-[#d94a68] flex items-center gap-2">
-                                            {manager.title}
-                                        </p>
-                                        <p className="text-sm text-gray-500">Brimon Consults</p>
+                                    <div className="relative bg-white/90 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center lg:items-start gap-8 p-8">
 
-                                        {/* Divider */}
-                                        <div className="h-[2px] w-20 bg-[#d94a68] mt-6 mb-4 rounded"></div>
-
-                                        {/* Description */}
-                                        <p className="text-gray-700 text-base leading-relaxed">{manager.description}</p>
-
-                                        {/* Credentials */}
-                                        {manager.credentials?.length > 0 && (
-                                            <div className="mt-6">
-                                                <h3 className="text-xl font-semibold text-gray-900">Credentials</h3>
-                                                <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                                                    {manager.credentials.map((credential: string, idx: number) => (
-                                                        <li key={idx}>{credential}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
-
-                                        {/* Expertise */}
-                                        {manager.expertises?.length > 0 && (
-                                            <div className="mt-6">
-                                                <h3 className="text-xl font-semibold text-gray-900">Expertise</h3>
-                                                <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                                                    {manager.expertises.map((exp: string, idx: number) => (
-                                                        <li key={idx}>{exp}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
-
-                                        {/* Socials */}
-                                        <div className="flex gap-3 mt-6">
-                                            {manager?.socialMedia
-                                                ?.filter((sm: any) => sm.link)
-                                                ?.map((sm: any, idx: number) => (
-                                                    <a
-                                                        key={sm.name + idx}
-                                                        href={sm.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="p-2 rounded-full border border-gray-300 hover:border-[#194a68] hover:bg-[#194a68]/10 transition"
-                                                    >
-                                                        {socialMediaIcons[sm.name]}
-                                                    </a>
-                                                ))}
+                                        {/* Image */}
+                                        <div className="w-full lg:w-1/3 relative flex-shrink-0">
+                                            <img
+                                                src={manager.image ? (manager.image as string) : user}
+                                                alt={manager.name}
+                                                className="rounded-2xl shadow-lg object-cover w-full h-[70%] lg:h-full lg:max-h-[500px] lg:translate-y-0 group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                            {/* Optional decorative overlay */}
+                                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/10 rounded-2xl pointer-events-none" />
                                         </div>
 
-                                        {/* Buttons */}
-                                        <div className="flex gap-4 mt-8">
-                                            <Link
-                                                to="team"
-                                                className="inline-block bg-[#d94a68] hover:bg-[#194a68] transition text-white font-semibold py-2 px-6 rounded-full"
-                                            >
-                                                Get In Touch
-                                            </Link>
-                                            {/* {manager.profilePdf && ( */}
+                                        {/* Text Section */}
+                                        <div className="flex-1 flex flex-col gap-4">
+                                            <h1 className="text-4xl font-extrabold text-[#194a68]">{manager.name}</h1>
+                                            <p className="text-xl font-semibold text-[#d94a68] flex items-center gap-2">
+                                                <MdWorkOutline className="text-2xl" />
+                                                {manager.title}
+                                            </p>
+                                            <p className="text-sm text-gray-500">Brimon Consults</p>
+
+                                            <div className="h-[3px] w-24 bg-gradient-to-r from-[#d94a68] to-[#194a68] mt-4 mb-4 rounded"></div>
+
+                                            <p className="text-gray-700 text-base leading-relaxed">{manager.description}</p>
+
+                                            {/* Credentials & Expertise */}
+                                            <div className="flex flex-col lg:flex-row gap-8 mt-4">
+                                                {manager.credentials?.length > 0 && (
+                                                    <div className="flex-1">
+                                                        <h3 className="text-lg font-semibold flex items-center gap-2 text-gray-900">
+                                                            <FaAward className="text-[#d94a68]" /> Credentials
+                                                        </h3>
+                                                        <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                                                            {manager.credentials.map((cred: string, idx: number) => (
+                                                                <li key={idx}>{cred}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+
+                                                {manager.expertises?.length > 0 && (
+                                                    <div className="flex-1">
+                                                        <h3 className="text-lg font-semibold flex items-center gap-2 text-gray-900">
+                                                            <FaStar className="text-[#194a68]" /> Expertise
+                                                        </h3>
+                                                        <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                                                            {manager.expertises.map((exp: string, idx: number) => (
+                                                                <li key={idx}>{exp}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Socials */}
+                                            <div className="flex gap-3 mt-4">
+                                                {/* Socials */}
+                                                {/* <div className="flex gap-4 mt-6 relative z-10"> */}
+                                                {manager?.socialMedia
+                                                    ?.filter((sm: any) => sm.link)
+                                                    ?.map((sm: any, idx: number) => (
+                                                        <a
+                                                            key={sm.name + idx}
+                                                            href={sm.link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="p-3 rounded-full border border-gray-300 hover:border-[#194a68] hover:bg-[#194a68]/10 transition shadow-sm"
+                                                        >
+                                                            {socialMediaIcons[sm.name] || <FaEnvelope />}
+                                                        </a>
+                                                    ))}
+                                                {/* </div> */}
+                                            </div>
+
+                                            {/* Buttons */}
+                                            <div className="flex flex-wrap gap-4 mt-6">
+                                                <Link
+                                                    to="/team"
+                                                    className="inline-block bg-[#d94a68] hover:bg-[#194a68] transition-all duration-300 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:shadow-xl"
+                                                >
+                                                    Get In Touch
+                                                </Link>
                                                 <a
-                                                href="/docs/Brimon_Consults_Company_Profile_April_2025.pdf"
+                                                    href="/docs/Brimon_Consults_Company_Profile.pdf"
                                                     download
-                                                    className="inline-block bg-[#194a68] hover:bg-[#d94a68] transition text-white font-semibold py-2 px-6 rounded-full"
+                                                    className="inline-block bg-[#194a68] hover:bg-[#d94a68] transition-all duration-300 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:shadow-xl"
                                                 >
                                                     Download Profile
                                                 </a>
-                                            {/* )} */}
+                                            </div>
                                         </div>
-
                                     </div>
+                                </section>
 
-                                    {/* Image Section */}
-                                    <div className="order-1 lg:order-2 w-full h-full">
-                                        <img
-                                            src={manager.image ? (manager.image as string) : user}
-                                            className="rounded-2xl shadow-md object-cover w-full h-[500px]"
-                                        />
-                                    </div>
-                                </div>
 
                             ) : null;
                         })()
@@ -159,7 +169,34 @@ export const TeamPage = ({ title }: { title: string }) => {
                 <div className="max-w-screen-xl overflow-hidden mx-auto px-4 py-8">
                     <h1 className="md:text-4xl text-3xl text-[#194062] dark:text-white mb-8">Our Team</h1>
                     <div className="my-10 w-full h-fit">
-                        <CardCarousel team={teamList.filter((m: TUser) => m.role !== "MANAGER")} />
+                        {/* <CardCarousel team={teamList.filter((m: TUser) => m.role !== "MANAGER")} /> */}
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 items-center justify-center">
+                            <div className="col-span-full text-xl">
+                                Body of directors
+                            </div>
+                            {teamList.filter((m: TUser) => m.role !== "MANAGER" && ['Business Development Director',"Technical Director","Contracts & Commercial Director","Operations & Construction Director/Manager"].includes(m.title) && m.role !== "ADMINISTRATOR")?.map((member: TUser, i: Key) => (
+                                <div
+                                    key={i}
+                                    className="w-full h-full flex-shrink-0 snap-start"
+                                >
+                                    <TeamCard member={member} show={false} />
+                                </div>
+                            ))}
+                            <div className="col-span-full mt-10 text-xl">
+                                Associates
+                            </div>
+                            <div className="col-span-full grid w-full sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
+                            {teamList.filter((m: TUser) => m.role !== "MANAGER" && !['Business Development Director',"Technical Director","Contracts & Commercial Director","Operations & Construction Director/Manager"].includes(m.title) && m.role !== "ADMINISTRATOR")?.map((member: TUser, i: Key) => (
+                                <div
+                                    key={i}
+                                    className="w-full h-full  flex-shrink-0 snap-start"
+                                >
+                                    <TeamCard member={member} show={false} />
+                                </div>
+                            ))}
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             }

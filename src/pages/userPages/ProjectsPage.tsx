@@ -7,12 +7,17 @@ import type { TProject } from "../../types";
 import { MdSearchOff } from "react-icons/md";
 import { LuLoader } from "react-icons/lu";
 import { useSearchParams } from "react-router";
+import { useEffect } from "react";
 
 export const ProjectsPage = ({ title }: { title: string }) => {
     pageTitle(title);
 
     const { projects, isLoading } = useProjects();
     const [params, setParams] = useSearchParams();
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        setParams({  limit: "6" });
+    }, []);
 
     const projectList = projects?.results || [];
 
@@ -20,14 +25,18 @@ export const ProjectsPage = ({ title }: { title: string }) => {
     const totalPages = projects?.totalPages || 1;
 
     const handleNext = () => {
-        if (projects?.hasNext) setParams({ page: String(projects.next), limit: params.get("limit") || "10" });
+        if (projects?.hasNext) setParams({ page: String(projects.next.page), limit: params.get("limit") || "6" });
     };
 
     const handlePrev = () => {
-        if (projects?.hasPrev) setParams({ page: String(projects.prev), limit: params.get("limit") || "10" });
+        if (projects?.hasPrev) setParams({ page: String(projects.previous.page), limit: params.get("limit") || "6" });
     };
 
     const projectNames = projectList?.map((project: TProject) => project.title);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <section className="w-full">

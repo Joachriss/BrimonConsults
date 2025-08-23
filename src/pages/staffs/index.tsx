@@ -26,6 +26,7 @@ export const Staffs = () => {
         onSuccess: (data: any) => {
             toast.success(data.message || "Staff deleted successfully");
             setSelectedStaff(null);
+            setIsDeleteUserOpen(false);
             refetch();
         },
         onError: (error: any) => {
@@ -67,13 +68,13 @@ export const Staffs = () => {
             />
 
             {/* Add project modal */}
-            <AddStaffModal refetch={refetch} user={selectedStaff!} isOpen={isAddUserOpen} onClose={() => {if(selectedStaff) setSelectedStaff(null);setIsAddUserOpen(false)}} />
+            <AddStaffModal refetch={refetch} user={selectedStaff!} isOpen={isAddUserOpen} onClose={() => {setIsAddUserOpen(false);if(setSelectedStaff) setSelectedStaff(null);}} />
 
             {/* delete project modal */}
             <ConfirmationDialog
                 action="delete" isOpen={isDeleteUserOpen} actionFn={() => onDeleteUser(selectedStaff?.id as string)}
                 description={"Are you sure you want to delete this staff?"}
-                onClose={() => setSelectedStaff(null)}
+                onClose={() => {setIsDeleteUserOpen(false);setSelectedStaff(null)}}
                 loading={deleteUserMutation.isPending}
             />
         </section>

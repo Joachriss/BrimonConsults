@@ -286,7 +286,7 @@ export const AddStaffModal = ({ isOpen, onClose, refetch, user }: dialogProps) =
                                 <Button
                                     type="submit"
                                     label="Submit"
-                                    loading={createUserMutation.isPending}
+                                    loading={createUserMutation.isPending || editUserMutation.isPending}
                                 />
                             </div>
                         </form>

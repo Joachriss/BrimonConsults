@@ -52,8 +52,8 @@ export const PageHeader = ({ pageName, services, recall, image, download = false
                 {
                     download &&
                     <a
-                        href="/docs/Brimon_Consults_Company_Profile_April_2025.pdf"
-                        download="Brimon_Consults_Company_Profile_April_2025.pdf"
+                        href="/docs/Brimon_Consults_Company_Profile.pdf"
+                        download="Brimon_Consults_Company_Profile.pdf"
                         className="flex flex-row whitespace-nowrap mx-auto mt-5 md:mt-0 items-center w-fit justify-center px-5 py-3 text-sm font-medium rounded-lg bg-white text-[#d94a68] hover:bg-gray-200 transition"
                     >
                         <FaDownload size={25} className="mr-2" />

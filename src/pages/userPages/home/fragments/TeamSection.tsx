@@ -128,7 +128,7 @@ export const TeamSection = () => {
                                                         </Link>
                                                         {/* {manager.profilePdf && ( */}
                                                         <a
-                                                            href="/docs/Brimon_Consults_Company_Profile_April_2025.pdf"
+                                                            href="/docs/Brimon_Consults_Company_Profile.pdf"
                                                             download
                                                             className="inline-block bg-[#194a68] hover:bg-[#d94a68] transition text-white font-semibold py-2 px-6 rounded-full"
                                                         >
@@ -163,7 +163,7 @@ export const TeamSection = () => {
                                 <div className="text-4xl text-[#194a68] font-bold col-span-full">Our Expert Consultant</div>
                                 <div className="text-sm text-[#194a68] mt-2 col-span-full">Our Expert Consultant</div>
                             </div>
-                            <CardCarousel team={teamList?.slice(1)} />
+                            <CardCarousel team={[...teamList].reverse().filter((team: any) => !["MANAGER","ADMINISTRATOR"].includes(team.role))} />
                             <div className="col-span-full w-full flex justify-center mt-6">
                                 <Btn name="Meet Our Team" w='md:min-w-40' location="team" />
                             </div>

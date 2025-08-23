@@ -1,0 +1,35 @@
+[
+  { "title": "People First", "icon": "/icons/values/people.svg",
+    "description":"We embrace and respect diverse perspectives, recognizing their contribution to optimal solutions. Building and sustaining relationships is a priority, grounded in mutual trust, respect, and appreciation. We prioritize the well-being of our employees daily and make sacrifices for long-term relationship building. We value staff growth in long-term careers and show respect to peer firms."
+  },
+  { "title": "Passion for Learning", "icon": "/icons/values/passion.svg",
+    "description":"We prioritize understanding through inquiry and value constructive debate. We see challenges as opportunities for growth and continually deepen our technical and emotional intelligence. Lifelong learning is integral to fulfilling our mission, and we strive for mastery in our field."
+  },
+  { "title": "Ensure & Preserve Safety", "icon": "/icons/values/safety.svg",
+    "description":"We prioritize ethical and integrity-driven operations, placing safety and security at the forefront of all our endeavours."
+  },
+  { "title": "Shared Success", "icon": "/icons/values/success.svg",
+    "description":"We openly share knowledge, believing collaboration enhances our work. We align with clients' needs to achieve the best outcomes. We foster a drama-free, politics-free environment, and every team member contributes to our shared goals. We learn collectively from mistakes and successes alike."
+  },
+  { "title": "Modernize", "icon": "/icons/values/modernize.svg",
+    "description":"We foster a culture of boundless thinking, embracing new ideas and leveraging digital solutions to help clients navigate present challenges and anticipate future ones."
+  },
+  { "title": "Sustain/Maintain", "icon": "/icons/values/sustain.svg",
+    "description":"We take proactive steps to make a positive impact, enhance the communities we engage with, and create enduring legacies for future generations."
+  },
+  { "title": "Ethics & Integrity", "icon": "/icons/values/ethics.svg",
+    "description":"We uphold directness, transparency, and honesty in all our actions, avoiding conflicts of interest and adhering to the highest ethical standards. Our moral compass guides us, and we challenge any behaviour that contradicts our values. We fulfil our commitments consistently and rectify any errors promptly."
+  },
+  { "title": "Team up (Collaborate)", "icon": "/icons/values/team.svg",
+    "description":"We bring together unparalleled expertise, proactively addressing and solving our clients' most complex challenges through teamwork."
+  },
+  { "title": "Thrive", "icon": "/icons/values/thrive.svg",
+    "description":"By building diverse teams, fostering inclusivity in the workplace, and providing growth opportunities, we empower each individual within our organization to achieve their full potential."
+  },
+  { "title": "Aiming High", "icon": "/icons/values/aiming.svg",
+    "description":"We challenge ourselves daily, exceeding client expectations and pushing industry standards higher. Passion, self-motivation, and initiative drive us to pursue excellence in all aspects. We reject complacency and promptly address client concerns for continual improvement."
+  },
+  { "title": "Deliver", "icon": "/icons/values/deliver.svg",
+    "description":"Our relentless focus on clients, coupled with operational excellence and exceptional project execution, drives our business growth."
+  }
+]

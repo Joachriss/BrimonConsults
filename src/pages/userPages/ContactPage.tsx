@@ -3,9 +3,13 @@ import { BookingForm } from "../../components/forms/BookingForm";
 import { motion } from "motion/react";
 import { BsPostcardFill } from "react-icons/bs";
 import { pageTitle } from "../../utils/pageTitle";
+import { useEffect } from "react";
 
-export const ContactPage = ({title}:{title:string}) => {
+export const ContactPage = ({ title }: { title: string }) => {
     pageTitle(title);
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <motion.div className="container md:mt-10 mx-auto py-10 px-4"
             initial={{ opacity: 0, translateY: -50 }}
@@ -54,7 +58,7 @@ export const ContactPage = ({title}:{title:string}) => {
                 <BookingForm />
             </div>
             <div className="my-10">
-                <iframe className="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.942990254!2d39.260587908232736!3d-6.776793593191846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d0049860211%3A0x5f0f3b992212d915!2sBrimon%20Consults%20Limited!5e0!3m2!1sen!2stz!4v1750599981681!5m2!1sen!2stz"loading="lazy"></iframe>
+                <iframe className="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.942990254!2d39.260587908232736!3d-6.776793593191846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d0049860211%3A0x5f0f3b992212d915!2sBrimon%20Consults%20Limited!5e0!3m2!1sen!2stz!4v1750599981681!5m2!1sen!2stz" loading="lazy"></iframe>
             </div>
 
             {/* Join our team */}
