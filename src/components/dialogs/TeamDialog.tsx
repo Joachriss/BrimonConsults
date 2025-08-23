@@ -22,7 +22,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
 
             <div className="fixed inset-0 z-50 w-screen overflow-y-auto flex items-center justify-center px-4 py-8">
                 <DialogPanel
-                    className="w-full max-w-5xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-300 dark:border-gray-700 relative"
+                    className="w-full max-w-5xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl max-h-[90vh] overflow-auto  flex flex-col md:flex-row border border-gray-300 dark:border-gray-700 relative"
                 >
                     {/* Image section */}
                     <div className="p-3 w-full md:w-[40%]  md:h-auto">
@@ -33,20 +33,41 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                         />
                     </div>
 
+                    {/* Close button */}
+                    <button
+                        onClick={() => setIsServiceOpen(false)}
+                        className="absolute bg-red-400 text-white top-4 right-4 rounded-lg hover:bg-red-600"
+                    >
+                        <IoClose size={24} />
+                    </button>
+
                     {/* Content section */}
-                    <div className="w-full p-6 overflow-y-auto">
-                        {/* Close button */}
-                        <button
-                            onClick={() => setIsServiceOpen(false)}
-                            className="absolute top-4 right-4 text-gray-600 hover:text-red-600"
-                        >
-                            <IoClose size={24} />
-                        </button>
+                    <div className="w-full p-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 items-center  justify-between">
+                            <div className="w-full">
+                                <h2 className="text-2xl font-bold text-[#194062]">{member.name}</h2>
+                                <p className="text-sm text-[#d94766] italic">{member.title}</p>
 
-                        <h2 className="text-2xl font-bold text-[#194062]">{member.name}</h2>
-                        <p className="text-sm text-[#d94766] italic">{member.title}</p>
+                                <hr className="my-3 border-[#194062] w-1/4" />
 
-                        <hr className="my-4 border-[#194062] w-1/4" />
+                            </div>
+                            {/* Socials */}
+                            <div className="flex gap-4 mt-6 relative z-10">
+                                {member?.socialMedia
+                                    ?.filter((sm: any) => sm.link)
+                                    ?.map((sm: any, idx: number) => (
+                                        <a
+                                            key={sm.name + idx}
+                                            href={sm.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 rounded-full border border-gray-300 hover:border-[#194a68] hover:bg-[#194a68]/10 transition shadow-sm"
+                                        >
+                                            {socialMediaIcons[sm.name] || <FaEnvelope />}
+                                        </a>
+                                    ))}
+                            </div>
+                        </div>
 
                         <p className="text-gray-800 dark:text-gray-300 text-sm leading-relaxed">
                             {member.description}
@@ -76,22 +97,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                                 </div>
                             )}
                         </div>
-                        {/* Socials */}
-                        <div className="flex gap-4 mt-6 relative z-10">
-                            {member?.socialMedia
-                                ?.filter((sm: any) => sm.link)
-                                ?.map((sm: any, idx: number) => (
-                                    <a
-                                        key={sm.name + idx}
-                                        href={sm.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 rounded-full border border-gray-300 hover:border-[#194a68] hover:bg-[#194a68]/10 transition shadow-sm"
-                                    >
-                                        {socialMediaIcons[sm.name] || <FaEnvelope />}
-                                    </a>
-                                ))}
-                        </div>
+
 
                         <div className="mt-6 flex justify-end">
                             <button
