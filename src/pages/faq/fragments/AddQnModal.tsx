@@ -122,7 +122,7 @@ export const AddQnModal = ({ isOpen, onClose, selectedFaq, refetch }: dialogProp
                             <Button
                                 type="submit"
                                 label={selectedFaq ? "Edit" : "Submit"}
-                                loading={faqCreateMutation.isPending}
+                                loading={faqCreateMutation.isPending || faqEditMutation.isPending}
                                 onClick={
                                     handleSubmit(onSubmit)
                                 }

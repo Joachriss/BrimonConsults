@@ -209,7 +209,7 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
               <Button
                 type="submit"
                 label="Submit"
-                loading={createProjectMutation.isPending}
+                loading={createProjectMutation.isPending || editProjectMutation.isPending}
               />
             </div>
           </DialogPanel>
