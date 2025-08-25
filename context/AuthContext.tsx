@@ -44,7 +44,6 @@ export function AuthContextProvider({ children }: { children: React.ReactNode })
         setLoading(true);
         try {
             const response = await axios.get(`/auth/getprofile`);
-            console.log(response);
             if (response?.data?.user) {
                 setUser({
                     id: response.data.user._id,
