@@ -14,7 +14,7 @@ const ServicesDialog = (props: any) => {
                     >
                         <DialogTitle className="font-bold text-2xl text-[#d94766]">{service?.title}</DialogTitle><hr className='border-gray-400' />
                         {/* <Description className="mt-2 font-bold text-lg text-[#194062] dark:text-gray-400">{service.subject}</Description> */}
-                        <p className="mt-2 text-gray-600 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: service?.description }}></p>
+                        <div className="mt-2 text-gray-600 dark:text-gray-300 space-y-4 text-justify" dangerouslySetInnerHTML={{ __html: service?.description }}></div>
                         <ul className="text-start disk list-disc ms-6">
                             {
                                 service?.details && service?.details.map((benefit: any, index: number) => (

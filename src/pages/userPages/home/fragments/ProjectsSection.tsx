@@ -43,8 +43,8 @@ export const ProjectsSection = () => {
                                         <LuLoader className="w-14 h-14 text-[#d94766] duration-300 animate-spin" />
                                     </div>
                                     : projectList?.length > 0 ?
-                                        projectList?.slice(0, 5).map((project: TProject, index: Key) => (
-                                            <Link to={`/projects100/${project.title}`} key={index} className="flex space-x-3 hover:underline">
+                                        projectList?.slice(0, 8).map((project: TProject, index: Key) => (
+                                            <Link to={`/projects/${project.title}`} key={index} className="flex space-x-3 hover:underline">
                                                 <svg className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
                                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                     <path fillRule="evenodd"

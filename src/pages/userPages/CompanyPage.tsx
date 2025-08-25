@@ -8,7 +8,6 @@ import { pageTitle } from '../../utils/pageTitle'
 import { useEffect, useState } from 'react'
 import policies from "../../data/policies.json"
 import values from "../../data/values.json"
-import { PolicyModal } from '../../components/dialogs/PolicyDialog'
 import { ImageModal } from '../../components/dialogs/ImageDialog'
 import ServicesDialog from '../../components/dialogs/ServicesDialog'
 // import {Helmet} from "react-helmet";
@@ -101,7 +100,7 @@ export const CompanyPage = ({ title }: { title: string }) => {
       </div>
 
       {/* who we are */}
-      <div className="max-w-screen-xl mt-8 overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
+      <div className="text-justify space-y-5 max-w-screen-xl mt-8 overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
         <h1 className="md:text-5xl text-3xl text-[#194062] dark:text-white mb-4">Who <span className="text-[#d94a68]">We Are</span></h1>
         <motion.p initial={{ x: -1300 }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 1 }} viewport={{ once: true }} className="text-lg text-gray-600 dark:text-gray-400 mb-4" >
           Brimon Consults Limited (BCL)is a construction consultancy firm comprising a cohesive team of skilled professionals dedicated to tackling project challenges through innovative, construction-focused program and project management solutions. As consultants in project management, we customize teams, resources, and processes to suit your specific project needs, consistently delivering positive outcomes.
@@ -272,10 +271,10 @@ export const CompanyPage = ({ title }: { title: string }) => {
               ))}
 
               {/* Modal */}
-              <PolicyModal
+              <ImageModal
                 isOpen={selectedPolicy !== null}
                 onClose={closeModal}
-                policy={selectedPolicy}
+                image={selectedPolicy?.pdfUrl}
               />
             </div>
           </section>

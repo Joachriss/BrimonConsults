@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaRegEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaPhoneAlt, FaRegEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaTiktok } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { BsPostcardFill } from "react-icons/bs";
 import { Link } from "react-router";
@@ -61,6 +61,14 @@ export const Footer = () => {
                             <a href="https://www.linkedin.com/company/brimon-consults/" target="_blank" rel="noopener noreferrer"
                                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
                                 <FaLinkedinIn />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCXzXygd-hN0P9z9fwJ5vMMA" target="_blank" rel="noopener noreferrer"
+                               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+                                <FaYoutube />
+                            </a>
+                            <a href="https://www.tiktok.com/@brimon.consults" target="_blank" rel="noopener noreferrer"
+                               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+                                <FaTiktok />
                             </a>
                         </div>
                     </div>

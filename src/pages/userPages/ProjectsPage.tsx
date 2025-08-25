@@ -55,8 +55,8 @@ export const ProjectsPage = ({ title }: { title: string }) => {
                 className="max-w-screen-xl mx-auto px-4 py-8"
             >
                 {/* Total projects */}
-                <div className="mb-4 text-right text-gray-600 font-semibold">
-                    Projects Conducted: {projects?.total || 0}
+                <div className="mb-4 text-start text-gray-600 font-semibold">
+                    Here are some of our recent projects:
                 </div>
 
                 {/* Projects grid */}

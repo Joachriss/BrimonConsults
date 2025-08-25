@@ -70,7 +70,7 @@ export const Dashboard = () => {
       <h1 className="col-span-full text-2xl font-bold my-7">Dashboard</h1>
       <div className="text-2xl font-extralight ">Hello, <span className="text-black font-[600]">{user.name}</span></div>
       <div className="mb-4">Welcome to your dashboard</div>
-      <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-12 items-center gap-4 w-full">
 
         <Link to="/admin/inquiries" className="rounded-lg col-span-full sm:col-span-6 md:col-span-4 shadow bg-white hover:scale-[103%] duration-300 w-full py-4 px-8 gap-4 font-bold flex flex-row items-center justify-between">
           <div className="flex flex-col gap-3">

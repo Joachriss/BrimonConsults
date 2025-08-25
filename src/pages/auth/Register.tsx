@@ -15,7 +15,7 @@ export const Register = () => {
     }
 
     return (
-        <div className="border bg-white border-gray-200 p-5 min-w-md  rounded">
+        <div className="border bg-white border-gray-200 p-5 min-w-sm sm:min-w-md  rounded">
             <img src="/logo/Logo-light.png" className='w-25 mx-auto my-3' alt="" />
             <div className="mb-8">
                 <h2 className="text-xl font-semibold mb-2">

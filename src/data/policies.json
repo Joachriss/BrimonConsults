@@ -1,7 +1,7 @@
 [
-  { "title": "Our Vision Board", "description":"Our Vision Board","pdfUrl":"/docs/policies/Our_Vision_Board.pdf" },
-  { "title": "Our Services", "description":"Services We Offer","pdfUrl":"/docs/policies/Our_Services.pdf" },
-  { "title": "HSSE & Social Policy", "description":"BCL Health, Safety, Security, Environment and social policy","pdfUrl":"/docs/policies/HSSE_Social_Policy.pdf" },
-  { "title": "BCL Human Right Policy", "description": "Towards Employees and Service Partners","pdfUrl":"/docs/policies/Human_Rights_Policy.pdf" },
-  { "title": "QA/QC Policy", "description":"BCL Quality Assurance/Quality Control Policy","pdfUrl":"/docs/policies/QA_QC_Policy.pdf" }
+  { "title": "Our Vision Board", "description":"Our Vision Board","pdfUrl":"/docs/policies/Our_Vision_Board.jpg" },
+  { "title": "Our Services", "description":"Services We Offer","pdfUrl":"/docs/policies/Our_Services.jpg" },
+  { "title": "HSSE & Social Policy", "description":"BCL Health, Safety, Security, Environment and social policy","pdfUrl":"/docs/policies/HSSE_Social_Policy.jpg" },
+  { "title": "BCL Human Right Policy", "description": "Towards Employees and Service Partners","pdfUrl":"/docs/policies/Human_Rights_Policy.jpg" },
+  { "title": "QA/QC Policy", "description":"BCL Quality Assurance/Quality Control Policy","pdfUrl":"/docs/policies/QA_QC_Policy.jpg" }
 ]

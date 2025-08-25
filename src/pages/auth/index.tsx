@@ -14,7 +14,7 @@ export const Login = () => {
   }
 
   return (
-    <div className="border bg-white border-gray-200 p-5 min-w-md rounded">
+    <div className="border bg-white border-gray-200 p-5 min-w-sm sm:min-w-md rounded">
       <div className="w-fit mx-auto">
         <Link to="/" target="_blank">
           <img src="/logo/Logo-light.png" className="w-25 my-3" alt="Logo" />

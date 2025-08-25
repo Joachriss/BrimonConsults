@@ -18,6 +18,14 @@ export const socialMediaIcons: Record<string, JSX.Element> = {
     INSTAGRAM: <FaInstagram className="hover:text-[#184062] transition" />
 };
 
+// directors
+    export const directorNames = [
+        "Otty Msuku",
+        "Bennet Katabarwa",
+        "Gregory Feist",
+        "Abdulrahim Kassongo"
+    ];
+
 export const TeamPage = ({ title }: { title: string }) => {
     pageTitle(title)
     useEffect(() => {
@@ -25,9 +33,12 @@ export const TeamPage = ({ title }: { title: string }) => {
     })
     const { staffs, isLoading } = useStaffs();
     const teamList = staffs?.results || [];
+
+    
+
     return (
         <section className="w-full">
-            <PageHeader recall="Meet Our Team" services={["Leadership", "Management", "Team Work"]} pageName="Our Team" image="bg-[url('/projects100/Commercial-Complex-Goba-Dar-es-Salaam/image2.webp')]" />
+            <PageHeader recall="Meet Our Team" services={["Leadership", "Management", "Team Work"]} pageName="Our Team" image="bg-[url('/projects100/Commercial-Complex-Goba-Dar-es-Salaam/image5.webp')]" />
             <div className="max-w-screen-xl overflow-hidden mx-auto px-4 py-8 border-s-8 border-[#d94a68] dark:border-[#d94a68]">
                 <h1 className="md:text-5xl text-3xl text-[#194062] dark:text-white mb-4">Meet Our <span className="text-[#d94a68]">Team</span></h1>
                 <motion.p
@@ -172,28 +183,39 @@ export const TeamPage = ({ title }: { title: string }) => {
                         {/* <CardCarousel team={teamList.filter((m: TUser) => m.role !== "MANAGER")} /> */}
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 items-center justify-center">
                             <div className="col-span-full text-xl">
-                                Body of directors
+                                Board of directors
                             </div>
-                            {teamList.filter((m: TUser) => m.role !== "MANAGER" && ['Business Development Director',"Technical Director","Contracts & Commercial Director","Operations & Construction Director/Manager"].includes(m.title) && m.role !== "ADMINISTRATOR")?.map((member: TUser, i: Key) => (
-                                <div
-                                    key={i}
-                                    className="w-full h-full flex-shrink-0 snap-start"
-                                >
-                                    <TeamCard member={member} show={false} />
-                                </div>
-                            ))}
+
+
+                            {directorNames.map((name) => {
+                                const member = teamList.find((m: TUser) => m.name === name);
+
+                                if (!member) return null; // skip if not found
+
+                                return (
+                                    <div
+                                        key={member.id}
+                                        className="w-full h-full flex-shrink-0 snap-start"
+                                    >
+                                        <TeamCard member={member} show={false} />
+                                    </div>
+                                );
+                            })}
+
+
+
                             <div className="col-span-full mt-10 text-xl">
                                 Associates
                             </div>
                             <div className="col-span-full grid w-full sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
-                            {teamList.filter((m: TUser) => m.role !== "MANAGER" && !['Business Development Director',"Technical Director","Contracts & Commercial Director","Operations & Construction Director/Manager"].includes(m.title) && m.role !== "ADMINISTRATOR")?.map((member: TUser, i: Key) => (
-                                <div
-                                    key={i}
-                                    className="w-full h-full  flex-shrink-0 snap-start"
-                                >
-                                    <TeamCard member={member} show={false} />
-                                </div>
-                            ))}
+                                {teamList.filter((m: TUser) => m.role !== "MANAGER" && !['Business Development Director', "Technical Director", "Contracts & Commercial Director", "Operations & Construction Director/Manager"].includes(m.title) && m.role !== "ADMINISTRATOR")?.map((member: TUser, i: Key) => (
+                                    <div
+                                        key={i}
+                                        className="w-full h-full  flex-shrink-0 snap-start"
+                                    >
+                                        <TeamCard member={member} show={false} />
+                                    </div>
+                                ))}
 
                             </div>
                         </div>

@@ -2,10 +2,14 @@
 import { motion } from "motion/react";
 import services from "../../../../data/services.json";
 import { ServiceCard } from "../../../../components/cards/ServiceCard";
+import ServicesDialog from "../../../../components/dialogs/ServicesDialog";
+import { useState } from "react";
 
 
 export const ServicesSection = (props: any) => {
-  const { showParagraph } = props;
+  const { showParagraph } = props;  
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [service, setService] = useState<any>({});
   return (
     <>
       <motion.section
@@ -27,18 +31,21 @@ export const ServicesSection = (props: any) => {
             {
               showParagraph && (
                 <>
-                <p className="mt-4 text-justify text-lg text-gray-600 dark:text-gray-300 md:px-20">
-                  The operations of the company are focused on dynamic solutions to challenges facing project implementation on Architectural, Quantity Surveying and Project Management. We thus endeavor to offer solutions with highly personalized service. Our depth of technical and managerial experience provides clients with a high level of financial analysis and management advice they require to make investment and development decisions.
-                </p>
-                <ul className="mt-4 ms-4 list-disc list-inside text-gray-600 dark:text-gray-300 md:px-20 text-start">
-                  {
-                    services.map((service, index) => (
-                      <li key={index} className="mt-2 text-lg">
-                        <span className="font-semibold">{service.title}:</span> 
-                      </li>
-                    ))
-                  }
-                </ul>
+                  <p className="mt-4 text-justify text-lg text-gray-600 dark:text-gray-300 md:px-20">
+                    The operations of the company are focused on dynamic solutions to challenges facing project implementation on Architectural, Quantity Surveying and Project Management. We thus endeavor to offer solutions with highly personalized service. Our depth of technical and managerial experience provides clients with a high level of financial analysis and management advice they require to make investment and development decisions.
+                  </p>
+                  <ul className="mt-4 ms-4 list-disc list-inside text-gray-600 dark:text-gray-300 md:px-20 text-start">
+                    {
+                      services.map((service, index) => (
+                        <li key={index} onClick={() => {setIsServiceOpen(true); setService(service)}} className="mt-2 text-lg hover:text-[#d94766] hover:font-bold cursor-pointer">
+                          <span className="font-semibold">{service.title}:</span>
+                        </li>
+                      ))
+                    }
+
+                    <ServicesDialog isServiceOpen={isServiceOpen} setIsServiceOpen={setIsServiceOpen} service={service} />
+
+                  </ul>
                 </>
               )
             }

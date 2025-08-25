@@ -1,9 +1,10 @@
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaTiktok, FaYoutube } from "react-icons/fa";
 import { BookingForm } from "../../components/forms/BookingForm";
 import { motion } from "motion/react";
 import { BsPostcardFill } from "react-icons/bs";
 import { pageTitle } from "../../utils/pageTitle";
 import { useEffect } from "react";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const ContactPage = ({ title }: { title: string }) => {
     pageTitle(title);
@@ -52,6 +53,32 @@ export const ContactPage = ({ title }: { title: string }) => {
                                 Dar es salaam,
                                 Tanzania
                             </div>
+                        </div>
+                        <div className="flex space-x-4 mt-10 border-t pt-4">
+                            <a href="https://www.facebook.com/share/1E2mHwUVvc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-white/10 hover:bg-pink-600/20 transition">
+                                <FaFacebookF />
+                            </a>
+                            <a href="https://www.instagram.com/brimonconsults?igsh=MWFqaXV3bjJ4d3U0Zw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-white/10 hover:bg-pink-600/20 transition">
+                                <FaInstagram />
+                            </a>
+                            <a href="https://x.com/brimonconsults?s=21" target="_blank" rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-white/10 hover:bg-pink-600/20 transition">
+                                <FaXTwitter />
+                            </a>
+                            <a href="https://www.linkedin.com/company/brimon-consults/" target="_blank" rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-white/10 hover:bg-pink-600/20 transition">
+                                <FaLinkedinIn />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCXzXygd-hN0P9z9fwJ5vMMA" target="_blank" rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-white/10 hover:bg-pink-600/20 transition">
+                                <FaYoutube />
+                            </a>
+                            <a href="https://www.tiktok.com/@brimon.consults" target="_blank" rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-white/10 hover:bg-pink-600/20 transition">
+                                <FaTiktok />
+                            </a>
                         </div>
                     </div>
                 </div>

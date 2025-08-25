@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-export const PolicyModal=({ isOpen, onClose, policy }: { isOpen: boolean; onClose: () => void; policy: any })=> {
+export const PolicyModal = ({ isOpen, onClose, policy }: { isOpen: boolean; onClose: () => void; policy: any }) => {
   if (!policy) return null;
 
   return (
@@ -14,7 +14,7 @@ export const PolicyModal=({ isOpen, onClose, policy }: { isOpen: boolean; onClos
           onClick={onClose}
         >
           <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-3xl w-full p-6 relative"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-sm md:max-w-3xl w-full p-6 relative"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
@@ -41,13 +41,19 @@ export const PolicyModal=({ isOpen, onClose, policy }: { isOpen: boolean; onClos
             )}
 
             {/* PDF Viewer */}
-            {policy.pdfUrl && (
-              <div className="w-full h-[500px] border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden">
+            {/* {policy.pdfUrl && (
+              <div className="w-full h-[600px] border border-gray-200 dark:border-gray-600 rounded-lg overflow-y-auto">
                 <iframe
+                  allowFullScreen={true}
                   src={policy.pdfUrl}
                   className="w-full h-full"
                   title={policy.title}
                 />
+              </div>
+            )} */}
+            {policy.pdfUrl && (
+              <div className="w-full h-[600px] border border-gray-200 dark:border-gray-600 rounded-lg overflow-y-auto">
+                
               </div>
             )}
           </motion.div>

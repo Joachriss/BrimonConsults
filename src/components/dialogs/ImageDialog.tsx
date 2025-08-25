@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 export const ImageModal=({ isOpen, onClose, image }: { isOpen: boolean; onClose: () => void; image: string | any })=> {
-  console.log(image);
   if (!image || image === "") return null;
 
   return (
@@ -15,7 +14,7 @@ export const ImageModal=({ isOpen, onClose, image }: { isOpen: boolean; onClose:
           onClick={onClose}
         >
           <motion.div
-            className={`bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-3xl w-full  relative`}
+            className={`bg-white dark:bg-gray-800 rounded shadow-2xl max-w-sm md:max-w-3xl w-full  relative`}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
@@ -30,16 +29,16 @@ export const ImageModal=({ isOpen, onClose, image }: { isOpen: boolean; onClose:
             </button>
 
             {/* Title */}
-            <h2 className="text-2xl ms-2 mt-2 font-bold text-[#194062] dark:text-white mb-4">
-              { image.name || "Image viewed"}
+            <h2 className="text-xl ms-2 mt-2 font-bold text-[#194062] dark:text-white mb-4">
+              { image.name || "Image"}
             </h2>
 
             {/* image */}
             {(image) && (
-              <div className="w-full max-h-[500px] border border-gray-200 dark:border-gray-600  overflow-hidden">
+              <div className="w-full max-h-[600px] border border-gray-200 dark:border-gray-600  overflow-y-auto">
                 <img
                   src={image.image || image}
-                  className={`w-full ${image.image ? "md:w-[50%]" : ""}  h-full object-cover object-center mx-auto`}
+                  className={`w-[95%] ${image.image ? "md:w-[50%]" : ""}  h-full object-cover object-center mx-auto`}
                   title={image.name || image}
                 />
               </div>

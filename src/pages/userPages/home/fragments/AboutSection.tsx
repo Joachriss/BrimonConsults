@@ -26,8 +26,7 @@ export const AboutSection = () => {
                     >
                         Brimon Consults Limited (BCL) is a construction consultancy firm with a dedicated team offering innovative project management solutions tailored to specific
                         needs. Our diverse expertise spans Industrial work and mining urban development, transportation, infrastructure, water, renewable energy, and environme
-                        ntal initiatives. We prioritize collaboration and continuous learning, assembling seasoned professionals to navigate project complexities and deliver successf
-                        ul outcomes
+                        ntal initiatives. We prioritize collaboration and continuous learning, assembling seasoned professionals to navigate project complexities and deliver successful outcomes
                     </motion.p>
                     <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
                         <div>
