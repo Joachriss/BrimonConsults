@@ -76,7 +76,7 @@ export const TeamSection = () => {
                                                         Brimon consults
                                                     </p>
 
-                                                    <p className="pt-8 text-lg">{manager.description}</p>
+                                                    <div className="pt-8 text-lg space-y-4" dangerouslySetInnerHTML={{ __html: manager.description }}></div>
 
                                                     {/* Credentials */}
                                                     {manager.credentials?.length > 0 && (

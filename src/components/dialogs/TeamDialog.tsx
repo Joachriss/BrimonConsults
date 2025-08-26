@@ -36,7 +36,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                     {/* Close button */}
                     <button
                         onClick={() => setIsServiceOpen(false)}
-                        className="absolute bg-red-400 text-white top-4 right-4 rounded-lg hover:bg-red-600"
+                        className="absolute bg-red-400 text-white top-2 right-2 rounded-lg hover:bg-red-600"
                     >
                         <IoClose size={24} />
                     </button>
@@ -52,7 +52,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
 
                             </div>
                             {/* Socials */}
-                            <div className="flex gap-4 mt-6 relative z-10">
+                            <div className="flex gap-4 mt-2 mb-4 relative z-10">
                                 {member?.socialMedia
                                     ?.filter((sm: any) => sm.link)
                                     ?.map((sm: any, idx: number) => (
@@ -69,9 +69,7 @@ const TeamDialog = ({ member, isServiceOpen, setIsServiceOpen }: TProps) => {
                             </div>
                         </div>
 
-                        <p className="text-gray-800 dark:text-gray-300 text-sm leading-relaxed">
-                            {member.description}
-                        </p>
+                        <div className="text-gray-800 dark:text-gray-300 text-sm leading-relaxed space-y-4 text-justify" dangerouslySetInnerHTML={{ __html: member.description }}></div>
 
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

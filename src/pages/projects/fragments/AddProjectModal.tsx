@@ -181,7 +181,7 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
               </label>
 
               <label>
-                <span className="font-bold text-sm">Wallpaper picture no:</span>
+                <span className="font-bold text-sm">Cover image no:</span>
                 <input
                   type="number"
                   min={1}

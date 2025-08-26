@@ -94,7 +94,7 @@ export const TeamPage = ({ title }: { title: string }) => {
 
                                             <div className="h-[3px] w-24 bg-gradient-to-r from-[#d94a68] to-[#194a68] mt-4 mb-4 rounded"></div>
 
-                                            <p className="text-gray-700 text-base leading-relaxed">{manager.description}</p>
+                                            <div className="text-gray-700 space-y-4 text-base text-justify leading-relaxed" dangerouslySetInnerHTML={{ __html: manager.description }}></div>
 
                                             {/* Credentials & Expertise */}
                                             <div className="flex flex-col lg:flex-row gap-8 mt-4">

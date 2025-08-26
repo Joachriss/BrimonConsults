@@ -105,7 +105,7 @@ export const AddStaffModal = ({ isOpen, onClose, refetch, user }: dialogProps) =
                 socialMedia: user?.socialMedia?.some((media: any) => media.link !== "") ? user.socialMedia?.map((media: any) => ({ name: media.name, link: media.link })) : socialMediaList.map((item) => ({ name: item.name, link: "" })),
                 image: user.image
             })
-        }else{
+        } else {
             reset({
                 id: undefined,
                 name: "",
@@ -223,8 +223,10 @@ export const AddStaffModal = ({ isOpen, onClose, refetch, user }: dialogProps) =
                                     <span className="font-bold text-sm">Description</span>
                                     <textarea
                                         {...register("description", { required: "Description is required." })}
+                                        rows={8}
                                         className="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none"
                                         placeholder="Description"
+                                        role="textbox"
                                     >
 
                                     </textarea>
