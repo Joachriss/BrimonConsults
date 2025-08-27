@@ -44,7 +44,7 @@ export const CompanyPage = ({ title }: { title: string }) => {
   const handleValueClick = (value: any) => { setSelectedValue(value); setIsValueOpen(true) };
   return (
     <section className="w-full relative bg-white dark:bg-gray-900 py-16">
-      <PageHeader pageName="Who We Are" recall="Our company" download={true} services={["Our Vision", "Our Mission", "Our Values", "Our Policies", "Certifications & Licenses"]} image="bg-[url('/projects100/Iyumbu/image3.webp')]" />
+      <PageHeader pageName="Who We Are" recall="Our company" download={true} services={["Our Vision", "Our Mission", "Our Values", "Our Policies", "Certifications & Licenses"]} image="bg-[url('/company.jpg')]" />
       <div className="max-w-screen-xl mx-auto px-6 flex flex-col items-center text-center">
         {/* Title */}
         <motion.h2

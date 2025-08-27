@@ -2,8 +2,9 @@ import { useState } from "react";
 import logo_light from "/logo/Logo-light.png";
 import { Btn } from "../buttons/Btn";
 import { Link, NavLink } from "react-router";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ export const Navbar = () => {
                     </Link>
                     <div className="flex items-center lg:order-2">
 
-                        <Btn name="Book a Meeting" w='md:min-w-44' location="contacts"/>
+                        <Btn name="Book a Meeting" w='md:min-w-44' location="contacts" />
                         <button onClick={toggleMenu} data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                             <span className="sr-only">Open main menu</span>
                             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
@@ -46,7 +47,7 @@ export const Navbar = () => {
                                     aria-current="page">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/company" 
+                                <NavLink to="/company"
                                     className={({ isActive }) => isActive ? linkActive : linkInactive}>Company</NavLink>
                             </li>
                             <li>
@@ -74,7 +75,7 @@ export const Navbar = () => {
             <div onClick={toggleMenu} className={`absolute md:hidden top-0 left-0 w-full h-screen bg-black/50 p-4 transform ${isOpen ? "" : "hidden"} duration-300 z-50`}></div>
 
             {/* Mobile menu */}
-            <div className={`${isOpen ? "translate-x-0" : "translate-x-[-100%]"} shadow md:hidden duration-300 bg-white fixed h-screen top-0 left-0 w-[70%] md:w-[30%] py-4 px-4 z-60`}>
+            <div className={`${isOpen ? "translate-x-0" : "translate-x-[-100%]"} shadow md:hidden duration-300 bg-white fixed h-screen top-0 left-0 w-[80%] md:w-[30%] py-4 px-4 z-60`}>
                 <div className="flex justify-between items-center">
                     <Link to="/" onClick={toggleMenu}>
                         <img src={logo_light} className="w-20" alt="" />
@@ -96,8 +97,43 @@ export const Navbar = () => {
                     <NavLink onClick={toggleMenu} to="/contacts" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>Contact</NavLink>
                     <Link onClick={toggleMenu} to={"#"} className="mt-6 bg-[#d94a68] text-center text-white px-6 py-3 rounded-lg hover:bg-[#194062]">Book Now</Link>
                     <hr className="border-2 my-2 border-stone-300" />
-                    <div className="flex gap-4 items-center  text-[#CCA034]-600">
-                        <Link to="https://www.instagram.com/skin_miracles_cosmetics/" className="flex flex-row items-center gap-4"><FaInstagram size={30} className="text-[#CCA034]" /> <div>Instagram</div></Link>
+                    <div className="flex fle-row gap-2 justify-between p-1 mt-3">
+                        <div className="flex gap-4 items-center">
+                            <Link to="https://www.facebook.com/share/1E2mHwUVvc/?mibextid=wwXIfr" className="flex flex-row items-center gap-4">
+                                <FaFacebookF size={27} className="text-[#1047c0]" />
+                                {/* <div>Facebook</div> */}
+                            </Link>
+                        </div>
+                        <div className="flex gap-4 items-center">
+                            <Link to="https://www.instagram.com/brimonconsults?igsh=MWFqaXV3bjJ4d3U0Zw%3D%3D&utm_source=qr" className="flex flex-row items-center gap-4">
+                                <FaInstagram size={27} className="text-[#e6224d]" />
+                                {/* <div>Instagram</div> */}
+                            </Link>
+                        </div>
+                        <div className="flex gap-4 items-center">
+                            <Link to="https://x.com/brimonconsults?s=21" className="flex flex-row items-center gap-4">
+                                <FaXTwitter size={27} className="text-[#000000]" />
+                                {/* <div>X</div> */}
+                            </Link>
+                        </div>
+                        <div className="flex gap-4 items-center">
+                            <Link to="https://www.linkedin.com/company/brimon-consults/" className="flex flex-row items-center gap-4">
+                                <FaLinkedinIn size={27} className="text-[#1d44f2]" />
+                                {/* <div>Linkedin</div> */}
+                            </Link>
+                        </div>
+                        <div className="flex gap-4 items-center">
+                            <Link to="https://www.youtube.com/@brimonconsults" className="flex flex-row items-center gap-4">
+                                <FaYoutube size={27} className="text-[#FF0000]" />
+                                {/* <div>Youtube</div> */}
+                            </Link>
+                        </div>
+                        <div className="flex gap-4 items-center">
+                            <Link to="https://www.tiktok.com/@brimon.consults" className="flex flex-row items-center gap-4">
+                                <FaTiktok size={27} className="text-[#000000]" />
+                                {/* <div>Tiktok</div> */}
+                            </Link>
+                        </div>
                     </div>
 
                 </div>
