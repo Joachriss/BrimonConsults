@@ -38,7 +38,7 @@ export const ImageModal=({ isOpen, onClose, image }: { isOpen: boolean; onClose:
               <div className="w-full max-h-[600px] border border-gray-200 dark:border-gray-600  overflow-y-auto">
                 <img
                   src={image.image || image}
-                  className={`w-[95%] ${image.image ? "md:w-[50%]" : ""}  h-full object-cover object-center mx-auto`}
+                  className={`w-full ${image.image ? "md:w-[50%]" : ""}  h-full object-cover object-center mx-auto`}
                   title={image.name || image}
                 />
               </div>
