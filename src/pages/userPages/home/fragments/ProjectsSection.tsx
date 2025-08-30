@@ -2,15 +2,20 @@ import { motion } from 'motion/react';
 import { Btn } from '../../../../components/buttons/Btn';
 import cvvv from "/projects100/Medeli-Conventioanl-Centre-Dodoma/image1.webp"
 import { ProjectCard } from '../../../../components/cards/ProjectCard';
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { useProjects } from '../../../../hooks/useProjects';
 import type { TProject } from '../../../../types';
-import type { Key } from 'react';
+import { useEffect, type Key } from 'react';
 import { LuLoader } from 'react-icons/lu';
 import { MdSearchOff } from 'react-icons/md';
+import { eight } from "../../../../data/projects.json";
 export const ProjectsSection = () => {
     const { projects, isLoading } = useProjects()
+    const [_,setParams] = useSearchParams();
     const projectList = projects?.results || [];
+    useEffect(() => {
+        setParams({  limit: "20" });
+    },[])
     return (
         <motion.section
             id="projects"
@@ -42,8 +47,13 @@ export const ProjectsSection = () => {
                                     <div className="col-span-full flex items-center justify-center h-full w-full">
                                         <LuLoader className="w-14 h-14 text-[#d94766] duration-300 animate-spin" />
                                     </div>
-                                    : projectList?.length > 0 ?
-                                        projectList?.slice(0, 8).map((project: TProject, index: Key) => (
+
+                                    : projectList.length > 0 ? eight.map((eight: string, index: Key) => {
+                                        if (projectList.length === 0) return null
+                                        const project = projectList.find((p: TProject) => p.title.trim() === eight.trim());
+
+                                        if (!project) return null;
+                                        return (
                                             <Link to={`/projects/${project.title}`} key={index} className="flex space-x-3 hover:underline">
                                                 <svg className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
                                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -53,11 +63,13 @@ export const ProjectsSection = () => {
                                                 </svg>
                                                 <span className="text-lg font-medium leading-tight text-gray-900 dark:text-white">{project.title}</span>
                                             </Link>
-                                        )) :
+                                        )
+                                    }) : (
                                         <div className="col-span-full flex flex-col items-center justify-center font-bold text-gray-400 text-2xl text-center h-full w-full">
                                             <MdSearchOff className="w-14 h-14" /><br />
                                             <p>No projects found.</p>
                                         </div>
+                                    )
                             }
                         </motion.ul>
                         <p className="mb-8 font-light lg:text-xl">

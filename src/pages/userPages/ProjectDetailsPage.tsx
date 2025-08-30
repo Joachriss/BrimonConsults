@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, useSearchParams } from "react-router";
 import { motion } from "motion/react";
 import { useEffect, useState, type Key } from "react";
 import { ProjectCardNormal } from "../../components/cards/ProjectCardNormal";
@@ -11,16 +11,18 @@ import { ImageModal } from "../../components/dialogs/ImageDialog";
 export const ProjectDetailsPage = ({ title }: { title: string }) => {
     pageTitle(title)
     const params = useParams();
+    const [_,setParams] = useSearchParams();
     const { projects } = useProjects()
 
     const projectName = params.project;
-    const project = projects?.results.find((p: TProject) => p.title === projectName);
+    const project = projects?.results.find((p: TProject) => p.title.trim() === projectName?.trim());
     const isSliding = true;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setParams({limit: '20'});
         if (isSliding) {
             const slideInterval = setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % project?.images?.length);
@@ -38,7 +40,6 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
         })
     }
     const onOpenImage = (image: string) => { setSelectedImage(image) }
-    console.log("image", selectedImage)
     const onCloseImage = () => { setSelectedImage('') }
     return (
         <div className="w-full overflow-hidden">

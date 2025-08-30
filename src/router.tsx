@@ -22,6 +22,7 @@ import { AuthLayout } from "./layouts/AuthLayout";
 import { Login } from "./pages/auth";
 import { Register } from "./pages/auth/Register";
 import { Staffs } from "./pages/staffs";
+import { NewsPage } from "./pages/userPages/NewsPage";
 
 export interface IRoutes {
     path: string;
@@ -131,6 +132,10 @@ export const router = createBrowserRouter([
                     {
                         path: "team",
                         element: <TeamPage title="Team" />
+                    },
+                    {
+                        path: "news",
+                        element: <NewsPage title="News and press" />
                     }
 
                 ]

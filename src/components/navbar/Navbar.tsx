@@ -59,6 +59,10 @@ export const Navbar = () => {
                                     className={({ isActive }) => isActive ? linkActive : linkInactive}>Projects</NavLink>
                             </li>
                             <li>
+                                <NavLink to="/news"
+                                    className={({ isActive }) => isActive ? linkActive : linkInactive}>News&Press</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to="/team"
                                     className={({ isActive }) => isActive ? linkActive : linkInactive}>Team</NavLink>
                             </li>
@@ -93,6 +97,7 @@ export const Navbar = () => {
                     <NavLink onClick={toggleMenu} to="/company" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>Company</NavLink>
                     <NavLink onClick={toggleMenu} to="/services" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>Services</NavLink>
                     <NavLink onClick={toggleMenu} to="/projects" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>Projects</NavLink>
+                    <NavLink onClick={toggleMenu} to="/news" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>News & Press</NavLink>
                     <NavLink onClick={toggleMenu} to="/team" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>Team</NavLink>
                     <NavLink onClick={toggleMenu} to="/contacts" className={({ isActive }) => isActive ? linkActiveMobile : linkInactiveMobile}>Contact</NavLink>
                     <Link onClick={toggleMenu} to={"#"} className="mt-6 bg-[#d94a68] text-center text-white px-6 py-3 rounded-lg hover:bg-[#194062]">Book Now</Link>

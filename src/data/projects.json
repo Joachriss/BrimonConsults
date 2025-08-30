@@ -1,107 +1,30 @@
-    [
-        {
-            "id": 2,
-            "name": "Commercial Complex | Goba, Dar es Salaam, Tanzania",
-            "description": "Our work",
-            "colse": 1,
-            "image": [
-                "image1.webp",
-                "image2.webp",
-                "image3.webp",
-                "image4.webp",
-                "image5.webp",
-                "image6.webp"
-            ],
-            "delay": 1000,
-            "path":"projects100/Commercial-Complex-Goba-Dar-es-Salaam/"
-        },
-        {
-            "id": 3,
-            "name": "Proposed Presidential Library | Dodoma, Tanzania",
-            "description": "Our work",
-            "image": [
-                "image1.webp",
-                "image2.webp",
-                "image3.webp",
-                "image4.webp",
-                "image5.webp",
-                "image6.webp"
-            ],
-            "cols": 2,
-            "delay": 0,
-            "path":"projects100/Proposed-Presidential-Library/"
-        },
-        {
-            "id": 4,
-            "name": "Residential Apartments | Mbezi Beach, Dar es Salaam, Tanzania",
-            "description": "Our work",
-            "image": [
-                "image1.webp",
-                "image2.webp",
-                "image3.webp",
-                "image4.webp",
-                "image5.webp",
-                "image6.webp"
-            ],
-            "cols": 2,
-            "delay": 1000,
-            "path":"projects100/Residential-Apartments-Mbezi-Beach-Dar/"
-        },
-        {
-            "id": 5,
-            "name": "Medeli Conventional Centre | Dodoma, Tanzania",
-            "description": "Our work",
-            "image": [
-                "image1.webp",
-                "image2.webp",
-                "image3.webp",
-                "image4.webp",
-                "image5.webp",
-                "image6.webp"
-            ],
-            "cols": 1,
-            "delay": 0,
-            "path":"projects100/Medeli-Conventioanl-Centre-Dodoma/"
-        },
-        {
-            "id": 6,
-            "name": "Iyumbu health Centre | Dodoma, Tanzania",
-            "description": "Our work",
-            "image": [
-                "image1.webp",
-                "image2.webp",
-                "image3.webp",
-                "image4.webp",
-                "image5.webp",
-                "image6.webp"
-            ],
-            "cols": 2,
-            "delay": 1000,
-            "path":"projects100/Iyumbu/"
-        },
-        {
-            "id": 7,
-            "name": "VIJANA Multipurpose Hall | Dar es Salaam, Tanzania",
-            "description": "Our work",
-            "image": [
-                "image1.webp",
-                "image2.webp",
-                "image3.webp",
-                "image4.webp",
-                "image5.webp",
-                "image6.webp"
-            ],
-            "cols": 2,
-            "delay": 0,
-            "path":"projects100/VIJANA-Multipurpose-Hall-Dar-es-Salaam/"
-        },
-        {
-            "id": 1,
-            "name": "Channery Roof Rehabilitation | CANADIAN HIGH COMMISSION",
-            "description": "Description 1",
-            "image": ["image1.webp"],
-            "cols": 1,
-            "delay": 1000
-            
-        }
-    ]
+    {
+        "all": [
+            "Brimon Consults Limited Office Fit-Out",
+            "Commercial Complex | Goba, Dar es Salaam, Tanzania",
+            "Canadian High Commission – Roof Rehabilitation",
+            "Medeli Conventional Centre | Dodoma, Tanzania",
+            "New Itega Hotel",
+            "Proposed Hotel at Njedegwa",
+            "Iyumbu health Centre | Dodoma, Tanzania",
+            "Proposed Hospital Dar es salaam",
+            "Proposed-Presidential-Library",
+            "SMMUCO Admin Block – Institutional Headquarters",
+            "Smmuco Campus Development: Chapel and Seminar Blocks",
+            "Makundichi Beach Villas -Zanzibar",
+            "Residential Apartment Mbezi Beach",
+            "Residential Building Mbezi Beach",
+            "Residential Apartment- Mlimwa C",
+            "VIJANA-Multipurpose-Hall-Dar-es-Salaam"
+        ],
+        "eight": [
+            "Brimon Consults Limited Office Fit-Out",
+            "Commercial Complex | Goba, Dar es Salaam, Tanzania",
+            "Iyumbu health Centre | Dodoma, Tanzania",
+            "Canadian High Commission – Roof Rehabilitation",
+            "New Itega Hotel",
+            "Makundichi Beach Villas -Zanzibar",
+            "Smmuco Campus Development: Chapel and Seminar Blocks",
+            "Residential Apartment Mbezi Beach"
+        ]
+    }

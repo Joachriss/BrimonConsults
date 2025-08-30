@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { TProject } from "../types";
 
-export async function getProjects (page: number = 1, limit: number = 10) {
+export async function getProjects (page: number = 1, limit: number = 20) {
     const response = await axios.get("/projects",{
         params: {
             page,
