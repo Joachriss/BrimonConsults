@@ -80,7 +80,7 @@ export const NewsPage = ({ title }: { title: string }) => {
                             <h3 className="text-xl font-semibold text-[#194062] dark:text-white mb-2">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</p>
+                            <p className="text-gray-600 dark:text-gray-400 text-lg">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>
