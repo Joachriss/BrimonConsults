@@ -11,7 +11,7 @@ import { ImageModal } from "../../components/dialogs/ImageDialog";
 export const ProjectDetailsPage = ({ title }: { title: string }) => {
     pageTitle(title)
     const params = useParams();
-    const [_,setParams] = useSearchParams();
+    const [_, setParams] = useSearchParams();
     const { projects } = useProjects()
 
     const projectName = params.project;
@@ -22,7 +22,7 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        setParams({limit: '20'});
+        setParams({ limit: '20' });
         if (isSliding) {
             const slideInterval = setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % project?.images?.length);
@@ -49,7 +49,7 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                         Array.isArray(project?.images) &&
                         <div className={`h-screen w-full  transition-transform duration-1000`} >
                             {project?.images.map((image: string, index: Key) => (
-                                <img src={image}  className={`w-full z-10 absolute h-screen object-cover transition-transform duration-1000 ${index === currentIndex ? 'translate-x-0' : 'translate-x-full '} `} key={index} alt="" />
+                                <img src={image} className={`w-full z-10 absolute h-screen object-cover transition-transform duration-1000 ${index === currentIndex ? 'translate-x-0' : 'translate-x-full '} `} key={index} alt="" />
                             ))}
 
                         </div>
@@ -84,10 +84,12 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
             {/* details */}
             <section className="bg-gray-50 dark:bg-gray-800 w-full overflow-hidden">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-                    <div className="max-w-screen-md">
+                    <div className="w-full">
                         <h2 className="mb-4 md:text-5xl text-3xl tracking-tight text-[#194062] dark:text-white">Project Details</h2>
-                        <p className="text-gray-500 sm:text-xl dark:text-gray-400">{project?.title}</p>
-                        <hr className="w-1/2 mt-7 border-4 border-[#d94a68]" />
+                        <p className="text-gray-500 sm:text-xl dark:text-gray-700 font-bold">{project?.title}</p>
+                        <p className="text-gray-500 sm:text-lg dark:text-gray-400">{project?.description}</p>
+                        <hr className="w-1/2 my-3 border-4 border-[#d94a68]" />
+                        <p className="text-gray-500 sm:text-base dark:text-gray-400 text-justify">{project?.details}</p>
                     </div>
                 </div>
                 <div className="max-w-screen-xl mx-auto px-4 py-8">

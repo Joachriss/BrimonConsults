@@ -24,6 +24,7 @@ export type TProject = {
     id?:string;
     title: string;
     description: string;
+    details?: string;
     wallpaper?:number;
     images: File[] | String[];
 }

@@ -22,6 +22,7 @@ const projectSchema = z.object({
   id: z.string().optional(),
   title: z.string().min(3, "Name must be at least 3 characters long"),
   description: z.string().min(3, "Description must be at least 3 characters long"),
+  details: z.string().min(3, "Details must be at least 3 characters long").optional(),
   wallpaper: z.preprocess(
     (val) => {
       if (typeof val === "string" && /^\d+$/.test(val)) {
@@ -54,6 +55,7 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
       id: project ? project.id : undefined,
       title: "",
       description: "",
+      details: "",  
       wallpaper: 1,
       images: [],
     },
@@ -65,6 +67,7 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
         id: project.id,
         title: project.title,
         description: project.description,
+        details: project.details,
         wallpaper: project.wallpaper || 1,
         images: (project.images as string[]) || [],
       });
@@ -73,6 +76,7 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
         id: "",
         title: "",
         description: "",
+        details: "",
         wallpaper: 1,
         images: [],
       });
@@ -111,6 +115,7 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
     const formData = new FormData();
     formData.append("title", data.title);
     formData.append("description", data.description);
+    formData.append("details", data.details);
     formData.append("wallpaper", String(data.wallpaper));
 
     if (project) {
@@ -178,6 +183,18 @@ export const AddProjectModal = ({ project, isOpen, onClose, refetch }: dialogPro
                   className="w-full p-2 mb-1 rounded-lg border border-gray-300 focus:outline-none"
                 />
                 <div className="text-red-600 text-xs">{errors.description?.message}</div>
+              </label>
+
+              <label>
+                <span className="font-bold text-sm">Details</span>
+                <textarea
+                  {...register("details")}
+                  rows={4}
+                  placeholder="More details..."
+                  className="w-full p-2 mb-1 rounded-lg border border-gray-300 focus:outline-none">
+
+                  </textarea>
+                <div className="text-red-600 text-xs">{errors.details?.message}</div>
               </label>
 
               <label>
