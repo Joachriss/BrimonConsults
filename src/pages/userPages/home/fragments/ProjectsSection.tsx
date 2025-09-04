@@ -8,14 +8,14 @@ import type { TProject } from '../../../../types';
 import { useEffect, type Key } from 'react';
 import { LuLoader } from 'react-icons/lu';
 import { MdSearchOff } from 'react-icons/md';
-import { eight } from "../../../../data/projects.json";
+import { eight, all } from "../../../../data/projects.json";
 export const ProjectsSection = () => {
     const { projects, isLoading } = useProjects()
-    const [_,setParams] = useSearchParams();
+    const [_, setParams] = useSearchParams();
     const projectList = projects?.results || [];
     useEffect(() => {
-        setParams({  limit: "20" });
-    },[])
+        setParams({ limit: "20" });
+    }, [])
     return (
         <motion.section
             id="projects"
@@ -104,17 +104,21 @@ export const ProjectsSection = () => {
 
                     <div className="col-span-full grid grid-cols-4 gap-4">
                         {
-                            projectList?.slice(0, 4).map((project: TProject, index: number) => (
-                                <ProjectCard
-                                    key={index}
-                                    cols={
-                                        index % 2 === 0 ?
-                                            index === 2 ?
-                                                3 : 1 : index === 3 ? 1 : 3
-                                    }
-                                    project={project}
-                                />
-                            ))
+                            all.slice(0, 4).map((projectName: string, index: number) => {
+                                const project = projectList.find((p: TProject) => p.title.trim() === projectName.trim());
+
+                                return (
+                                    <ProjectCard
+                                        key={index}
+                                        cols={
+                                            index % 2 === 0 ?
+                                                index === 2 ?
+                                                    3 : 1 : index === 3 ? 1 : 3
+                                        }
+                                        project={project}
+                                    />
+                                )
+                            })
                         }
                     </div>
                     <div className="col-span-full mt-4 w-full flex justify-center">

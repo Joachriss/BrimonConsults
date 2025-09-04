@@ -8,6 +8,7 @@ import { MdSearchOff } from "react-icons/md";
 import { LuLoader } from "react-icons/lu";
 import { useSearchParams } from "react-router";
 import { useEffect } from "react";
+import { all } from "../../data/projects.json";
 
 // Icons
 import { FaIndustry, FaRoad, FaHospital, FaUniversity, FaHotel, FaHome, FaChurch } from "react-icons/fa";
@@ -22,7 +23,7 @@ export const ProjectsPage = ({ title }: { title: string }) => {
     const [params, setParams] = useSearchParams();
     useEffect(() => {
         window.scrollTo(0, 0);
-        setParams({ limit: "6" });
+        setParams({ limit: "20" });
     }, []);
 
     const projectList = projects?.results || [];
@@ -121,9 +122,16 @@ export const ProjectsPage = ({ title }: { title: string }) => {
                             <LuLoader className="w-14 h-14 text-[#d94766] animate-spin" />
                         </div>
                     ) : projectList?.length > 0 ? (
-                        projectList?.map((project: TProject, index: number) => (
-                            <ProjectCardNormal key={index} index={index} project={project} />
-                        ))
+                        all.map((projectName: string, index: number) => {
+
+                            const project = projectList.find((p: TProject) => p.title.trim() === projectName.trim());
+                            return project ? (
+                                <ProjectCardNormal key={index} index={index} project={project} />
+                            ) : null
+                        })
+                        // projectList?.map((project: TProject, index: number) => (
+                        //     <ProjectCardNormal key={index} index={index} project={project} />
+                        // ))
                     ) : (
                         <div className="col-span-full flex flex-col items-center justify-center font-bold text-gray-400 text-2xl text-center h-full w-full">
                             <MdSearchOff className="w-14 h-14" />
