@@ -104,9 +104,9 @@ export const ProjectsSection = () => {
 
                     <div className="col-span-full grid grid-cols-4 gap-4">
                         {
-                            all.slice(0, 4).map((projectName: string, index: number) => {
+                            projectList && all.slice(0, 4).map((projectName: string, index: number) => {
                                 const project = projectList.find((p: TProject) => p.title.trim() === projectName.trim());
-
+                                if (!project) return null
                                 return (
                                     <ProjectCard
                                         key={index}
