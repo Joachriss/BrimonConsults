@@ -10,13 +10,14 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { MdContacts } from 'react-icons/md';
 import { BsBuildings, BsQuestionDiamond } from 'react-icons/bs';
 import { useProjects } from '../../hooks/useProjects';
 import { useFaqs } from '../../hooks/useFaqs';
 import { useInquiries } from '../../hooks/useInquiries';
 import { useAuth } from '../../../context/AuthContext';
+import { useEffect } from 'react';
 
 ChartJS.register(
   CategoryScale,
@@ -62,8 +63,12 @@ export const data = {
 export const Dashboard = () => {
   const { projects } = useProjects()
   const { inquiries } = useInquiries()
+  const [_, setParams] = useSearchParams();
   const { faqs } = useFaqs()
   const { user } = useAuth()
+  useEffect(() => {
+    setParams({ limit: '100' })
+  }, [])
 
   return (
     <section className="p-3">

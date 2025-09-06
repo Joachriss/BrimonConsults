@@ -29,3 +29,8 @@ export type TProject = {
     images: File[] | String[];
 }
 
+export type TQueryParams ={
+    page?:number;
+    limit?:number;
+}
+

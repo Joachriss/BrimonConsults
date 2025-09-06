@@ -8,8 +8,8 @@ export function useProjects() {
     const limit = parseInt(params.get("limit") || "10");
 
     const { data, isLoading, refetch } = useQuery({
-        queryKey: ["projects", page, limit],   // ✅ queryKey changes => auto refetch
-        queryFn: () => getProjects(page, limit),
+        queryKey: ["projects", page, limit], 
+        queryFn: () => getProjects({ page, limit }),
     });
 
     return {

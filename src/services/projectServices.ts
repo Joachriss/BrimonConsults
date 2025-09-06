@@ -1,11 +1,10 @@
 import axios from "axios";
-import type { TProject } from "../types";
+import type { TProject, TQueryParams } from "../types";
 
-export async function getProjects (page: number = 1, limit: number = 20) {
+export async function getProjects (params:TQueryParams) {
     const response = await axios.get("/projects",{
         params: {
-            page,
-            limit
+            ...params
         }
     });
     return response.data
