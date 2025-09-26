@@ -9,7 +9,7 @@ export function useFaqs() {
     const { isLoading,data,refetch } = useQuery({
         queryKey: ["faqskey", page, limit],
         queryFn:()=> getFaqs(page, limit),
-        refetchInterval:1500000
+        refetchInterval:1500000 
     })
     return {
         isLoading,

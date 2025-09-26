@@ -10,6 +10,7 @@ export function useProjects() {
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["projects", page, limit], 
         queryFn: () => getProjects({ page, limit }),
+        refetchInterval: 1500000
     });
 
     return {

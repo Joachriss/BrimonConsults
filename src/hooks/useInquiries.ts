@@ -9,7 +9,7 @@ export function useInquiries() {
     const { isLoading,data } = useQuery({
         queryKey: ["inquirieskey", page, limit],
         queryFn:()=> getInquiries(page, limit),
-        refetchInterval:10000
+        refetchInterval:1500000
     })
     return {
         isLoading,
