@@ -6,7 +6,8 @@ import { FaAngleDoubleDown } from "react-icons/fa";
 import { pageTitle } from "../../utils/pageTitle";
 import { useProjects } from "../../hooks/useProjects";
 import type { TProject } from "../../types";
-import { ImageModal } from "../../components/dialogs/ImageDialog";
+// import { ImageModal } from "../../components/dialogs/ImageDialog";
+import { PhotoView } from 'react-photo-view';
 
 export const ProjectDetailsPage = ({ title }: { title: string }) => {
     pageTitle(title)
@@ -18,7 +19,7 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
     const project = projects?.results.find((p: TProject) => p.title.trim() === projectName?.trim());
     const isSliding = true;
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState('');
+    // const [selectedImage, setSelectedImage] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -39,8 +40,8 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
             behavior: "smooth"
         })
     }
-    const onOpenImage = (image: string) => { setSelectedImage(image) }
-    const onCloseImage = () => { setSelectedImage('') }
+    // const onOpenImage = (image: string) => { setSelectedImage(image) }
+    // const onCloseImage = () => { setSelectedImage('') }
     return (
         <div className="w-full overflow-hidden">
             <section className="bg-white dark:bg-gray-900 relative w-full h-screen">
@@ -92,7 +93,7 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                         <p className="text-gray-500 sm:text-base dark:text-gray-400 text-justify">{project?.details}</p>
                     </div>
                 </div>
-                <div className="max-w-screen-xl mx-auto px-4 py-8">
+                {/* <div className="max-w-screen-xl mx-auto px-4 py-8">
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {Array.isArray(project?.images) && project?.images.map((image: string, index: number) => (
                             <motion.div
@@ -109,7 +110,22 @@ export const ProjectDetailsPage = ({ title }: { title: string }) => {
                         ))}
                         <ImageModal isOpen={selectedImage !== ''} onClose={() => onCloseImage()} image={selectedImage} />
                     </div>
+                </div> */}
+
+                <div className="max-w-screen-xl mx-auto px-4 py-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* <PhotoProvider> */}
+                            {Array.isArray(project?.images) && project?.images.map((image: string, index: number) => (
+                                <PhotoView key={index} src={image}
+                                >
+                                    <img src={image} alt={project?.title} className="w-full h-48 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+                                </PhotoView>
+                            ))}
+                        {/* </PhotoProvider> */}
+                    </div>
                 </div>
+
+
 
                 {/* More projects */}
                 <div className="max-w-screen-xl mx-auto px-4 py-8">

@@ -5,6 +5,7 @@ import { router } from './router.tsx'
 import { RouterProvider } from 'react-router'
 import axios from 'axios'
 import { Toaster } from 'react-hot-toast'
+import 'react-photo-view/dist/react-photo-view.css';
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL
 axios.defaults.withCredentials = true
